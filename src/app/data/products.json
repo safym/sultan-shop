@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "imageURL": "https://sbermarket.ru/statics/spree/products/3521745/original/18473161.jpg?1642667408",
+    "name": "AOS средство для мытья посуды Crystal",
+    "measurementType": "мл",
+    "measurementValue": "450",
+    "barcode": "1",
+    "manufacturer": "",
+    "brand": "AOS",
+    "description": "Do not leave this candle burning all night, but enjoy the smell and warm color it provides.",
+    "price": 48.76    
+  },
+  {
+    "id": "2",
+    "imageURL": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/622/662/859/315/114/4/100023621244b0.jpg",
+    "name": "Стиральный порошок PERSIL Свежесть от Вернель Автомат",
+    "measurementType": "кг",
+    "measurementValue": "3",
+    "barcode": "2",
+    "manufacturer": "Henkel",
+    "brand": "PERSIL",
+    "description": "Стиральный порошок Persil Freshness by Vernel для белого белья с формулой Deep Clean Technology обладает уникальным сочетанием 13 активных компонентов. Стиральный порошок Persil это всё, что нужно для сияющей чистоты белья. Порошок для стирки белья Persil содержит защиту от образования известкового налета для жесткой и мягкой воды.",
+    "price": 599    
+  },
+  {
+    "id": "3",
+    "imageURL": "https://www.shop-profit.ru/upload/iblock/d81/stiralnyy_poroshok_avtomat_mif_3_v_1_moroznaya_svezhest_6kg_5413149352902.jpg",
+    "name": "Стиральный порошок Миф 3 в 1 «Морозная свежесть» Автомат",
+    "measurementType": "кг",
+    "measurementValue": "6",
+    "barcode": "3",
+    "manufacturer": "Procter & Gamble",
+    "brand": "Миф",
+    "description": "Стиральный порошок Миф Морозная Свежесть — это новая, лучшая формула Миф для сияющей белизны, с технологией против разводов. Стиральный порошок Миф растворяется едва коснувшись воды, и моментально активируется: удаляет даже трудновыводимые пятна и придает одежде сияющую белизну. С помощью технологии против разводов, Миф помогает эффективно справляться с загрязнениями, не оставляя разводов на одежде. Только чистота и морозная свежесть!",
+    "price": 1300    
+  },
+  {
+    "id": "4",
+    "imageURL": "https://opttorg-horeca.ru/assets/images/catalog/hoz-tovar/gel-dlya-stirki-laska-siyanie-chernogo-1l.jpg",
+    "name": "Гель для стирки Ласка Сияние черного",
+    "measurementType": "л",
+    "measurementValue": "1",
+    "barcode": "4",
+    "manufacturer": "Henkel",
+    "brand": "Ласка",
+    "description": "Жидкий порошок Ласка Восстановление BLACK для тёмного эффективно и бережно отстирывает загрязнения на одежде, восстанавливая яркость чёрного и тёмных цветов и сохраняя прочность волокон ткани. В отличие от обычного порошка, Ласка содержит цветозащитные ингредиенты, которые поддерживают стойкость цвета одежды. Активные компоненты способствуют уменьшению количества катышков на ткани, и при регулярном использовании ткань становится более гладкой. Формула содержит более 90% ингредиентов натурального происхождения.",
+    "price": 299    
+  }
+]
