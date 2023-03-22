@@ -1,13 +1,19 @@
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getProducts } from "../../app/data/api";
-import { useDispatch } from "react-redux"
-import { useAppDispatch } from "../../app/hooks";
 import { addItem } from "../../app/slices/cartSlice"
- 
-//todo: сделать api
-import data from '../../app/data/products.json';
+import { setProducts } from "../../app/slices/productsSlice"
 
 function Products() {
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    getProducts().then((products) => {
+      dispatch(setProducts(products));
+    });
+  }, []);
+
+  const productsItems = useAppSelector((state) => state.products.productsItems);
 
   const add = (item: object) => {
     dispatch(addItem({item}))
@@ -17,19 +23,19 @@ function Products() {
     <>
       <h1>(Products)</h1>
       <ul>
-        {data.map(item => (
-          <li key={item.id}>
-            <img src={item.imageURL} alt={item.name} />
+        {Object.entries(productsItems).map(([id, product]) => (
+          <li key={id}>
+            <img src={product.imageURL} alt={product.name} />
             
             <pre>
-              <a>{item.name}</a>
+              <a>{product.name}</a>
             </pre>
 
             <pre>
-              <p>{item.measurementValue} {item.measurementType}</p>
+              <p>{product.measurementValue} {product.measurementType}</p>
             </pre>
             
-            <button onClick={() => add(item)}>Add</button>
+            <button onClick={() => add(product)}>Add</button>
           </li>
         ))}
       </ul>

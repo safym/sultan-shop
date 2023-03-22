@@ -2,7 +2,8 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { removeItem } from "../../app/slices/cartSlice"
 
 function Cart() {
-  const cartItems = useAppSelector(state => state.cartItems.cartItems);
+  const cartItems = useAppSelector(state => state.cart.cartItems);
+  const productsItems = useAppSelector((state) => state.products.productsItems);
 
   const dispatch = useAppDispatch();
 
@@ -14,12 +15,17 @@ function Cart() {
     <>
       <h1>(Cart)</h1>
       <ul>
-        {Object.entries(cartItems).map(([id, quantity]) => (
-          <li key={id}>
-            <a>id: {id} x{quantity}</a>
-            <button onClick={() => remove(id)}>X</button>
-          </li>
-        )
+        {Object.entries(cartItems).map(([id, quantity]) => {
+          const product = productsItems[id]
+
+          return (
+            <li key={id}>
+              <a>{product.name}</a>
+              <a>   x{quantity}</a>
+              <button onClick={() => remove(id)}>X</button>
+            </li>
+          )
+        }
         )}
       </ul>
     </>

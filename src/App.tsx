@@ -3,27 +3,15 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 import './App.css'
 
-import Products from "./features/products/Products";
+import Header from "./features/header/Header";
 import Home from "./features/home/Home";
+import Products from "./features/products/Products";
 import Cart from "./features/cart/Cart";
 
 function App() {
   return (
     <BrowserRouter>
-
-      {/* temporary header */}
-      <NavLink to="/">
-        home
-      </NavLink>
-      <br />
-      <NavLink to="/products">
-        products
-      </NavLink>
-      <br />
-      <NavLink to="/cart">
-        cart
-      </NavLink>
-      {/* temporary header */}
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
