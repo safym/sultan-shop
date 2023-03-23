@@ -1,22 +1,21 @@
-import { useState } from 'react'
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 import './App.css'
 
-import Header from "./features/header/Header";
 import Home from "./features/home/Home";
 import Products from "./features/products/Products";
 import Cart from "./features/cart/Cart";
+import Layout from './features/layout/Layout';
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/" element={<Layout />}>
+          <Route path="" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
