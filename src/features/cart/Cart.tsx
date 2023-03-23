@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { removeItem } from "../../app/slices/cartSlice"
 
-function Cart() {
+const Cart: React.FC = () => {
   const cartItems = useAppSelector(state => state.cart.cartItems);
   const productsItems = useAppSelector((state) => state.products.productsItems);
 

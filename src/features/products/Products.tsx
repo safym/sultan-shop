@@ -4,7 +4,7 @@ import { getProducts } from "../../app/data/api";
 import { addItem } from "../../app/slices/cartSlice"
 import { setProducts } from "../../app/slices/productsSlice"
 
-function Products() {
+const Products: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {

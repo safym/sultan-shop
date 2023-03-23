@@ -1,7 +1,8 @@
+import React from 'react';
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 
-function Header() {
+const Header: React.FC = () => {
   const cartItems = useAppSelector((state) => state.cart.cartItems);
 
   return (

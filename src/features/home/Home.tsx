@@ -1,8 +1,8 @@
-function Home() {
+const Home: React.FC = () =>  {
   return (
-    <main className="page">
+    <div>
       <h1>Welcome to the Store (HOME)</h1>
-    </main>
+    </div>
   );
 }
 
