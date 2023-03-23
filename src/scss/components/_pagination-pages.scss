@@ -1,0 +1,24 @@
+.pagination-pages {
+  &__page-nav-link {
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__page-link {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    &_state {
+      &_active {
+        background-color: rgba($button-color, .3);
+      }
+    }
+  }
+}

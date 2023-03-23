@@ -1,0 +1,16 @@
+.checkbox {
+  color: var(--darkTextColor);
+
+  &__counter {
+    font-size: 10px;
+    color: inherit;
+  }
+
+  &__input {}
+
+  &__checkmark {}
+
+  input[type="checkbox"] {
+    accent-color: #8691a1;
+  }
+}
