@@ -66,6 +66,12 @@ body {
 /// --------------------------------------HEADER-----------------------------------------//
 ///////////////////////////////////////////////////////////////////////////////////////////
 .app-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  
+  background-color: var(--body-bg-color);
   &__container {}
 
   &__row-container {

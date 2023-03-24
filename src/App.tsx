@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
-import './App.css'
+import './scss/app.css'
 
 import Home from "./features/home/Home";
 import Products from "./features/products/Products";

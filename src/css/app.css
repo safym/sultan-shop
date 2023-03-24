@@ -203,6 +203,12 @@ body {
   margin: 0 auto;
 }
 
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--body-bg-color);
+}
 .app-header__row-container {
   padding: 0 15px;
   box-sizing: content-box;
