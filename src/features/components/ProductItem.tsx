@@ -3,7 +3,6 @@ import { Product } from "../../app/data/api"
 import { useAppDispatch } from "../../app/hooks";
 
 interface productItemProps {
-  id: string,
   productData: Product,
 }
 
@@ -15,7 +14,7 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
   }
 
   return (
-    <li key={props.id} className="products__item product-item">
+    <li className="products__item product-item">
       <div className="product-item__image-wrapper">
         <img className="product-item__image" src={props.productData.imageURL} alt="" />
       </div>
