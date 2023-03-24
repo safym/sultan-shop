@@ -321,6 +321,7 @@ body {
   color: var(--darkTextColor);
 }
 .contact-link {
+  color: inherit;
   font-weight: 600;
 }
 
@@ -373,6 +374,9 @@ body {
   padding: 20px;
   border-radius: 60px;
   background-color: var(--field-bg-color);
+}
+.field__input_color_white {
+  background-color: var(--body-bg-color);
 }
 .field__button-submit {
   position: absolute;
@@ -437,7 +441,6 @@ body {
 .content__products {
   margin-bottom: 50px;
 }
-
 .page-header__container {
   padding: 0 15px;
   box-sizing: content-box;
@@ -646,4 +649,67 @@ body {
   font-size: 10px;
   line-height: 12px;
   letter-spacing: 0.15em;
+}
+
+.app-footer {
+  background-color: var(--darkTextColor);
+  color: var(--lightTextColor);
+  padding: 70px 0 116px 0;
+}
+.app-footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 30px;
+  flex-wrap: wrap;
+}
+.app-footer__main {
+  width: 320px;
+}
+.app-footer__column {
+  display: flex;
+  flex-direction: column;
+}
+.app-footer__logo, .app-footer__field-label {
+  margin-bottom: 15px;
+}
+.app-footer__company-description {
+  margin-bottom: 45px;
+}
+.app-footer__column-title {
+  margin-bottom: 25px;
+}
+.app-footer__link:not(:last-child) {
+  margin-bottom: 20px;
+}
+.app-footer__social, .app-footer__payment {
+  display: flex;
+}
+.app-footer__social-item, .app-footer__payment-item {
+  display: block;
+}
+.app-footer__social-item:not(:last-child), .app-footer__payment-item:not(:last-child) {
+  margin-right: 10px;
+}
+.app-footer__column-title, .app-footer__link, .app-footer__schedule, .app-footer__subtitle, .app-footer__company-description, .app-footer__field-label, .app-footer__order-call {
+  color: inherit;
+}
+.app-footer__column-title {
+  font-weight: 600;
+}
+.app-footer__button-price-list {
+  margin-bottom: 20px;
+}
+.app-footer__phone-wrapper {
+  margin-bottom: 25px;
+}
+.app-footer__order-call {
+  text-decoration: underline;
+}
+.app-footer__mail-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
 }
