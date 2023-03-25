@@ -1,8 +1,27 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../store/store';
 
 interface CartItem{
   [id: string]: number;
 }
+
+
+export interface CartState {
+  totalPrice: number;
+  items: CartItem[];
+}
+
+export const getMemoizedNumItems = createSelector(
+  (state: RootState) => state.cart.items,
+  (items) => {
+    console.log("calling getMemoizedNumItems");
+    let numItems = 0;
+    for (let id in items) {
+      numItems += items[id];
+    }
+    return numItems;
+  }
+);
 
 const CartSlice = createSlice({
     name: 'cartItems',
