@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { getProducts } from "../app/data/api";
-import { setProducts } from "../app/slices/productsSlice"
-import ProductItem from "./ProductItem";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { getProducts } from "../../app/data/api";
+import { setProducts } from "../../app/slices/productsSlice"
+import ProductItem from "../ProductItem";
 
 const Products: React.FC = () => {
   const dispatch = useAppDispatch();
