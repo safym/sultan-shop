@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 import './scss/app.css'
 
-import Home from "./features/home/Home";
-import Products from "./features/products/Products";
-import Cart from "./features/cart/Cart";
-import Layout from './features/layout/Layout';
+import Home from "./components/Home";
+import Products from "./components/Products";
+import Cart from "./components/Cart";
+import Layout from './components/Layout';
 
 function App() {
   return (

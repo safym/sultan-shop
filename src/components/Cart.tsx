@@ -1,5 +1,5 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { removeItem } from "../../app/slices/cartSlice"
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { removeItem } from "../app/slices/cartSlice"
 
 const Cart: React.FC = () => {
   const cartItems = useAppSelector(state => state.cart.cartItems);
