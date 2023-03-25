@@ -16,7 +16,6 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
   const cartItems = useAppSelector(state => state.cart.cartItems);
 
   const addedCount = cartItems[props.productData.id]
-  // const addedCount = cartItems.reduce((sum: number, item: CartItemType) => item.count + sum, 0);
 
   return (
     <li className="products__item product-item">
@@ -52,7 +51,6 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
         <button className="product-item__button-add" onClick={() => add(props.productData)}>
           <span className="product-item__button-text">
             В КОРЗИНУ 
-            <span className="product-item__added-counter">{addedCount}</span>
           </span>
           <span className="button__icon">
             <svg width="27" height="27" viewBox="0 0 27 27" fill="none"
@@ -62,6 +60,7 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
                 fill="white" />
             </svg>
           </span>
+          <span className="product-item__added-counter">{addedCount}</span>
         </button>
       </div>
     </li>

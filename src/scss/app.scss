@@ -682,6 +682,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: 5px;
     border-radius: $secondary-ui-height;
     color: var(--lightTextColor);
     font-weight: 700;
@@ -703,7 +704,7 @@ body {
       min-width: 22px;
       height: 22px;
       padding: 3px;
-      margin: 0 5px;
+      // margin: 0 5px;
       border-radius: 22px;
       background-color: var(--body-bg-color);
       color: var(--button-bg-color)
