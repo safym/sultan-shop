@@ -11,6 +11,7 @@ export interface Product {
   barcode: string;
   manufacturer: string;
   brand: string;
+  category: Array<string>
 }
 
 export async function getProducts(): Promise<Product[]> {
