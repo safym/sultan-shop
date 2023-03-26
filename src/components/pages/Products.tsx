@@ -4,6 +4,7 @@ import { getProducts } from "../../app/data/api";
 import { setProducts } from "../../app/slices/productsSlice"
 import ProductItem from "../ProductItem";
 import FilterSidebar from "../FilterSidebar";
+import FilterCategories from "../FilterCategories";
 
 const Products: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -37,19 +38,7 @@ const Products: React.FC = () => {
 
             </div>
           </div>
-          <div className="products__categories-filter ">
-            <a className="products__filter-card">Уход за телом</a>
-            <a className="products__filter-card">Уход за руками</a>
-            <a className="products__filter-card">Уход за ногами</a>
-            <a className="products__filter-card">Уход за лицом</a>
-            <a className="products__filter-card">Уход за волосами</a>
-            <a className="products__filter-card">Средства для загара</a>
-            <a className="products__filter-card">Средства для бритья</a>
-            <a className="products__filter-card">Подарочные наборы</a>
-            <a className="products__filter-card">Гигиеническая продукция</a>
-            <a className="products__filter-card">Гигиена полости рта</a>
-            <a className="products__filter-card">Бумажная продукция</a>
-          </div>
+          <FilterCategories />
           <div className="products__content">
             <FilterSidebar />
             <div className="products__list-wrapper">

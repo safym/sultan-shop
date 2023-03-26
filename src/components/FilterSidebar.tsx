@@ -1,8 +1,20 @@
 import { useAppSelector } from "../app/hooks";
+import { getCateroryList } from "../utils/getCateroryList";
 
 const FilterSidebar: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
-  console.log(productsItems);
+
+  // temp manufacturersList
+  const manufacturersList = Object.entries(productsItems).reduce(function (result: Array<string>, currentPair) {
+    const [key, value] = currentPair;
+
+    if (!result.includes(value.manufacturer)) {
+      result.push(value.manufacturer)
+    }
+    return result;
+  }, []);
+
+  const categoryList = getCateroryList(productsItems)
 
   return (
     <div className="products__filter-sidebar filter-sidebar">
@@ -29,22 +41,17 @@ const FilterSidebar: React.FC = () => {
           </button>
         </form>
         <ul className="filter-sidebar__manufacturer-list">
-          <li className="filter-sidebar__manufacturer-item">
-            <label className="filter-sidebar__checkbox checkbox">
-              <input type="checkbox" className="checkbox__input" />
-              Nivea <span className="checkbox__counter">(56)</span>
-              <span className="checkbox__checkmark"></span>
-            </label>
-          </li>
-          <li className="filter-sidebar__manufacturer-item">
-            <label className="filter-sidebar__checkbox checkbox">
-              <input type="checkbox" className="checkbox__input" />
-              Nivea
-              <span className="checkbox__counter">(56)</span>
-              <span className="checkbox__checkmark"></span>
-            </label>
-          </li>
-
+          {manufacturersList.map((item, index) => {
+            return (
+              <li key={index} className="filter-sidebar__manufacturer-item">
+                <label className="filter-sidebar__checkbox checkbox">
+                  <input type="checkbox" className="checkbox__input" />
+                  {item} <span className="checkbox__counter">(?)</span>
+                  <span className="checkbox__checkmark"></span>
+                </label>
+              </li>
+            )
+          })}
         </ul>
         <a className="filter-sidebar__show-hide-link show-hide-link">
           Показать все
@@ -73,8 +80,12 @@ const FilterSidebar: React.FC = () => {
       <div className="filter-sidebar__borderline"></div>
       <div className="filter-sidebar__categories filter-sidebar__section">
         <ul className="filter-sidebar__categories-list">
-          <li className="filter-sidebar__category-item"><a href="#">Уход за телом</a></li>
-          <li className="filter-sidebar__category-item"><a href="#">Уход за руками</a></li>
+
+          {categoryList.map((item, index) => {
+            return (
+              <li key={index} className="filter-sidebar__category-item"><a href="#">{item}</a></li>
+            )
+          })}
         </ul>
       </div>
     </div>
