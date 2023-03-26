@@ -643,9 +643,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
 
-  &__image {}
+  &__image {
+    max-height: 250px;
+  }
 
   &__name {
     font-weight: 500;
