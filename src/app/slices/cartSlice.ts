@@ -11,18 +11,6 @@ export interface CartState {
   items: CartItem[];
 }
 
-export const getMemoizedNumItems = createSelector(
-  (state: RootState) => state.cart.items,
-  (items) => {
-    console.log("calling getMemoizedNumItems");
-    let numItems = 0;
-    for (let id in items) {
-      numItems += items[id];
-    }
-    return numItems;
-  }
-);
-
 const CartSlice = createSlice({
     name: 'cartItems',
     initialState: {
