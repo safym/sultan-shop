@@ -49,7 +49,7 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
             <span className="cart-item__total-currency"></span>
           </div>
           <span className="cart-item__divider divider divider_size_long"></span>
-          <button className="filter-sidebar__delete-button rounded-button" onClick={() => remove(props.productData.id)}>
+          <button className="filter-sidebar__delete-button button button_form_rounded" onClick={() => remove(props.productData.id)}>
             <span className="rounded-button__icon">
               <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

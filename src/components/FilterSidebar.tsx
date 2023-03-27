@@ -64,10 +64,10 @@ const FilterSidebar: React.FC = () => {
       </div>
 
       <div className="filter-sidebar__controls filter-sidebar__section">
-        <button className="filter-sidebar__show-button button button_width_long">
+        <button className="filter-sidebar__show-button button button_size_l">
           <span className="button__text">Показать</span>
         </button>
-        <button className="filter-sidebar__delete-button rounded-button">
+        <button className="filter-sidebar__delete-button button button_form_rounded">
           <span className="rounded-button__icon">
             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path

@@ -90,7 +90,7 @@ const Header: React.FC = () => {
                 </defs>
               </svg>
               <div className="app-header__actions-wrapper">
-                <NavLink to="/products" className="app-header__action app-header__button-product button button_width_long">
+                <NavLink to="/products" className="app-header__action app-header__button-product button button_size_l">
                   <span className="button__text">Каталог</span>
                   <span className="button__icon">
                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -133,7 +133,7 @@ const Header: React.FC = () => {
                 </div>
               </div>
               <span className="app-header__divider divider divider_size_short"></span>
-              <a className="app-header__button-price-list button button_width_long" href="">
+              <a className="app-header__button-price-list button button_size_l" href="">
                 <span className="button__text">Прайс-лист</span>
                 <span className="button__icon">
                   <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
