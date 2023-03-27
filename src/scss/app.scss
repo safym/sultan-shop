@@ -7,6 +7,7 @@ $primary-font-size: 14px;
 $header-font-size: 40px;
 
 $offset: 15px;
+$duration: 0.15s;
 $ui-height: 60px;
 $secondary-ui-height: 45px;
 
@@ -74,8 +75,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  
+
   background-color: var(--body-bg-color);
+
   &__container {}
 
   &__row-container {
@@ -424,6 +426,9 @@ body {
   }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////
+/// --------------------------------------PRODUCTS---------------------------------------//
+///////////////////////////////////////////////////////////////////////////////////////////
 .products {
   position: relative;
 
@@ -447,7 +452,11 @@ body {
 
   &__options {}
 
-  &__sort {}
+  &__sort {
+    display: flex;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
+  }
 
   &__sort-title {
     font-weight: 500;
@@ -459,6 +468,7 @@ body {
 
   &__categories-filter {
     display: flex;
+    -moz-column-gap: 10px;
     column-gap: 10px;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -482,18 +492,11 @@ body {
     }
 
   }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////
-/// --------------------------------------PRODUCTS---------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
-.products {
   &__content {
     position: relative;
     display: flex;
     justify-content: space-between;
   }
-
 
   &__filter-sidebar {
     margin-right: 100px;
@@ -598,18 +601,24 @@ body {
 
   &__controls {
     display: flex;
+    -moz-column-gap: 10px;
     column-gap: 10px;
   }
 
   &__show-button {
     flex-grow: 1;
   }
+}
 
-  &__delete-button {
-    height: $ui-height;
-    width: $ui-height;
-    flex-grow: 0;
-  }
+.rounded-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $ui-height;
+  width: $ui-height;
+  flex-grow: 0;
+  border-radius: 50%;
+  background-color: $button-color;
 }
 
 .show-hide-link {
@@ -632,7 +641,9 @@ body {
 
 .product-item {
   width: 326px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 
   background: var(--body-bg-color);
   box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
@@ -643,7 +654,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
 
   &__image {
@@ -654,20 +664,24 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 130%;
-    margin-bottom: 15px;
   }
 
   &__info {
-    margin-bottom: 15px;
+    flex: 1 1 auto;
+  }
+
+  &__property-title {
+    color: var(--darkTextColor);
+    display: flex;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
   }
 
   &__property-value {
     font-weight: 500;
+    color: var(--mainTextColor);
   }
 
-  &__property-title {
-    color: var(--darkTextColor)
-  }
 
   &__footer {
     display: flex;
@@ -689,6 +703,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    -moz-column-gap: 5px;
     column-gap: 5px;
     border-radius: $secondary-ui-height;
     color: var(--lightTextColor);
@@ -720,6 +735,21 @@ body {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
+/// -----------------------------------MEASUREMENT---------------------------------------//
+///////////////////////////////////////////////////////////////////////////////////////////
+.measurement {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+  column-gap: 5px;
+  color: var(--darkTextColor);
+
+  &__icon {}
+
+  &__value {}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
 /// ---------------------------------------FOOTER----------------------------------------//
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -732,6 +762,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    -moz-column-gap: 30px;
     column-gap: 30px;
     row-gap: 30px;
     flex-wrap: wrap;
@@ -818,4 +849,100 @@ body {
   }
 
   .app-footer__subtitle {}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+/// -----------------------------------CART-ITEM-----------------------------------------//
+///////////////////////////////////////////////////////////////////////////////////////////
+
+.cart {
+  &__title {
+    margin-bottom: 50px;
+  }
+}
+
+.cart-item {
+
+  &__wrapper {
+    max-height: 290px;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 300px repeat(2, 1fr);
+    // grid-template-rows: 200px;
+    grid-column-gap: 20px;
+    align-items: center;
+    border-top: 1px dashed var(--border-color);
+  }
+
+  &__image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__info-wrapper {
+    min-height: 190px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    row-gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image {
+    height: 200px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  &__description {
+    font-size: 12px;
+    color: var(--darkTextColor);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    white-space: pre-wrap; 
+  }
+
+  &__info {
+    flex: 1 1 auto;
+  }
+
+  &__counter {
+    display: flex;
+  }
+
+  &__controls-wrapper {
+    height: $secondary-ui-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+/// -----------------------------------COUNTER-------------------------------------------//
+///////////////////////////////////////////////////////////////////////////////////////////
+
+.counter {
+  display: flex;
+  column-gap: 20px;
+
+  &__button {
+    width: 34px;
+    height: 23px;
+    background-color: rgba($button-color, .3);
+    border-radius: 20px;
+
+    &:disabled {
+      background-color: var(--online-border-color);
+    }
+  }
 }
