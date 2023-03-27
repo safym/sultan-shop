@@ -15,6 +15,7 @@ $container-width: 1366px;
 
 $element-color: #ffffff;
 $button-color: #FFC85E;
+$button-color-light: rgba($button-color, .3);
 $dark-text-color: #3F4E65;
 
 :root {
@@ -36,6 +37,7 @@ $dark-text-color: #3F4E65;
 @import "./libs/normalize";
 @import './components/path';
 @import './components/checkbox';
+@import './components/button';
 @import './components/title';
 @import './components/pagination-pages';
 
@@ -58,7 +60,6 @@ body {
 ._container {
   max-width: $container-width;
   margin: 0 auto;
-  // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 1px, rgb(51, 51, 51) 0px 0px 0px 1px;
 }
 
 .main-wrapper {
@@ -162,8 +163,6 @@ body {
     }
   }
 
-  &__button-product {}
-
   &__search-field {
     width: 260px;
   }
@@ -212,8 +211,6 @@ body {
       box-shadow: var(--online-border-color) 0px 0px 0px 2px;
     }
   }
-
-  &__button-price-list {}
 
   &__cart-button {}
 }
@@ -264,40 +261,6 @@ body {
   }
 }
 
-//-----button----------------------------------------------------------------------------//
-.button {
-  height: $ui-height;
-
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  border-radius: $ui-height;
-  color: var(--lightTextColor);
-  background-color: var(--button-bg-color);
-
-  &_width {
-    &_short {
-      padding: 10px;
-    }
-
-    &_long {
-      padding: 21px 40px;
-    }
-  }
-
-  &__text {
-    color: inherit;
-    margin-right: 12px;
-  }
-
-  &__icon {
-    display: flex;
-    align-items: center;
-  }
-}
-
 //---field---------------------------------------------------------------//
 .field {
   $field-offset: 10px;
@@ -339,7 +302,7 @@ body {
   align-items: center;
   height: $ui-height;
   border-radius: $ui-height;
-  padding: $offset / 2;
+  padding: calc($offset / 2);
 
   &__icon-wrapper {
     display: flex;
@@ -486,8 +449,7 @@ body {
     border-radius: 10px;
 
     &:hover {
-      // background-color: darken($element-color, 3%);
-      color: lighten($dark-text-color, 20%);
+      background-color: darken($element-color, 5%);
       box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.15);
     }
 
@@ -564,7 +526,7 @@ body {
     padding: 4px 14px;
     border-radius: 20px;
     text-align: center;
-    background-color: rgba($button-color, .3);
+    background-color: $button-color-light;
   }
 
   &__dash {}
@@ -608,17 +570,6 @@ body {
   &__show-button {
     flex-grow: 1;
   }
-}
-
-.rounded-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: $ui-height;
-  width: $ui-height;
-  flex-grow: 0;
-  border-radius: 50%;
-  background-color: $button-color;
 }
 
 .show-hide-link {
@@ -694,43 +645,6 @@ body {
     font-weight: 800;
     font-size: 16px;
     line-height: 130%;
-  }
-
-  &__button-add {
-    padding: 9px 25px;
-    height: $secondary-ui-height;
-    background-color: var(--button-bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -moz-column-gap: 5px;
-    column-gap: 5px;
-    border-radius: $secondary-ui-height;
-    color: var(--lightTextColor);
-    font-weight: 700;
-    font-size: 10px;
-    line-height: 12px;
-    letter-spacing: 0.15em;
-  }
-
-  &__button-text {
-    display: flex;
-    align-items: center;
-  }
-
-  &__added-counter {
-    &:not(:empty) {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-width: 22px;
-      height: 22px;
-      padding: 3px;
-      // margin: 0 5px;
-      border-radius: 22px;
-      background-color: var(--body-bg-color);
-      color: var(--button-bg-color)
-    }
   }
 }
 
