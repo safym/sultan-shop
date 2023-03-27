@@ -20,11 +20,17 @@ const CartSlice = createSlice({
         addItem: (state, action) => {
           const productId = action.payload.item.id;
 
-          console.log(action.payload)
           if (state.cartItems[productId]) {
             state.cartItems[productId]++;
           } else {
             state.cartItems[productId] = 1;
+          }
+        },
+        minusItem: (state, action) => {
+          const productId = action.payload.item.id;
+
+          if (state.cartItems[productId]) {
+            state.cartItems[productId]--;
           }
         },
         removeItem: (state, action) => {
@@ -33,6 +39,6 @@ const CartSlice = createSlice({
     },
 });
 
-export const {addItem, removeItem} = CartSlice.actions;
+export const {addItem, minusItem, removeItem} = CartSlice.actions;
 
 export default CartSlice.reducer;
