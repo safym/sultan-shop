@@ -1,9 +1,12 @@
 import { Product } from "../app/data/api"
 import AddButton from "./addButton";
+import Measurement from "./Measurement";
 
+// ----> draft
 interface productItemProps {
   productData: Product,
 }
+// draft <-----
 
 const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
   return (
@@ -11,11 +14,12 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
       <div className="product-item__image-wrapper">
         <img className="product-item__image" src={props.productData.imageURL} alt="" />
       </div>
+      <Measurement {...props.productData.measurement}/>
       <p className="product-item__name">{props.productData.name}</p>
       <div className="product-item__info">
         <p className="product-item__barcode-title product-item__property-title">
           Штрихкод:
-          <span className="product-item__barcode-value ">
+          <span className="product-item__barcode-value product-item__property-value">
             {props.productData.barcode}
           </span>
         </p>
@@ -37,7 +41,7 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
           <span className="product-item__price-value">{props.productData.price}</span>
           <span className="product-item__price-currency">₸</span>
         </p>
-        <AddButton productData={props.productData}/>
+        <AddButton productData={props.productData} />
       </div>
     </li>
   );
