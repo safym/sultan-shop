@@ -6,8 +6,10 @@ export interface Product {
   imageURL: string;
   imageAlt: string;
   imageCredit: string;
-  measurementType: string;
-  measurementValue: string;
+  measurement: {
+    type: string;
+    value: string;
+  };
   barcode: string;
   manufacturer: string;
   brand: string;

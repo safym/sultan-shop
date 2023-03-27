@@ -3,8 +3,10 @@
     "id": "1",
     "imageURL": "https://sbermarket.ru/statics/spree/products/3521745/original/18473161.jpg?1642667408",
     "name": "AOS средство для мытья посуды Crystal",
-    "measurementType": "мл",
-    "measurementValue": "450",
+    "measurement": {
+      "type":  "мл",
+      "value":  "450"
+    },
     "barcode": "1",
     "manufacturer": "Нэфис Косметикс",
     "brand": "AOS",
@@ -16,8 +18,10 @@
     "id": "2",
     "imageURL": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/622/662/859/315/114/4/100023621244b0.jpg",
     "name": "Стиральный порошок PERSIL Свежесть от Вернель Автомат",
-    "measurementType": "кг",
-    "measurementValue": "3",
+    "measurement": {
+      "type":  "кг",
+      "value":  "3"
+    },
     "barcode": "2",
     "manufacturer": "Henkel",
     "brand": "PERSIL",
@@ -29,8 +33,10 @@
     "id": "3",
     "imageURL": "https://www.shop-profit.ru/upload/iblock/d81/stiralnyy_poroshok_avtomat_mif_3_v_1_moroznaya_svezhest_6kg_5413149352902.jpg",
     "name": "Стиральный порошок Миф 3 в 1 «Морозная свежесть» Автомат",
-    "measurementType": "кг",
-    "measurementValue": "6",
+    "measurement": {
+      "type":  "кг",
+      "value":  "6"
+    },
     "barcode": "3",
     "manufacturer": "Procter & Gamble",
     "brand": "Миф",
@@ -42,8 +48,10 @@
     "id": "4",
     "imageURL": "https://opttorg-horeca.ru/assets/images/catalog/hoz-tovar/gel-dlya-stirki-laska-siyanie-chernogo-1l.jpg",
     "name": "Гель для стирки Ласка Сияние черного",
-    "measurementType": "л",
-    "measurementValue": "1",
+    "measurement": {
+      "type":  "л",
+      "value":  "1"
+    },
     "barcode": "4",
     "manufacturer": "Henkel",
     "brand": "Ласка",
@@ -55,8 +63,10 @@
     "id": "5",
     "imageURL": "https://static.galamart.ru/images/6CMRRAD.jpg?t=1594641131",
     "name": "Крем для рук и тела Бархатные Ручки, сила масел/с пантенолом",
-    "measurementType": "мл",
-    "measurementValue": "100",
+    "measurement": {
+      "type":  "мл",
+      "value":  "100"
+    },
     "barcode": "5",
     "manufacturer": "Unilever",
     "brand": "Бархатные ручки",
@@ -68,8 +78,10 @@
     "id": "6",
     "imageURL": "https://www.letu.ru/common/img/uploaded/skuImageFolder/GRN609800_mainGT.jpg",
     "name": "GARNIER Крем для рук Интенсивный уход восстанавливающий",
-    "measurementType": "мл",
-    "measurementValue": "100",
+    "measurement": {
+      "type":  "мл",
+      "value":  "100"
+    },
     "barcode": "6",
     "manufacturer": "L'Oréal",
     "brand": "Garnier",
@@ -81,8 +93,10 @@
     "id": "7",
     "imageURL": "https://www.podrygka.ru//upload/iblock/26b/26b2087823caac09f6c306c24ccd6454.jpg",
     "name": "Крем для лица ЧЕРНЫЙ ЖЕМЧУГ ЭКСТРЕМАЛЬНОЕ УВЛАЖНЕНИЕ дневной",
-    "measurementType": "мл",
-    "measurementValue": "50",
+    "measurement": {
+      "type":  "мл",
+      "value":  "50"
+    },
     "barcode": "7",
     "manufacturer": "Unilever",
     "brand": "ЧЕРНЫЙ ЖЕМЧУГ",
@@ -94,8 +108,10 @@
     "id": "8",
     "imageURL": "https://arkhyz.spb.ru/upload/iblock/f35/f35d520b08664c487f5dee2ef02e4d96.jpg",
     "name": "Туалетная бумага Zewa Плюс",
-    "measurementType": "шт",
-    "measurementValue": "12",
+    "measurement": {
+      "type":  "шт",
+      "value":  "12"
+    },
     "barcode": "8",
     "manufacturer": "SCA",
     "brand": "Zewa",
@@ -107,8 +123,10 @@
     "id": "9",
     "imageURL": "https://static.galamart.ru/images/6Y1ZEKT.jpg?t=1669969344",
     "name": "Салфетки бумажные Gratias",
-    "measurementType": "шт",
-    "measurementValue": "20",
+    "measurement": {
+      "type":  "шт",
+      "value":  "20"
+    },
     "barcode": "9",
     "manufacturer": "Тетра",
     "brand": "Gratias",
@@ -120,8 +138,10 @@
     "id": "10",
     "imageURL": "https://www.okeydostavka.ru/wcsstore/OKMarketCAS/cat_entries/916741/916741_fullimage.jpg",
     "name": "Салфетки влажные Salfeti Eco универсальные",
-    "measurementType": "шт",
-    "measurementValue": "72",
+    "measurement": {
+      "type":  "шт",
+      "value":  "72"
+    },
     "barcode": "10",
     "manufacturer": "Авангард",
     "brand": "Salfeti Eco",
@@ -133,8 +153,10 @@
     "id": "11",
     "imageURL": "https://www.bitovayahimiyaoptom.ru/wp-content/uploads/2018/12/Konditsioner-dlya-belya-Vernel-Detskij-2-l.jpeg",
     "name": "Кондиционер для белья Vernel",
-    "measurementType": "л",
-    "measurementValue": "2",
+    "measurement": {
+      "type":  "л",
+      "value":  "2"
+    },
     "barcode": "11",
     "manufacturer": "Henkel",
     "brand": "Vernel",
@@ -146,8 +168,10 @@
     "id": "11",
     "imageURL": "https://www.bitovayahimiyaoptom.ru/wp-content/uploads/2018/12/Konditsioner-dlya-belya-Vernel-Detskij-2-l.jpeg",
     "name": "Кондиционер для белья Vernel",
-    "measurementType": "л",
-    "measurementValue": "2",
+    "measurement": {
+      "type":  "л",
+      "value":  "2"
+    },
     "barcode": "11",
     "manufacturer": "Henkel",
     "brand": "Vernel",
@@ -159,8 +183,10 @@
     "id": "12",
     "imageURL": "https://homemos.ru/upload/iblock/560/56032606a2e5f040edfe42dd228526ba.jpg",
     "name": "Cif Чистящее средство для стекол",
-    "measurementType": "мл",
-    "measurementValue": "500",
+    "measurement": {
+      "type": "мл",
+      "value": "500"
+    },
     "barcode": "12",
     "manufacturer": "Unilever",
     "brand": "Cif",
