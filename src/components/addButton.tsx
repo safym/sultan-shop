@@ -14,11 +14,9 @@ const AddButton: React.FC<productItemProps>= (props: productItemProps) => {
   }
 
   const cartItems = useAppSelector(state => state.cart.cartItems);
-
-  const addedCount = cartItems[props.productData.id]
-
+  const addedItem = cartItems.find((item) => item.id === props.productData.id)
   return (
-    <button className={`product-item__button-add  button button_size_s ${(addedCount)? "button_state_done" : ""}`} onClick={() => add(props.productData)}>
+    <button className={`product-item__button-add  button button_size_s  ${(addedItem?.count)? "button_state_done" : ""}`} onClick={() => add(props.productData)}>
       <span className="button_text">
         В КОРЗИНУ
       </span>
@@ -30,7 +28,7 @@ const AddButton: React.FC<productItemProps>= (props: productItemProps) => {
             fill="white" />
         </svg>
       </span>
-      <span className="button__counter-badge counter_badge">{addedCount}</span>
+      <span className="button__counter-badge counter_badge">{addedItem?.count}</span>
     </button>
   );
 }

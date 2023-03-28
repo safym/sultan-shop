@@ -1,19 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { Product } from "../app/data/api";
+import { CartItem as CartItemData} from "../app/slices/cartSlice"
 import { useAppDispatch } from "../app/hooks";
 import { addItem, minusItem, removeItem } from "../app/slices/cartSlice";
 import Measurement from "./Measurement";
 
 interface CartItemProps {
-  productData: Product;
-  quantity: number;
+  product: Product;
+  cartItem: CartItemData;
 }
 
 const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
   const dispatch = useAppDispatch();
 
-  const remove = (id: string) => {
-    dispatch(removeItem({ id }))
+  const remove = (item: object) => {
+    dispatch(removeItem({ item }))
   }
 
   const countPlus = (item: object) => {
@@ -24,32 +25,31 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
     dispatch(minusItem({ item }))
   };
 
-
   return (
     <li className="cart__item cart-item">
       <div className="cart-item__wrapper">
-        <NavLink className="cart-item__image-wrapper" to={`/product/${props.productData.id}`}>
-          <img className="cart-item__image" src={props.productData.imageURL} alt="" />
+        <NavLink className="cart-item__image-wrapper" to={`/product/${props.product.id}`}>
+          <img className="cart-item__image" src={props.product.imageURL} alt="" />
         </NavLink>
         <div className="cart-item__info-wrapper">
-          <Measurement {...props.productData.measurement} />
-          <NavLink className="cart-item__name" to={`/product/${props.productData.id}`}>{props.productData.name}</NavLink>
-          <p className="cart-item__description">{props.productData.description}</p>
+          <Measurement {...props.product.measurement} />
+          <NavLink className="cart-item__name" to={`/product/${props.product.id}`}>{props.product.name}</NavLink>
+          <p className="cart-item__description">{props.product.description}</p>
         </div>
         <div className="cart-item__controls-wrapper">
           <span className="cart-item__divider divider divider_size_long"></span>
           <div className="cart-item__counter counter">
-            <button className="counter__button" disabled={props.quantity === 1} onClick={() => countMinus(props.productData)}>-</button>
-            <b className="counter__value">{props.quantity}</b>
-            <button className="counter__button" onClick={() => countPlus(props.productData)}>+</button>
+            <button className="counter__button" disabled={props.cartItem.count === 1} onClick={() => countMinus(props.product)}>-</button>
+            <b className="counter__value">{props.cartItem.count}</b>
+            <button className="counter__button" onClick={() => countPlus(props.product)}>+</button>
           </div>
           <span className="cart-item__divider divider divider_size_long"></span>
-          <div className="cart-item__total">
-            <b className="cart-item__total-value"> {(props.quantity * props.productData.price).toFixed(2)} ₸</b>
+          <div className="cart-item__total price">
+            <b className="cart-item__total-value"> {(props.cartItem.total).toFixed(2)} ₸</b>
             <span className="cart-item__total-currency"></span>
           </div>
           <span className="cart-item__divider divider divider_size_long"></span>
-          <button className="filter-sidebar__delete-button button button_form_rounded" onClick={() => remove(props.productData.id)}>
+          <button className="filter-sidebar__delete-button button button_form_rounded" onClick={() => remove(props.product)}>
             <span className="rounded-button__icon">
               <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

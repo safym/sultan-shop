@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 
 const Header: React.FC = () => {
-  const cartItems = useAppSelector((state) => state.cart.cartItems);
+  const cart = useAppSelector((state) => state.cart);
 
   return (
     <header className="app-header">
@@ -147,7 +147,7 @@ const Header: React.FC = () => {
               <NavLink to="/cart" className="app-header__cart-button cart-button">
                 <div className="cart-button__icon-wrapper">
                   <span className="cart-button__items-counter">
-                    {Object.keys(cartItems).length}
+                    {Object.keys(cart.cartItems).length}
                   </span>
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -157,7 +157,7 @@ const Header: React.FC = () => {
                 </div>
                 <div className="cart-button__total-wrapper">
                   <p className="cart-button__title">Корзина</p>
-                  <p className="cart-button__total">12 478 ₸</p>
+                  <p className="cart-button__total">{cart.totalPrice.toFixed(2)} ₸</p>
                 </div>
               </NavLink>
             </div>
