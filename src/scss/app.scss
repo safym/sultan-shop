@@ -775,6 +775,11 @@ body {
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 .cart {
+  &__container {
+    padding: 0 15px;
+    box-sizing: content-box;
+  }
+
   &__body {
     padding: 50px 0;
   }
@@ -803,6 +808,7 @@ body {
 
 .cart-item {
   position: relative;
+
   &__wrapper {
     position: relative;
     max-height: 290px;
