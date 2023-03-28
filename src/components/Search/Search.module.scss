@@ -1,0 +1,37 @@
+@import "../../scss/variables";
+
+$field-offset: 10px;
+
+.field {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: $ui-height;
+  padding: 20px;
+  border-radius: $ui-height;
+  background-color: var(--field-bg-color);
+
+  &_color {
+    &_white {
+      background-color: var(--body-bg-color);
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  top: $field-offset;
+  right: $field-offset;
+
+  $size: $ui-height - (2 * $field-offset);
+  height: $size;
+  width: $size;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-bg-color);
+}

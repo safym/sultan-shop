@@ -1,39 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900&display=swap&subset=cyrillic-ext');
 
-// variables
-$primary-font-family: 'Inter';
-$primary-font-weight: 400;
-$primary-font-size: 14px;
-$header-font-size: 40px;
-
-$offset: 15px;
-$duration: 0.15s;
-$ui-height: 60px;
-$secondary-ui-height: 45px;
-
-$container-width: 1366px;
-
-$element-color: #ffffff;
-$button-color: #FFC85E;
-$button-color-light: rgba($button-color, .3);
-$dark-text-color: #3F4E65;
-
-:root {
-  --mainTextColor: #000000;
-  --darkTextColor: #3F4E65;
-  --lightTextColor: #ffffff;
-
-  --border-color: #3f4e6532;
-
-  --body-bg-color: #ffffff;
-  --button-bg-color: #FFC85E;
-  --field-bg-color: #EDEDED;
-
-
-  --online-bg-color: #1FD85D;
-  --online-border-color: #F0F6FA;
-}
-
+@import "./variables";
 @import "./libs/normalize";
 @import './components/path';
 @import './components/checkbox';
@@ -266,40 +233,6 @@ body {
 }
 
 //---field---------------------------------------------------------------//
-.field {
-  $field-offset: 10px;
-  position: relative;
-
-  &__input {
-    width: 100%;
-    height: $ui-height;
-    padding: 20px;
-    border-radius: $ui-height;
-    background-color: var(--field-bg-color);
-
-    &_color {
-      &_white {
-        background-color: var(--body-bg-color);
-      }
-    }
-  }
-
-  &__button-submit {
-    position: absolute;
-    top: $field-offset;
-    right: $field-offset;
-
-    $size: $ui-height - (2 * $field-offset);
-    height: $size;
-    width: $size;
-
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-bg-color);
-  }
-}
 
 .cart-button {
   display: flex;

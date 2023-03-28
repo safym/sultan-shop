@@ -1,0 +1,33 @@
+// variables
+$primary-font-family: 'Inter';
+$primary-font-weight: 400;
+$primary-font-size: 14px;
+$header-font-size: 40px;
+
+$offset: 15px;
+$duration: 0.15s;
+$ui-height: 60px;
+$secondary-ui-height: 45px;
+
+$container-width: 1366px;
+
+$element-color: #ffffff;
+$button-color: #FFC85E;
+$button-color-light: rgba($button-color, .3);
+$dark-text-color: #3F4E65;
+
+:root {
+  --mainTextColor: #000000;
+  --darkTextColor: #3F4E65;
+  --lightTextColor: #ffffff;
+
+  --border-color: #3f4e6532;
+
+  --body-bg-color: #ffffff;
+  --button-bg-color: #FFC85E;
+  --field-bg-color: #EDEDED;
+
+
+  --online-bg-color: #1FD85D;
+  --online-border-color: #F0F6FA;
+}
