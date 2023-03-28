@@ -48,7 +48,7 @@
   &_form {
     &_rounded {
       height: $ui-height;
-      width: $ui-height;
+      min-width: $ui-height;
       flex-grow: 0;
       border-radius: 50%;
     }
