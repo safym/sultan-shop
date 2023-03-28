@@ -28,12 +28,12 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
   return (
     <li className="cart__item cart-item">
       <div className="cart-item__wrapper">
-        <NavLink className="cart-item__image-wrapper" to={`/product/${props.product.id}`}>
+        <NavLink className="cart-item__image-wrapper" to={`/products/${props.product.id}`}>
           <img className="cart-item__image" src={props.product.imageURL} alt="" />
         </NavLink>
         <div className="cart-item__info-wrapper">
           <Measurement {...props.product.measurement} />
-          <NavLink className="cart-item__name" to={`/product/${props.product.id}`}>{props.product.name}</NavLink>
+          <NavLink className="cart-item__name" to={`/products/${props.product.id}`}>{props.product.name}</NavLink>
           <p className="cart-item__description">{props.product.description}</p>
         </div>
         <div className="cart-item__controls-wrapper">
