@@ -8,17 +8,19 @@ export interface CartItem {
   total: number;
 }
 
-// export interface CartState {
-//   cartItems: CartItem[];
-//   totalPrice: number;
-// }
+export interface CartState {
+  cartItems: CartItem[];
+  totalPrice: number;
+}
+
+const initialState: CartState = {
+  cartItems: [] as CartItem[],
+  totalPrice: 0
+}
 
 const CartSlice = createSlice({
   name: 'cartItems',
-  initialState: {
-    cartItems: [] as CartItem[],
-    totalPrice: 0,
-  },
+  initialState,
   reducers: {
     addItem: (state, action) => {
       const productId = action.payload.item.id;

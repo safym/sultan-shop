@@ -1,20 +1,4 @@
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  imageURL: string;
-  imageAlt: string;
-  imageCredit: string;
-  measurement: {
-    type: string;
-    value: string;
-  };
-  barcode: string;
-  manufacturer: string;
-  brand: string;
-  category: Array<string>
-}
+import { Product } from "../slices/productsSlice";
 
 export async function getProducts(): Promise<Product[]> {
   const results = await fetch("products.json");
