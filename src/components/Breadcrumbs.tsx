@@ -25,7 +25,7 @@ const Breadcrumbs: React.FC = () => {
   }
 
   if (!breadcrumbs) {
-    return
+    return <></>
   }
 
   return (
