@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { Product } from "../app/data/api";
-import { CartItem as CartItemData} from "../app/slices/cartSlice"
+import { Product } from "../app/slices/productsSlice";
+import { CartItem as CartItemData } from "../app/slices/cartSlice"
 import { useAppDispatch } from "../app/hooks";
-import { addItem, minusItem, removeItem } from "../app/slices/cartSlice";
+import { removeItem } from "../app/slices/cartSlice";
 import Measurement from "./Measurement";
+import Counter from "./Counter/Counter";
 
-interface CartItemProps {
+export interface CartItemProps {
   product: Product;
   cartItem: CartItemData;
 }
@@ -13,17 +14,9 @@ interface CartItemProps {
 const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
   const dispatch = useAppDispatch();
 
-  const remove = (item: object) => {
+  const remove = (item: Product) => {
     dispatch(removeItem({ item }))
   }
-
-  const countPlus = (item: object) => {
-    dispatch(addItem({ item }))
-  }
-
-  const countMinus = (item: object) => {
-    dispatch(minusItem({ item }))
-  };
 
   return (
     <li className="cart__item cart-item">
@@ -39,9 +32,7 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
         <div className="cart-item__controls-wrapper">
           <span className="cart-item__divider divider divider_size_long"></span>
           <div className="cart-item__counter counter">
-            <button className="counter__button" disabled={props.cartItem.count === 1} onClick={() => countMinus(props.product)}>-</button>
-            <b className="counter__value">{props.cartItem.count}</b>
-            <button className="counter__button" onClick={() => countPlus(props.product)}>+</button>
+            <Counter product={props.product} />
           </div>
           <span className="cart-item__divider divider divider_size_long"></span>
           <div className="cart-item__total price">
