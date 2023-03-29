@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useAppSelector } from "../../../app/hooks";
-import Measurement from "../../Measurement";
+import { useAppSelector } from "../../app/hooks";
+import Measurement from "../Measurement";
 
 import componentStyles from "./ProductDetails.module.scss";
-import mainStyle from "../../../scss/_container.module.scss"
-import AddButton from "../../AddButton/AddButton";
+import mainStyle from "../../scss/_container.module.scss"
+import AddButton from "../AddButton/AddButton";
 import { useState } from "react";
-import Counter from "../../Counter/Counter";
+import Counter from "../Counter/Counter";
 
 const ProductDetails: React.FC = () => {
   const [count, setCount] = useState(0);
