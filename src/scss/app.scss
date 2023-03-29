@@ -178,7 +178,7 @@ body {
       top: 29px;
       right: 6px;
       border-radius: 50%;
-      background-color: var(--online-bg-color);
+      background-color: var(--color-green);
       box-shadow: var(--online-border-color) 0px 0px 0px 2px;
     }
   }
@@ -382,7 +382,7 @@ body {
     text-align: center;
     color: var(--darkTextColor);
     background-color: var(--body-bg-color);
-    box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.06);
+    box-shadow: $shadow;
     border-radius: 10px;
 
     &:hover {
@@ -533,12 +533,18 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-
+  
   background: var(--body-bg-color);
   box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   padding: 20px;
 
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  
   &__image-wrapper {
     display: flex;
     align-items: center;
@@ -818,30 +824,6 @@ body {
     justify-content: space-between;
   }
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////
-/// -----------------------------------COUNTER-------------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
-
-.counter {
-  display: flex;
-  column-gap: 20px;
-
-  &__button {
-    width: 34px;
-    height: 23px;
-    background-color: rgba($button-color, .3);
-    border-radius: 20px;
-
-    &:disabled {
-      background-color: var(--online-border-color);
-    }
-  }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////
-/// -----------------------------------COUNTER-------------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
 
 .empty-message {
   display: flex;

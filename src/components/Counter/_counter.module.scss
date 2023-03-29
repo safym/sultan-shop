@@ -1,0 +1,17 @@
+@import "../../scss/variables";
+
+.counter {
+  display: flex;
+  column-gap: 20px;
+
+  &__button {
+    width: 34px;
+    height: 23px;
+    background-color: rgba($button-color, .3);
+    border-radius: 20px;
+
+    &:disabled {
+      background-color: var(--online-border-color);
+    }
+  }
+}

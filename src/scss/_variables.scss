@@ -16,6 +16,8 @@ $button-color: #FFC85E;
 $button-color-light: rgba($button-color, .3);
 $dark-text-color: #3F4E65;
 
+$shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.08);
+
 :root {
   --mainTextColor: #000000;
   --darkTextColor: #3F4E65;
@@ -28,6 +30,6 @@ $dark-text-color: #3F4E65;
   --field-bg-color: #EDEDED;
 
 
-  --online-bg-color: #1FD85D;
+  --color-green: #1FD85D;
   --online-border-color: #F0F6FA;
 }
