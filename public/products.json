@@ -2,7 +2,7 @@
   {
     "id": "1",
     "imageURL": "https://sbermarket.ru/statics/spree/products/3521745/original/18473161.jpg?1642667408",
-    "name": "AOS средство для мытья посуды Crystal",
+    "name": "Cредство для мытья посуды Crystal",
     "measurement": {
       "type":  "мл",
       "value":  "450"
@@ -17,7 +17,7 @@
   {
     "id": "2",
     "imageURL": "https://main-cdn.sbermegamarket.ru/big1/hlr-system/622/662/859/315/114/4/100023621244b0.jpg",
-    "name": "Стиральный порошок PERSIL Свежесть от Вернель Автомат",
+    "name": "Стиральный порошок Свежесть от Вернель Автомат",
     "measurement": {
       "type":  "кг",
       "value":  "3"
@@ -25,14 +25,14 @@
     "barcode": "2",
     "manufacturer": "Henkel",
     "brand": "PERSIL",
-    "description": "Стиральный порошок Persil Freshness by Vernel для белого белья с формулой Deep Clean Technology обладает уникальным сочетанием 13 активных компонентов. Стиральный порошок Persil это всё, что нужно для сияющей чистоты белья. Порошок для стирки белья Persil содержит защиту от образования известкового налета для жесткой и мягкой воды.",
+    "description": "Стиральный порошок для белого белья с формулой Deep Clean Technology обладает уникальным сочетанием 13 активных компонентов. Стиральный порошок Persil это всё, что нужно для сияющей чистоты белья. Порошок для стирки белья Persil содержит защиту от образования известкового налета для жесткой и мягкой воды.",
     "price": 599,
     "category" :  ["Средства для стирки"] 
   },
   {
     "id": "3",
     "imageURL": "https://www.shop-profit.ru/upload/iblock/d81/stiralnyy_poroshok_avtomat_mif_3_v_1_moroznaya_svezhest_6kg_5413149352902.jpg",
-    "name": "Стиральный порошок Миф 3 в 1 «Морозная свежесть» Автомат",
+    "name": "Стиральный порошок 3 в 1 «Морозная свежесть» Автомат",
     "measurement": {
       "type":  "кг",
       "value":  "6"
@@ -47,7 +47,7 @@
   {
     "id": "4",
     "imageURL": "https://opttorg-horeca.ru/assets/images/catalog/hoz-tovar/gel-dlya-stirki-laska-siyanie-chernogo-1l.jpg",
-    "name": "Гель для стирки Ласка Сияние черного",
+    "name": "Гель для стирки Сияние черного",
     "measurement": {
       "type":  "л",
       "value":  "1"
@@ -55,14 +55,14 @@
     "barcode": "4",
     "manufacturer": "Henkel",
     "brand": "Ласка",
-    "description": "Жидкий порошок Ласка Восстановление BLACK для тёмного эффективно и бережно отстирывает загрязнения на одежде, восстанавливая яркость чёрного и тёмных цветов и сохраняя прочность волокон ткани. В отличие от обычного порошка, Ласка содержит цветозащитные ингредиенты, которые поддерживают стойкость цвета одежды. Активные компоненты способствуют уменьшению количества катышков на ткани, и при регулярном использовании ткань становится более гладкой. Формула содержит более 90% ингредиентов натурального происхождения.",
+    "description": "Жидкий порошок Восстановление BLACK для тёмного эффективно и бережно отстирывает загрязнения на одежде, восстанавливая яркость чёрного и тёмных цветов и сохраняя прочность волокон ткани. В отличие от обычного порошка, Ласка содержит цветозащитные ингредиенты, которые поддерживают стойкость цвета одежды. Активные компоненты способствуют уменьшению количества катышков на ткани, и при регулярном использовании ткань становится более гладкой. Формула содержит более 90% ингредиентов натурального происхождения.",
     "price": 299,
     "category" :  ["Средства для стирки"]  
   },
   {
     "id": "5",
     "imageURL": "https://static.galamart.ru/images/6CMRRAD.jpg?t=1594641131",
-    "name": "Крем для рук и тела Бархатные Ручки, сила масел/с пантенолом",
+    "name": "Крем для рук и тела, сила масел/с пантенолом",
     "measurement": {
       "type":  "мл",
       "value":  "100"
@@ -77,7 +77,7 @@
   {
     "id": "6",
     "imageURL": "https://www.letu.ru/common/img/uploaded/skuImageFolder/GRN609800_mainGT.jpg",
-    "name": "GARNIER Крем для рук Интенсивный уход восстанавливающий",
+    "name": "Крем для рук Интенсивный уход восстанавливающий",
     "measurement": {
       "type":  "мл",
       "value":  "100"
@@ -92,7 +92,7 @@
   {
     "id": "7",
     "imageURL": "https://www.podrygka.ru//upload/iblock/26b/26b2087823caac09f6c306c24ccd6454.jpg",
-    "name": "Крем для лица ЧЕРНЫЙ ЖЕМЧУГ ЭКСТРЕМАЛЬНОЕ УВЛАЖНЕНИЕ дневной",
+    "name": "Крем для лица ЭКСТРЕМАЛЬНОЕ УВЛАЖНЕНИЕ дневной",
     "measurement": {
       "type":  "мл",
       "value":  "50"
@@ -122,7 +122,7 @@
   {
     "id": "9",
     "imageURL": "https://static.galamart.ru/images/6Y1ZEKT.jpg?t=1669969344",
-    "name": "Салфетки бумажные Gratias",
+    "name": "Салфетки бумажные",
     "measurement": {
       "type":  "шт",
       "value":  "20"
@@ -137,7 +137,7 @@
   {
     "id": "10",
     "imageURL": "https://www.okeydostavka.ru/wcsstore/OKMarketCAS/cat_entries/916741/916741_fullimage.jpg",
-    "name": "Салфетки влажные Salfeti Eco универсальные",
+    "name": "Салфетки влажные универсальные",
     "measurement": {
       "type":  "шт",
       "value":  "72"
@@ -152,7 +152,7 @@
   {
     "id": "11",
     "imageURL": "https://www.bitovayahimiyaoptom.ru/wp-content/uploads/2018/12/Konditsioner-dlya-belya-Vernel-Detskij-2-l.jpeg",
-    "name": "Кондиционер для белья Vernel",
+    "name": "Кондиционер для белья",
     "measurement": {
       "type":  "л",
       "value":  "2"
@@ -167,7 +167,7 @@
   {
     "id": "11",
     "imageURL": "https://www.bitovayahimiyaoptom.ru/wp-content/uploads/2018/12/Konditsioner-dlya-belya-Vernel-Detskij-2-l.jpeg",
-    "name": "Кондиционер для белья Vernel",
+    "name": "Кондиционер для белья",
     "measurement": {
       "type":  "л",
       "value":  "2"
@@ -182,7 +182,7 @@
   {
     "id": "12",
     "imageURL": "https://homemos.ru/upload/iblock/560/56032606a2e5f040edfe42dd228526ba.jpg",
-    "name": "Cif Чистящее средство для стекол",
+    "name": "Чистящее средство для стекол",
     "measurement": {
       "type": "мл",
       "value": "500"
