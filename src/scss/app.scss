@@ -532,6 +532,7 @@ body {
   width: 326px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   row-gap: 10px;
   
   background: var(--body-bg-color);
