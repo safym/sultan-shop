@@ -17,7 +17,7 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
           <img className="product-item__image" src={props.productData.imageURL} alt="" />
         </div>
         <Measurement {...props.productData.measurement} />
-        <p className="product-item__name">{props.productData.name}</p>
+        <p className="product-item__name"><b>{props.productData.brand}</b> {props.productData.name}</p>
         <div className="product-item__info">
           <p className="product-item__barcode-title product-item__property-title">
             Штрихкод:
