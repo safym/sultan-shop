@@ -14,7 +14,7 @@ const Breadcrumbs: React.FC = () => {
         return "Коризна"
       case path === '/products':
         return "Каталог"
-      case path.includes('/products/'): 
+      case path.includes('/products/'):
         const productId = path.replace('/products/', '');
         const product = productsItems[productId];
 
@@ -24,21 +24,21 @@ const Breadcrumbs: React.FC = () => {
     }
   }
 
+  if (!breadcrumbs) {
+    return
+  }
+
   return (
     <header className="content__page-header page-header">
       <div className="page-header__container _container">
         <div className="page-header__path path">
 
-          {breadcrumbs.map(({ breadcrumb, match }, index) => {
-
-            if (breadcrumb) {
-              return (
-                <span className="path__step" key={match.pathname}>
-                  <NavLink to={match.pathname || ""}>{getPathTitle(match.pathname)}</NavLink>
-                  {index < breadcrumbs.length - 1 && <span className="path__divider divider divider_size_long"></span>}
-                </span>)
-            }
-          })}
+          {breadcrumbs.map(({ breadcrumb, match }, index) => (
+            <span className="path__step" key={match.pathname}>
+              <NavLink to={match.pathname || ""}>{getPathTitle(match.pathname)}</NavLink>
+              {index < breadcrumbs.length - 1 && <span className="path__divider divider divider_size_long"></span>}
+            </span>
+          ))}
         </div>
 
       </div>
