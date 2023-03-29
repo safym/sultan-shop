@@ -3,6 +3,8 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { removeItem } from "../../app/slices/cartSlice"
 import CartItem from "../CartItem";
 
+import buttonStyle from "../../scss/components/_button.module.scss";
+
 const Cart: React.FC = () => {
   const cart = useAppSelector(state => state.cart);
   const productsItems = useAppSelector((state) => state.products.productsItems);
@@ -49,8 +51,8 @@ const Cart: React.FC = () => {
               </ul>
             </div>
             <div className="cart__total-wrapper">
-              <button className="cart__order-button button button_size_l">
-                <span className="button__text">Оформить</span>
+              <button className={buttonStyle.button}>
+                <span className={buttonStyle.button__text}>Оформить</span>
               </button>
               <div className="cart__total price">
                 <b className="cart__total-value"> {cart.totalPrice.toFixed(2)} ₸</b>
