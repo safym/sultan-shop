@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Product } from "../app/data/api"
+import { Product } from "../app/slices/productsSlice"
 import AddButton from "./AddButton/AddButton";
 import Measurement from "./Measurement";
 
