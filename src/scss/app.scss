@@ -4,7 +4,7 @@
 @import "./libs/normalize";
 @import './components/path';
 @import './components/checkbox';
-@import './components/button';
+// @import './components/button';
 @import './components/title';
 @import './components/pagination-pages';
 
@@ -597,103 +597,7 @@ body {
 /// ---------------------------------------FOOTER----------------------------------------//
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-.app-footer {
-  background-color: var(--darkTextColor);
-  color: var(--lightTextColor);
-  padding: 70px 0 116px 0;
 
-  &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    -moz-column-gap: 30px;
-    column-gap: 30px;
-    row-gap: 30px;
-    flex-wrap: wrap;
-  }
-
-  &__main {
-    width: 320px;
-  }
-
-  &__column {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__logo,
-  &__field-label {
-    margin-bottom: 15px;
-  }
-
-  &__company-description {
-    margin-bottom: 45px;
-  }
-
-  &__column-title {
-    margin-bottom: 25px;
-  }
-
-  &__link {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-
-  &__social,
-  &__payment {
-    display: flex;
-  }
-
-  &__social-item,
-  &__payment-item {
-    display: block;
-
-    &:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
-  &__action {}
-
-  &__search-field {}
-
-  &__column-title,
-  &__link,
-  &__schedule,
-  &__subtitle,
-  &__company-description,
-  &__field-label,
-  &__order-call {
-    color: inherit;
-  }
-
-  &__column-title {
-    font-weight: 600;
-  }
-
-  &__button-price-list {
-    margin-bottom: 20px;
-  }
-
-  &__contact-column {}
-
-  &__phone-wrapper {
-    margin-bottom: 25px;
-  }
-
-  &__order-call {
-    text-decoration: underline;
-  }
-
-  &__mail-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25px;
-  }
-
-  .app-footer__subtitle {}
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 /// -----------------------------------CART-ITEM-----------------------------------------//

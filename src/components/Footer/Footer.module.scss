@@ -1,0 +1,79 @@
+.footer {
+  background-color: var(--darkTextColor);
+  color: var(--lightTextColor);
+  padding: 70px 0 116px 0;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    row-gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__main {
+    width: 320px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo,
+  &__label {
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    margin-bottom: 45px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__link {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__sign {
+    display: block;
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 20px;
+  }
+
+  &__phone {
+    margin-bottom: 25px;
+  }
+
+  &__call {
+    text-decoration: underline !important;
+  }
+
+  &__contact {
+    font-weight: 600;
+  }
+
+  &__mail {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+}
