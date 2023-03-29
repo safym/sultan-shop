@@ -1,4 +1,4 @@
-import styles from "./_measurement.module.scss"
+import styles from "./Measurement.module.scss"
 
 const WEIGHT_UNITS = ['мг', 'г', 'кг'];
 const VOLUME_UNITS = ['мл', 'л'];

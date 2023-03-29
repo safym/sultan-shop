@@ -1,7 +1,7 @@
 import { Product } from "../../app/slices/productsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { addItem } from "../../app/slices/cartSlice";
-import styles from "./_addButton.module.scss";
+import styles from "./AddButton.module.scss";
 
 interface productItemProps {
   productData: Product,

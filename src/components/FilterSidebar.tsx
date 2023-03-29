@@ -1,6 +1,6 @@
 import { useAppSelector } from "../app/hooks";
 import { getCateroryList } from "../utils/getCateroryList";
-import Search from "./Search";
+import Search from "./Search/Search";
 
 const FilterSidebar: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);

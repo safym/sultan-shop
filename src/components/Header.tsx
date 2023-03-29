@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import Search from './Search';
+import Search from './Search/Search';
 
 const Header: React.FC = () => {
   const cart = useAppSelector((state) => state.cart);
