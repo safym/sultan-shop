@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import Search from './Search/Search';
 
+import buttonStyle from "../scss/components/_button.module.scss";
+
 const Header: React.FC = () => {
   const cart = useAppSelector((state) => state.cart);
 
@@ -91,9 +93,9 @@ const Header: React.FC = () => {
                 </defs>
               </svg>
               <div className="app-header__actions-wrapper">
-                <NavLink to="/products" className="app-header__action app-header__button-product button button_size_l">
-                  <span className="button__text">Каталог</span>
-                  <span className="button__icon">
+                <NavLink to="/products" className={`app-header__action ${buttonStyle.button}`}>
+                  <span className={buttonStyle.button__text}>Каталог</span>
+                  <span className={buttonStyle.button__icon}>
                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H6C6.27614 0.5 6.5 0.723858 6.5 1V6C6.5 6.27614 6.27614 6.5 6 6.5H1C0.723858 6.5 0.5 6.27614 0.5 6V2Z"
@@ -125,9 +127,9 @@ const Header: React.FC = () => {
                 </div>
               </div>
               <span className="app-header__divider divider divider_size_short"></span>
-              <a className="app-header__button-price-list button button_size_l" href="">
-                <span className="button__text">Прайс-лист</span>
-                <span className="button__icon">
+              <a className={buttonStyle.button} href="">
+                <span className={buttonStyle.button__text}>Прайс-лист</span>
+                <span className={buttonStyle.button__icon}>
                   <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M13.958 6.375H11.1247V2.125H6.87467V6.375H4.04134L8.99967 12.0417L13.958 6.375ZM3.33301 13.4583H14.6663V14.875H3.33301V13.4583Z"

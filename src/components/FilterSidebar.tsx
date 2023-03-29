@@ -2,6 +2,8 @@ import { useAppSelector } from "../app/hooks";
 import { getCateroryList } from "../utils/getCateroryList";
 import Search from "./Search/Search";
 
+import buttonStyle from "../scss/components/_button.module.scss";
+
 const FilterSidebar: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
 
@@ -56,10 +58,10 @@ const FilterSidebar: React.FC = () => {
       </div>
 
       <div className="filter-sidebar__controls filter-sidebar__section">
-        <button className="filter-sidebar__show-button button button_size_l">
+        <button className={`filter-sidebar__show-button ${buttonStyle.button}`}>
           <span className="button__text">Показать</span>
         </button>
-        <button className="filter-sidebar__delete-button button button_form_rounded">
+        <button className={`filter-sidebar__delete-button ${buttonStyle.roundedButton}`}>
           <span className="rounded-button__icon">
             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
