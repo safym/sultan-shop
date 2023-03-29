@@ -4,7 +4,7 @@ import Measurement from "../../Measurement";
 
 import componentStyles from "./ProductDetails.module.scss";
 import mainStyle from "../../../scss/_container.module.scss"
-import AddButton from "../../addButton";
+import AddButton from "../../addButton/addButton";
 import { useState } from "react";
 import Counter from "../../Counter/Counter";
 
