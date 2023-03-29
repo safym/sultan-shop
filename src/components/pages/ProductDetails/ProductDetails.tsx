@@ -83,7 +83,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Артикул:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.barcode}
                 </span>
               </li>
@@ -91,7 +91,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Штрихкод:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.barcode}
                 </span>
               </li>
@@ -99,7 +99,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Назначения:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.manufacturer}
                 </span>
               </li>
@@ -107,7 +107,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Тип:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.manufacturer}
                 </span>
               </li>
@@ -115,7 +115,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Производитель:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.manufacturer}
                 </span>
               </li>
@@ -123,7 +123,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Бренд:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.brand}
                 </span>
               </li>
@@ -131,7 +131,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Артикул:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.barcode}
                 </span>
               </li>
@@ -139,7 +139,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Штрихкод:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.barcode}
                 </span>
               </li>
@@ -147,7 +147,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Вес:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.measurement.value} {product.measurement.type}
                 </span>
               </li>
@@ -155,7 +155,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Объем:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.measurement.value} {product.measurement.type}
                 </span>
               </li>
@@ -163,7 +163,7 @@ const ProductDetails: React.FC = () => {
                 <span className={componentStyles.section__property}>
                   Кол-во в коробке:
                 </span>
-                <span className="product-item__property-value">
+                <span>
                   {product.measurement.value} {product.measurement.type}
                 </span>
               </li>
