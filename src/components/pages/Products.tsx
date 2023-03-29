@@ -7,14 +7,6 @@ import FilterSidebar from "../FilterSidebar";
 import FilterCategories from "../FilterCategories";
 
 const Products: React.FC = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    getProducts().then((products) => {
-      dispatch(setProducts(products));
-    });
-  }, []);
-
   const productsItems = useAppSelector((state) => state.products.productsItems);
 
   return (
