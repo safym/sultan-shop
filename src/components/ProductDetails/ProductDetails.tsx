@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
-import Measurement from "../Measurement";
+import Measurement from "../Measurement/Measurement";
 
 import componentStyles from "./ProductDetails.module.scss";
 import mainStyle from "../../scss/_container.module.scss"

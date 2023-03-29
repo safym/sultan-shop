@@ -1,3 +1,5 @@
+import styles from "./_measurement.module.scss"
+
 const WEIGHT_UNITS = ['мг', 'г', 'кг'];
 const VOLUME_UNITS = ['мл', 'л'];
 
@@ -22,9 +24,9 @@ const Measurement: React.FC<MeasurementProps> = (props: MeasurementProps) => {
   }
   
   return (
-    <p className="product-item__measurement measurement">
+    <p className={styles.measurement}>
       {renderIcon()}
-      <span className="measurement__value">
+      <span>
         {props.value} {props.type}
       </span>
     </p>

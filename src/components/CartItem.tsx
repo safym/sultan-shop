@@ -3,7 +3,7 @@ import { Product } from "../app/slices/productsSlice";
 import { CartItem as CartItemData } from "../app/slices/cartSlice"
 import { useAppDispatch } from "../app/hooks";
 import { removeItem } from "../app/slices/cartSlice";
-import Measurement from "./Measurement";
+import Measurement from "./Measurement/Measurement";
 import Counter from "./Counter/Counter";
 
 export interface CartItemProps {

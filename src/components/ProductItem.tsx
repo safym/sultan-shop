@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Product } from "../app/slices/productsSlice"
 import AddButton from "./AddButton/AddButton";
-import Measurement from "./Measurement";
+import Measurement from "./Measurement/Measurement";
 
 // ----> draft
 interface productItemProps {
