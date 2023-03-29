@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Product } from "../app/data/api"
-import AddButton from "./addButton/addButton";
+import AddButton from "./AddButton/AddButton";
 import Measurement from "./Measurement";
 
 // ----> draft
