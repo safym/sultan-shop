@@ -1,14 +1,12 @@
 import { NavLink } from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { useAppSelector } from "../app/hooks";
-import ProductDetails from "./ProductDetails/ProductDetails";
 
 const Breadcrumbs: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
   const breadcrumbs = useBreadcrumbs();
 
   const getPathTitle = (path: string) => {
-    console.log(path)
     switch (true) {
       case path === '/':
         return "Главная"
@@ -16,24 +14,24 @@ const Breadcrumbs: React.FC = () => {
         return "Коризна"
       case path === '/products':
         return "Каталог"
-      case path.includes('/products/'):
+      case path.includes('/products/'): 
         const productId = path.replace('/products/', '');
         const product = productsItems[productId];
-        return `${product.brand} ${product.name}`
+
+        if (product) {
+          return `${product.brand} ${product.name}`
+        }
     }
   }
-  
+
   return (
     <header className="content__page-header page-header">
       <div className="page-header__container _container">
         <div className="page-header__path path">
 
           {breadcrumbs.map(({ breadcrumb, match }, index) => {
-            console.log()
 
             if (breadcrumb) {
-              console.log(match.pathname)
-
               return (
                 <span className="path__step" key={match.pathname}>
                   <NavLink to={match.pathname || ""}>{getPathTitle(match.pathname)}</NavLink>
