@@ -1,9 +1,15 @@
+import Search from '../Search/Search';
+
+import componentStyle from "./Footer.module.scss"
+import mainStyle from "../../scss/_container.module.scss"
+import buttonStyle from "../../scss/components/_button.module.scss";
+
 const Footer: React.FC = () => {
   return (
-    <footer className="content__app-footer app-footer">
-      <div className="app-footer__container _container">
-        <div className="app-footer__main app-footer__column">
-          <svg className="app-footer__logo" width="156" height="66" viewBox="0 0 156 66" fill="none"
+    <footer className={componentStyle.footer}>
+      <div className={`${componentStyle.footer__container} ${mainStyle.container}`}>
+        <div className={`${componentStyle.footer__main} ${componentStyle.footer__column}`}>
+          <svg className={componentStyle.footer__logo} width="156" height="66" viewBox="0 0 156 66" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_4612_183)">
               <path
@@ -39,38 +45,31 @@ const Footer: React.FC = () => {
               </clipPath>
             </defs>
           </svg>
-          <p className="app-footer__company-description">Компания «Султан» — снабжаем розничные магазины товарами "под
+          <p className={componentStyle.footer__description}>Компания «Султан» — снабжаем розничные магазины товарами "под
             ключ" в Кокчетаве и Акмолинской области</p>
-          <p className="app-footer__field-label">Подпишись на скидки и акции</p>
-          <form className="app-header__action app-header__search-field field">
-            <input placeholder="Поиск..." className="field__input field__input_color_white" type="text"/>
-              <button className="field__button-submit" type="submit">
-                <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 12.8571L5 7.5L0 2.14286L1 0L8 7.5L1 15L0 12.8571Z" fill="white" />
-                </svg>
-              </button>
-          </form>
+          <p className={componentStyle.footer__label}>Подпишись на скидки и акции</p>
+          <Search />
         </div>
-        <div className="app-footer__column">
-          <h3 className="app-footer__column-title">Меню сайта:</h3>
-          <a className="app-footer__link">О компании</a>
-          <a className="app-footer__link">Доставка и оплата</a>
-          <a className="app-footer__link">Возврат</a>
-          <a className="app-footer__link">Контакты</a>
+        <div className={componentStyle.footer__column}>
+          <h3 className={componentStyle.footer__title}>Меню сайта:</h3>
+          <a className={componentStyle.footer__link}>О компании</a>
+          <a className={componentStyle.footer__link}>Доставка и оплата</a>
+          <a className={componentStyle.footer__link}>Возврат</a>
+          <a className={componentStyle.footer__link}>Контакты</a>
         </div>
-        <div className="app-footer__column">
-          <h3 className="app-footer__column-title">Категории:</h3>
-          <a className="app-footer__link">Бытовая химия</a>
-          <a className="app-footer__link">Косметика и гигиена</a>
-          <a className="app-footer__link">Товары для дома</a>
-          <a className="app-footer__link">Товары для детей и мам</a>
-          <a className="app-footer__link">Посуда</a>
+        <div className={componentStyle.footer__column}>
+          <h3 className={componentStyle.footer__title}>Категории:</h3>
+          <a className={componentStyle.footer__link}>Бытовая химия</a>
+          <a className={componentStyle.footer__link}>Косметика и гигиена</a>
+          <a className={componentStyle.footer__link}>Товары для дома</a>
+          <a className={componentStyle.footer__link}>Товары для детей и мам</a>
+          <a className={componentStyle.footer__link}>Посуда</a>
         </div>
-        <div className="app-footer__actions app-footer__column">
-          <h3 className="app-footer__column-title">Скачать прайс-лист:</h3>
-          <a className="app-footer__button-price-list button button_width_long" href="">
-            <span className="button__text">Прайс-лист</span>
-            <span className="button__icon">
+        <div className={componentStyle.footer__column}>
+          <h3 className={componentStyle.footer__title}>Скачать прайс-лист:</h3>
+          <a className={`${componentStyle.footer__phone} ${buttonStyle.button}`} href="">
+            <span className={buttonStyle.button__text}>Прайс-лист</span>
+            <span className={buttonStyle.button__icon}>
               <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M13.958 6.375H11.1247V2.125H6.87467V6.375H4.04134L8.99967 12.0417L13.958 6.375ZM3.33301 13.4583H14.6663V14.875H3.33301V13.4583Z"
@@ -78,9 +77,9 @@ const Footer: React.FC = () => {
               </svg>
             </span>
           </a>
-          <p className="app-footer__link">Связь в мессенджерах:</p>
-          <div className="app-footer__social">
-            <a className="app-footer__social-item" href="">
+          <p className={componentStyle.footer__link}>Связь в мессенджерах:</p>
+          <div className={componentStyle.footer__row}>
+            <a className={componentStyle.footer__sign} href="">
               <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="39" height="39" rx="19.5" fill="#00E676" />
                 <path
@@ -88,7 +87,7 @@ const Footer: React.FC = () => {
                   fill="white" />
               </svg>
             </a>
-            <a className="app-footer__social-item" href="">
+            <a className={componentStyle.footer__sign} href="">
               <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_4612_227)">
                   <path
@@ -113,19 +112,19 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-        <div className="app-footer__contact app-footer__column">
-          <h3 className="app-footer__column-title">Контакты:</h3>
-          <div className="app-footer__phone-wrapper">
-            <a className="app-footer__phone-number contact-link" href="">+7 (777) 490-00-91</a>
-            <p className="app-footer__schedule">время работы: 9:00-20:00</p>
-            <a className="app-footer__order-call" href="">Заказать звонок</a>
+        <div className={componentStyle.footer__column}>
+          <h3 className={componentStyle.footer__title}>Контакты:</h3>
+          <div className={componentStyle.footer__phone}>
+            <a className={componentStyle.footer__contact} href="">+7 (777) 490-00-91</a>
+            <p className={componentStyle.footer__schedule}>время работы: 9:00-20:00</p>
+            <a className={componentStyle.footer__call} href="">Заказать звонок</a>
           </div>
-          <div className="app-footer__mail-wrapper">
-            <a className="app-footer__mail contact-link">opt.sultan@mail.ru</a>
-            <span className="app-footer__subtitle">На связи в любое время</span>
+          <div className={componentStyle.footer__mail}>
+            <a className={componentStyle.footer__contact}>opt.sultan@mail.ru</a>
+            <span>На связи в любое время</span>
           </div>
-          <div className="app-footer__payment">
-            <a className="app-footer__payment-item" href="">
+          <div className={componentStyle.footer__row}>
+            <a className={componentStyle.footer__sign} href="">
               <svg width="61" height="39" viewBox="0 0 61 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="60.9375" height="39" rx="3" fill="#00579F" />
                 <path d="M27.3815 26.6927H23.6299L25.9764 13.2432H29.7279L27.3815 26.6927Z" fill="white" />
@@ -143,7 +142,7 @@ const Footer: React.FC = () => {
                   fill="#FAA61A" />
               </svg>
             </a>
-            <a className="app-footer__payment-item" href="">
+            <a className={componentStyle.footer__sign} href="">
               <svg width="61" height="39" viewBox="0 0 61 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="60.9375" height="39" rx="3" fill="#0F3560" />
                 <path d="M35.5648 29.12H24.8623V9.88574H35.5648V29.12Z" fill="#FF5F00" />
