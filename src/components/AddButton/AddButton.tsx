@@ -20,7 +20,10 @@ const AddButton: React.FC<productItemProps> = (props: productItemProps) => {
   return (
     <button className={`${styles.button}  ${(addedItem?.count) ? styles.button_done : ""}`} onClick={() => add(props.productData)}>
       <span className={styles.button__text}>
-        В КОРЗИНУ
+        {(addedItem?.count)
+          ? "В КОРЗИНЕ"
+          : "В КОРЗИНУ"
+        }
       </span>
       <span className={styles.button__icon}>
         <svg width="27" height="27" viewBox="0 0 27 27" fill="none"
