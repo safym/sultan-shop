@@ -15,7 +15,6 @@ const Sort: React.FC = () => {
   }
 
   const optionOnClick = (item: sortItem) => {
-    console.log(item)
     dispatch(setSort({ item }))
     setDropdownOpen(!dropdownOpen);
   }

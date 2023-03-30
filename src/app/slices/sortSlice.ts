@@ -1,22 +1,15 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export enum ENUM_SORT {
-  priceAsc = '+number',
-  priceDesc = '-number',
-  nameAsc = '+string',
-  nameDesc = '-string'
-}
+import { createSlice } from '@reduxjs/toolkit';
 
 
 const SORT_TYPES: sortTypeItem = {
-  priceAsc: {type: 'number', direction: 1},
-  priceDesc: {type: 'number', direction: -1},
-  nameAsc: {type: 'string', direction: 1},
-  nameDesc: {type: 'string', direction: -1}
+  priceAsc: {field: 'price', direction: 1},
+  priceDesc: {field: 'price', direction: -1},
+  nameAsc: {field: 'brand', direction: 1},
+  nameDesc: {field: 'brand', direction: -1}
 }
 
 export interface sortSpec {
-  type: string;
+  field: string;
   direction: number;
 } 
 

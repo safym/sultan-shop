@@ -34,12 +34,16 @@ const productsSlice = createSlice({
     setProducts(state, action: PayloadAction<Product[]>) {
       const products = action.payload;
       products.forEach(product => {
-        state.productsItems.push(product);
+        const IsAdded = state.productsItems.find((item) => item.id === product.id)
+
+        if (!IsAdded) {
+          state.productsItems.push(product);
+        }
       })
     }
   },
 });
 
-export const {setProducts} = productsSlice.actions;
+export const { setProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;

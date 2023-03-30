@@ -4,23 +4,21 @@ import ProductItem from "../ProductItem";
 import FilterSidebar from "../FilterSidebar";
 import FilterCategories from "../FilterCategories";
 import Sort from "../Sort/Sort";
-// import { sortByField } from "../../utils/sort"
+import { sortByField } from "../../utils/sort"
 
 const Products: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
   const sort = useAppSelector((state) => state.sort.type);
-  // const sortedProducts = sortByField(productsItems, sort)
-  // console.log(sort)
+  const sortedProductItems = sortByField(productsItems, sort)
+
   return (
     <section className="content__products products">
       <div className="products__container _container">
         <div className="products__body">
           <div className="products__title-wrapper">
             <h1 className="products__title title">Косметика и гигиена</h1>
-            <div className="products__options">
-              
+            <div className="products__options">  
             <Sort />
-
             </div>
           </div>
           <FilterCategories />
@@ -28,7 +26,7 @@ const Products: React.FC = () => {
             <FilterSidebar />
             <div className="products__list-wrapper">
               <ul className="products__list">
-                {Object.entries(productsItems).map(([id, product]) => {
+                {Object.entries(sortedProductItems).map(([id, product]) => {
                   const productItemProps = { 
                     productData: product,
                   }
