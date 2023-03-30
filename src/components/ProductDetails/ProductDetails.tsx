@@ -13,9 +13,10 @@ const ProductDetails: React.FC = () => {
 
   const { productId } = useParams();
   const productsItems = useAppSelector((state) => state.products.productsItems);
+  
   let product;
   if (productId) {
-    product = productsItems[productId];
+    product = productsItems.find((item) => item.id === productId)
   }
 
   if (!product) {

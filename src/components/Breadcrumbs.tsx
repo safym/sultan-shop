@@ -16,7 +16,7 @@ const Breadcrumbs: React.FC = () => {
         return "Каталог"
       case path.includes('/products/'):
         const productId = path.replace('/products/', '');
-        const product = productsItems[productId];
+        const product = productsItems.find((item) => item.id === productId)
 
         if (product) {
           return `${product.brand} ${product.name}`

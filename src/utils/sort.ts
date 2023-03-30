@@ -1,13 +1,13 @@
-import { ProductItems } from "../app/slices/productsSlice"
+import { ProductsState } from "../app/slices/productsSlice"
 import { sortSpec } from "../app/slices/sortSlice"
 
 
-export const sortByField = (data: ProductItems, sortSpec: sortSpec) => {
-  // console.log(data, sortSpec)
-  // // const dataCopy = [...data]
-  // const field = sortSpec.type;
+export const sortByField = (data: ProductsState, sortSpec: sortSpec) => {
+  console.log(data, sortSpec)
+  const dataCopy = [...data.productsItems]
+  const field = sortSpec.type;
 
-  // data.sort((a, b) => {
+  // dataCopy.sort((a, b) => {
   //   switch (field) {
   //     case 'price':
   //       return sortSpec.direction * (a.price - b.price)
@@ -16,5 +16,5 @@ export const sortByField = (data: ProductItems, sortSpec: sortSpec) => {
   //   }
   // })
 
-  // // return sortedData
+  // return sortedData
 }

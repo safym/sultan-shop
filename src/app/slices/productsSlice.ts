@@ -18,17 +18,13 @@ export interface Product {
   category: Array<string>
 }
 
-export interface ProductItems {
-  [id: string]: Product
-}
-
 export interface ProductsState {
-  productsItems: ProductItems;
+  productsItems: Product[];
 }
 
 
 const initialState: ProductsState = {
-  productsItems: {},
+  productsItems: [],
 };
 
 const productsSlice = createSlice({
@@ -38,7 +34,7 @@ const productsSlice = createSlice({
     setProducts(state, action: PayloadAction<Product[]>) {
       const products = action.payload;
       products.forEach(product => {
-        state.productsItems[product.id] = product;
+        state.productsItems.push(product);
       })
     }
   },
