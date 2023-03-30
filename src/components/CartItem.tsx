@@ -20,6 +20,8 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
     dispatch(removeItem({ item }))
   }
 
+  console.log(props.product)
+
   return (
     <li className="cart__item cart-item">
       <div className="cart-item__wrapper">
