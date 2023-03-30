@@ -1,16 +1,31 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { useAppSelector } from "../../app/hooks";
-import Measurement from "../Measurement/Measurement";
 
-import componentStyles from "./ProductDetails.module.scss";
-import mainStyle from "../../scss/_container.module.scss"
+import Measurement from "../Measurement/Measurement";
 import AddButton from "../AddButton/AddButton";
 import Counter from "../Counter/Counter";
 
+import mainStyle from "../../scss/_container.module.scss"
+import componentStyles from "./ProductDetails.module.scss";
+import expandedBlockStyles from "../../scss/components/_expanded-block.module.scss"
+
 const ProductDetails: React.FC = () => {
+  const [descrptionOpen, setDescrptionOpen] = useState(true);
+  const [specOpen, setSpecOpen] = useState(true);
+
   const { productId } = useParams();
   const productsItems = useAppSelector((state) => state.products.productsItems);
-  
+
+  const toggleDescriptionOpen = () => {
+    setDescrptionOpen(!descrptionOpen);
+  };
+
+  const toggleSpecOpen = () => {
+    setSpecOpen(!specOpen);
+  };
+
+
   let product;
   if (productId) {
     product = productsItems.find((item) => item.id === productId)
@@ -50,118 +65,135 @@ const ProductDetails: React.FC = () => {
               </a>
             </div>
 
-            <h3 className={componentStyles.section__subtitle}>Описание</h3>
-            <div>
-              <p className={componentStyles.section__description}>{product.description}</p>
+
+            <div className={expandedBlockStyles.expandedBlock}>
+              <div className={expandedBlockStyles.title} onClick={toggleDescriptionOpen}>
+                <h3 className={componentStyles.section__subtitle}>Описание</h3>
+                <span className={descrptionOpen ? expandedBlockStyles.arrowUp : expandedBlockStyles.arrowDown} />
+              </div>
+              <div className={`${expandedBlockStyles.list} ${descrptionOpen ? expandedBlockStyles.open : ""}`}>
+                <div className={expandedBlockStyles.item}>
+                  <p className={componentStyles.section__description}>{product.description}</p>
+                </div>
+              </div>
             </div>
 
-            <h3 className={componentStyles.section__subtitle}>Характеристики</h3>
-            <ul className={componentStyles.section__list}>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Производитель:
-                </span>
-                <span>
-                  {product.manufacturer}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Бренд:
-                </span>
-                <span>
-                  {product.brand}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Артикул:
-                </span>
-                <span>
-                  {product.barcode}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Штрихкод:
-                </span>
-                <span>
-                  {product.barcode}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Назначения:
-                </span>
-                <span>
-                  {product.manufacturer}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Тип:
-                </span>
-                <span>
-                  {product.manufacturer}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Производитель:
-                </span>
-                <span>
-                  {product.manufacturer}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Бренд:
-                </span>
-                <span>
-                  {product.brand}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Артикул:
-                </span>
-                <span>
-                  {product.barcode}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Штрихкод:
-                </span>
-                <span>
-                  {product.barcode}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Вес:
-                </span>
-                <span>
-                  {product.measurement.value} {product.measurement.type}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Объем:
-                </span>
-                <span>
-                  {product.measurement.value} {product.measurement.type}
-                </span>
-              </li>
-              <li>
-                <span className={componentStyles.section__property}>
-                  Кол-во в коробке:
-                </span>
-                <span>
-                  {product.measurement.value} {product.measurement.type}
-                </span>
-              </li>
-            </ul>
+            <div className={expandedBlockStyles.expandedBlock}>
+              <div className={expandedBlockStyles.title} onClick={toggleSpecOpen}>
+                <h3 className={componentStyles.section__subtitle}>Характеристики</h3>
+                <span className={specOpen ? expandedBlockStyles.arrowUp : expandedBlockStyles.arrowDown} />
+              </div>
+              <div className={`${expandedBlockStyles.list} ${specOpen ? expandedBlockStyles.open : ""}`}>
+
+                <ul className={`${componentStyles.section__list} ${expandedBlockStyles.item}}`}>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Производитель:
+                    </span>
+                    <span>
+                      {product.manufacturer}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Бренд:
+                    </span>
+                    <span>
+                      {product.brand}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Артикул:
+                    </span>
+                    <span>
+                      {product.barcode}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Штрихкод:
+                    </span>
+                    <span>
+                      {product.barcode}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Назначения:
+                    </span>
+                    <span>
+                      {product.manufacturer}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Тип:
+                    </span>
+                    <span>
+                      {product.manufacturer}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Производитель:
+                    </span>
+                    <span>
+                      {product.manufacturer}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Бренд:
+                    </span>
+                    <span>
+                      {product.brand}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Артикул:
+                    </span>
+                    <span>
+                      {product.barcode}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Штрихкод:
+                    </span>
+                    <span>
+                      {product.barcode}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Вес:
+                    </span>
+                    <span>
+                      {product.measurement.value} {product.measurement.type}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Объем:
+                    </span>
+                    <span>
+                      {product.measurement.value} {product.measurement.type}
+                    </span>
+                  </li>
+                  <li>
+                    <span className={componentStyles.section__property}>
+                      Кол-во в коробке:
+                    </span>
+                    <span>
+                      {product.measurement.value} {product.measurement.type}
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

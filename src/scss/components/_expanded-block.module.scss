@@ -1,0 +1,50 @@
+.expandedBlock {
+  overflow: hidden;
+
+  .title {
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .arrowUp {
+      border: solid #333;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+      margin-left: 10px;
+    }
+
+    .arrowDown {
+      border: solid #333;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      margin-left: 10px;
+    }
+  }
+
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+
+    &.open {
+      max-height: 500px;
+    }
+
+    .item {
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
