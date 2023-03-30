@@ -348,20 +348,6 @@ body {
 
   &__options {}
 
-  &__sort {
-    display: flex;
-    -moz-column-gap: 5px;
-    column-gap: 5px;
-  }
-
-  &__sort-title {
-    font-weight: 500;
-  }
-
-  &__sort-link {
-    color: var(--darkTextColor)
-  }
-
   &__categories-filter {
     display: flex;
     -moz-column-gap: 10px;

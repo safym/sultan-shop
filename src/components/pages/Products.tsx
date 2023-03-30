@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { getProducts } from "../../app/data/api";
-import { setProducts } from "../../app/slices/productsSlice"
+import React from "react";
+import { useAppSelector } from "../../app/hooks";
 import ProductItem from "../ProductItem";
 import FilterSidebar from "../FilterSidebar";
 import FilterCategories from "../FilterCategories";
+import Sort from "../Sort/Sort";
+// import { sortByField } from "../../utils/sort"
 
 const Products: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
-
+  const sort = useAppSelector((state) => state.sort.type);
+  // const sortedProducts = sortByField(productsItems, sort)
+  // console.log(sort)
   return (
     <section className="content__products products">
       <div className="products__container _container">
@@ -16,17 +18,8 @@ const Products: React.FC = () => {
           <div className="products__title-wrapper">
             <h1 className="products__title title">Косметика и гигиена</h1>
             <div className="products__options">
-              <div className="products__sort sort">
-                <span className="products__sort-title">Сортировка:</span>
-                <a className="products__show-hide-link show-hide-link" href="#">
-                  Название
-                  <span className="show-hide-link__direction-arrow">
-                    <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3.5 6L0.468911 0.750001L6.53109 0.75L3.5 6Z" fill="#3F4E65" />
-                    </svg>
-                  </span>
-                </a>
-              </div>
+              
+            <Sort />
 
             </div>
           </div>
