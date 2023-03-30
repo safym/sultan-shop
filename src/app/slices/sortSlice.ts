@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 const SORT_TYPES: sortTypeItem = {
   priceAsc: {field: 'price', direction: 1},
   priceDesc: {field: 'price', direction: -1},
@@ -41,7 +40,6 @@ const CartSlice = createSlice({
     },
   },
 });
-
 
 export const { setSort } = CartSlice.actions;
 

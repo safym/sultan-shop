@@ -1,6 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { removeItem } from "../../app/slices/cartSlice"
+import { useAppSelector } from "../../app/hooks";
 import CartItem from "../CartItem";
 
 import buttonStyle from "../../scss/components/_button.module.scss";
@@ -39,14 +37,16 @@ const Cart: React.FC = () => {
               <ul className="cart__list">
                 {cart.cartItems.map((item) => {
                   const productId = item.id;
-                  const product = productsItems[productId];
-
-                  const cartItemProps = {
-                    product: product,
-                    cartItem: item
+                  const product = productsItems.find((item) => item.id === productId);
+                  
+                  if (product) {
+                    const cartItemProps = {
+                      product: product,
+                      cartItem: item
+                    }
+  
+                    return <CartItem key={productId} {...cartItemProps} />
                   }
-
-                  return <CartItem key={productId} {...cartItemProps} />
                 })}
               </ul>
             </div>
