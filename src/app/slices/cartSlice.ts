@@ -9,11 +9,13 @@ export interface CartItem {
 
 export interface CartState {
   cartItems: CartItem[];
+  totalCount: number;
   totalPrice: number;
 }
 
 const initialState: CartState = {
   cartItems: [] as CartItem[],
+  totalCount: 0,
   totalPrice: 0
 }
 
@@ -39,16 +41,18 @@ const CartSlice = createSlice({
       }
 
       state.totalPrice = getTotalCartPrice(state.cartItems)
+      state.totalCount = getTotalCartCount(state.cartItems)
     },
     minusItem: (state, action) => {
-      const productId = action.payload.item.id;
+      const productId = action.payload.item.id
       const addedItem = state.cartItems.find((item) => item.id === productId)
 
       if (addedItem) {
-        addedItem.count--;
-        addedItem.total = getTotalItemPrice(addedItem);
+        addedItem.count--
+        addedItem.total = getTotalItemPrice(addedItem)
       }
 
+      state.totalCount = getTotalCartCount(state.cartItems)
       state.totalPrice = getTotalCartPrice(state.cartItems)
     },
     removeItem: (state, action) => {
@@ -60,6 +64,11 @@ const CartSlice = createSlice({
     }
   },
 });
+
+
+export const getTotalCartCount = (items: CartItem[]) => {
+  return items.reduce((sum, obj) => obj.count + sum, 0);
+};
 
 export const getTotalCartPrice = (items: CartItem[]) => {
   return items.reduce((sum, obj) => obj.price * obj.count + sum, 0);

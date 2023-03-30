@@ -19,11 +19,7 @@ const ProductDetails: React.FC = () => {
     product = productsItems.find((item) => item.id === productId)
   }
 
-  if (!product) {
-    return (
-      <div>error</div>
-    )
-  }
+  if (!product) return <></>
 
   return (
     <section className={componentStyles.section}>

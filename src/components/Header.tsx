@@ -141,7 +141,7 @@ const Header: React.FC = () => {
               <NavLink to="/cart" className="app-header__cart-button cart-button">
                 <div className="cart-button__icon-wrapper">
                   <span className="cart-button__items-counter">
-                    {Object.keys(cart.cartItems).length}
+                    {cart.totalCount}
                   </span>
                   <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
