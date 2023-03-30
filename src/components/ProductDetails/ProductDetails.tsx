@@ -5,12 +5,9 @@ import Measurement from "../Measurement/Measurement";
 import componentStyles from "./ProductDetails.module.scss";
 import mainStyle from "../../scss/_container.module.scss"
 import AddButton from "../AddButton/AddButton";
-import { useState } from "react";
 import Counter from "../Counter/Counter";
 
 const ProductDetails: React.FC = () => {
-  const [count, setCount] = useState(0);
-
   const { productId } = useParams();
   const productsItems = useAppSelector((state) => state.products.productsItems);
   

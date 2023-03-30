@@ -32,11 +32,7 @@ const Counter: React.FC<CounterProductProps> = (props: CounterProductProps) => {
 
   if (!addedItem?.count) {
     return (
-      <div className={counterStyle.counter}>
-        <button className={counterStyle.counter__button} disabled onClick={() => countMinus(props.product)}>-</button>
-        <b className={counterStyle.value}>0</b>
-        <button className={counterStyle.counter__button} disabled onClick={() => countPlus(props.product)}>+</button>
-      </div>
+      <div className={counterStyle.mock}></div>
     );
   }
   
