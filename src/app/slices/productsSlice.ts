@@ -22,7 +22,6 @@ export interface ProductsState {
   productsItems: Product[];
 }
 
-
 const initialState: ProductsState = {
   productsItems: [],
 };
