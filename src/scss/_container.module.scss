@@ -1,6 +1,14 @@
 @import "./variables";
 
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   max-width: $container-width;
   margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: content-box;
 }
