@@ -43,13 +43,13 @@ const Header: React.FC = () => {
               </div>
             </div>
             <nav className="app-header__nav">
-              <a className="app-header__nav-link" href="">О компании</a>
+              <a className="app-header__nav-link">О компании</a>
               <span className="app-header__divider divider divider_size_long"></span>
-              <a className="app-header__nav-link" href="">Доставка и оплата</a>
+              <a className="app-header__nav-link">Доставка и оплата</a>
               <span className="app-header__divider divider divider_size_long"></span>
-              <a className="app-header__nav-link" href="">Возврат</a>
+              <a className="app-header__nav-link">Возврат</a>
               <span className="app-header__divider divider divider_size_long"></span>
-              <a className="app-header__nav-link" href="">Контакты</a>
+              <a className="app-header__nav-link">Контакты</a>
             </nav>
           </div>
         </div>
@@ -118,16 +118,16 @@ const Header: React.FC = () => {
             <div className="app-header__right-column">
               <div className="app-header__call-wrapper">
                 <div className="app-header__call-text">
-                  <a className="app-header__phone-number contact-link" href="">+7 (777) 490-00-91</a>
+                  <a className="app-header__phone-number contact-link">+7 (777) 490-00-91</a>
                   <p className="app-header__schedule">время работы: 9:00-20:00</p>
-                  <a className="app-header__order-call" href="">Заказать звонок</a>
+                  <a className="app-header__order-call">Заказать звонок</a>
                 </div>
                 <div className="app-header__call-image">
                   <img src="./../src/assets/img/call.png" alt="consultant" />
                 </div>
               </div>
               <span className="app-header__divider divider divider_size_short"></span>
-              <a className={buttonStyle.button} href="">
+              <a className={buttonStyle.button}>
                 <span>Прайс-лист</span>
                 <span className={buttonStyle.icon}>
                   <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">

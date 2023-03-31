@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
         </div>
         <div className={style.column}>
           <h3 className={style.title}>Скачать прайс-лист:</h3>
-          <a className={`${style.phone} ${buttonStyle.button}`} href="">
+          <a className={`${style.phone} ${buttonStyle.button}`}>
             <span className={buttonStyle.button__text}>Прайс-лист</span>
             <span className={buttonStyle.button__icon}>
               <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
           </a>
           <p className={style.link}>Связь в мессенджерах:</p>
           <div className={style.row}>
-            <a className={style.sign} href="">
+            <a className={style.sign}>
               <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="39" height="39" rx="19.5" fill="#00E676" />
                 <path
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
                   fill="white" />
               </svg>
             </a>
-            <a className={style.sign} href="">
+            <a className={style.sign}>
               <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_4612_227)">
                   <path
@@ -115,16 +115,16 @@ const Footer: React.FC = () => {
         <div className={style.column}>
           <h3 className={style.title}>Контакты:</h3>
           <div className={style.phone}>
-            <a className={style.contact} href="">+7 (777) 490-00-91</a>
+            <a className={style.contact}>+7 (777) 490-00-91</a>
             <p className={style.schedule}>время работы: 9:00-20:00</p>
-            <a className={style.call} href="">Заказать звонок</a>
+            <a className={style.call}>Заказать звонок</a>
           </div>
           <div className={style.mail}>
             <a className={style.contact}>opt.sultan@mail.ru</a>
             <span>На связи в любое время</span>
           </div>
           <div className={style.row}>
-            <a className={style.sign} href="">
+            <a className={style.sign}>
               <svg width="61" height="39" viewBox="0 0 61 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="60.9375" height="39" rx="3" fill="#00579F" />
                 <path d="M27.3815 26.6927H23.6299L25.9764 13.2432H29.7279L27.3815 26.6927Z" fill="white" />
@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
                   fill="#FAA61A" />
               </svg>
             </a>
-            <a className={style.sign} href="">
+            <a className={style.sign}>
               <svg width="61" height="39" viewBox="0 0 61 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="60.9375" height="39" rx="3" fill="#0F3560" />
                 <path d="M35.5648 29.12H24.8623V9.88574H35.5648V29.12Z" fill="#FF5F00" />
