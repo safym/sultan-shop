@@ -3,8 +3,6 @@
 @import "./variables";
 @import "./libs/normalize";
 @import './components/path';
-@import './components/checkbox';
-// @import './components/button';
 @import './components/title';
 @import './components/pagination-pages';
 
@@ -333,19 +331,10 @@ body {
     text-transform: uppercase;
   }
 
-
-  &__filter-checked {
-    font-weight: 700;
-  }
-
   &__content {
     position: relative;
     display: flex;
     justify-content: space-between;
-  }
-
-  &__filter-sidebar {
-    margin-right: 100px;
   }
 
   &__list-wrapper {
@@ -354,11 +343,10 @@ body {
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
-    grid-column-gap: 11px;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
     justify-items: center;
-    grid-column-gap: 21px;
-    grid-row-gap: 21px;
+    column-gap: 21px;
+    row-gap: 21px;
   }
 
   &__pages {
@@ -376,83 +364,7 @@ body {
 ///////////////////////////////////////////////////////////////////////////////////////////
 /// -----------------------------------FILTER-SIDEBAR------------------------------------//
 ///////////////////////////////////////////////////////////////////////////////////////////
-.filter-sidebar {
-  width: 240px;
-  position: relative;
 
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-
-  &__price {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-  }
-
-  &__title {
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  &__subtitle {
-    color: var(--darkTextColor);
-    display: flex;
-    column-gap: 5px;
-  }
-
-  &__price-fields-wrapper {
-    display: flex;
-    column-gap: 5px;
-    justify-content: space-between;
-  }
-
-  &__price-input {
-    width: 105px;
-    height: 23px;
-    padding: 4px 14px;
-    border-radius: 20px;
-    text-align: center;
-    background-color: $button-color-light;
-  }
-
-  &__manufacturer {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-  }
-
-  &__categories-list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-  }
-
-  &__category-item {
-    color: var(--darkTextColor)
-  }
-
-  &__borderline {
-    border: $dash-border;
-  }
-
-  &__controls {
-    display: flex;
-    column-gap: 10px;
-  }
-
-  &__show-button {
-    flex-grow: 1;
-  }
-
-  &__category-input {
-    display: none;
-  }
-
-  &__checked {
-    font-weight: 700;
-  }
-}
 
 .show-hide-link {
   display: inline-flex;
