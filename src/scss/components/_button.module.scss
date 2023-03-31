@@ -1,6 +1,7 @@
 @import "../variables";
 
 .button {
+  max-width: 200px;
   height: $ui-height;
   display: flex;
   align-items: center;
@@ -10,17 +11,12 @@
   color: var(--lightTextColor);
   background-color: var(--button-bg-color);
 
-
   padding: 21px 40px;
   -moz-column-gap: 15px;
   column-gap: 15px;
-  // flex-grow: 1;
+  flex-grow: 1;
 
-  &__text {
-    color: inherit;
-  }
-
-  &__icon {
+  .icon {
     display: flex;
     align-items: center;
   }
