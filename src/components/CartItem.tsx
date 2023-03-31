@@ -38,8 +38,7 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
           </div>
           <span className="cart-item__divider divider divider_size_long"></span>
           <div className="cart-item__total price">
-            <b className="cart-item__total-value"> {(props.cartItem.total).toFixed(2)} ₸</b>
-            <span className="cart-item__total-currency"></span>
+            <b className="cart-item__total-value">{(props.cartItem.total).toFixed(2)} ₸</b>
           </div>
           <span className="cart-item__divider divider divider_size_long"></span>
           <button className={buttonStyle.roundedButton} onClick={() => remove(props.product)}>

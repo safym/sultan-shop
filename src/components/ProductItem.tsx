@@ -40,8 +40,7 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
       </NavLink>
       <div className="product-item__footer">
         <p className="product-item__price-wrapper">
-          <span className="product-item__price-value">{props.productData.price}</span>
-          <span className="product-item__price-currency">₸</span>
+          <span className="product-item__price-value">{props.productData.price} ₸</span>
         </p>
         <AddButton productData={props.productData} />
       </div>
