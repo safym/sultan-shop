@@ -2,7 +2,6 @@
 
 @import "./variables";
 @import "./libs/normalize";
-@import './components/path';
 @import './components/title';
 @import './components/pagination-pages';
 
@@ -444,8 +443,6 @@ body {
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 .cart {
-  background-color: orange;
-  
   &__body {
     padding: 50px 0;
 
