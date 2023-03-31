@@ -14,7 +14,7 @@ body {
   font-size: $primary-font-size;
   line-height: 150%;
   color: var(--mainTextColor);
-  background-color: var(--body-bg-color);
+  background-color: var(--body-bg-color); 
 }
 
 .main-wrapper {
@@ -305,10 +305,6 @@ body {
 .products {
   position: relative;
 
-  &__body {
-    padding: 50px 0;
-  }
-
   &__title-wrapper {
     display: flex;
     align-items: center;
@@ -380,7 +376,6 @@ body {
   justify-content: space-between;
   row-gap: 10px;
 
-  background: var(--body-bg-color);
   box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   padding: 20px;
@@ -443,11 +438,6 @@ body {
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 .cart {
-  &__body {
-    padding: 50px 0;
-
-  }
-
   &__title {
     margin-bottom: 50px;
   }
@@ -543,27 +533,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-}
-
-.empty-message {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: 50px;
-
-  &__title {
-    opacity: 0.8;
-    margin-left: 20px;
-    font-size: 25px;
-    color: $button-color;
-  }
-
-  &__image {
-    opacity: 0.3;
-    width: 200px;
   }
 }
 

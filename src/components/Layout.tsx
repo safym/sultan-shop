@@ -8,7 +8,7 @@ import mainStyle from "../scss/_container.module.scss"
 
 const Layout: React.FC = () => {
   return (
-    <div className="main-wrapper">
+    <div className={mainStyle.wrapper}>
       <ScrollToTop />
       <Header />
       <div className={mainStyle.container}>
