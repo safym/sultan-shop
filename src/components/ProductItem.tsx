@@ -13,7 +13,7 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
     <li className="products__item product-item">
       <NavLink className="product-item__body" to={props.productData.id}>
         <div className="product-item__image-wrapper">
-          <img className="product-item__image" src={props.productData.imageURL} alt="" />
+          <img className="product-item__image" src={props.productData.imageURL} alt="product image"  />
         </div>
         <Measurement {...props.productData.measurement} />
         <p className="product-item__name"><b>{props.productData.brand}</b> {props.productData.name}</p>

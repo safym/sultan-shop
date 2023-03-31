@@ -24,7 +24,7 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
     <li className="cart__item cart-item">
       <div className="cart-item__wrapper">
         <NavLink className="cart-item__image-wrapper" to={`/products/${props.product.id}`}>
-          <img className="cart-item__image" src={props.product.imageURL} alt="" />
+          <img className="cart-item__image" src={props.product.imageURL} alt="product image" />
         </NavLink>
         <div className="cart-item__info-wrapper">
           <Measurement {...props.product.measurement} />
