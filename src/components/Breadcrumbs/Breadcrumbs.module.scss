@@ -1,0 +1,20 @@
+@import "../../scss/variables";
+
+.path {
+  margin: 50px 0;
+
+  .step {
+    padding: 0 10px;
+    color: var(--darkTextColor);
+
+    &:last-child {
+      padding-right: 0;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+    &:not(:last-child) {
+      border-right: $dash-border;
+    }
+  }
+}
