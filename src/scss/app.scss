@@ -40,8 +40,6 @@ body {
   top: 0;
   z-index: 10;
 
-
-
   &__container {}
 
   &__row-container {
@@ -62,7 +60,6 @@ body {
 
   &__top {
     min-height: 60px;
-
   }
 
   &__contact-wrapper {
@@ -346,32 +343,9 @@ body {
     text-transform: uppercase;
   }
 
-  &__options {}
 
-  &__categories-filter {
-    display: flex;
-    -moz-column-gap: 10px;
-    column-gap: 10px;
-    justify-content: space-between;
-    margin-bottom: 50px;
-  }
-
-  &__filter-card {
-    padding: 10px;
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: var(--darkTextColor);
-    background-color: var(--body-bg-color);
-    box-shadow: $shadow;
-    border-radius: 10px;
-
-    &:hover {
-      background-color: darken($element-color, 5%);
-      box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.15);
-    }
-
+  &__filter-checked {
+    font-weight: 700;
   }
 
   &__content {
@@ -480,6 +454,14 @@ body {
   &__show-button {
     flex-grow: 1;
   }
+
+  &__category-input {
+    display: none;
+  }
+
+  &__checked {
+    font-weight: 700;
+  }
 }
 
 .show-hide-link {
@@ -506,7 +488,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   row-gap: 10px;
-  
+
   background: var(--body-bg-color);
   box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
   border-radius: 10px;
@@ -517,7 +499,7 @@ body {
     flex-direction: column;
     row-gap: 10px;
   }
-  
+
   &__image-wrapper {
     display: flex;
     align-items: center;
@@ -566,12 +548,6 @@ body {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-/// ---------------------------------------FOOTER----------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////
 /// -----------------------------------CART-ITEM-----------------------------------------//
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -616,28 +592,24 @@ body {
     padding: 50px 0;
     display: flex;
     justify-content: space-between;
-    // display: grid;
-    // grid-template-columns: 300px 1fr minmax(0, 1fr);
-    // // grid-template-rows: 200px;
-    // grid-column-gap: 20px;
     align-items: center;
     border-top: 1px dashed var(--border-color);
   }
 
   &__image-wrapper {
+    position: relative;
     height: 290px;
     width: 290px;
     padding: 30px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
   }
 
   &__info-wrapper {
+    position: relative;
     min-height: 190px;
     max-width: 480px;
-    position: relative;
     display: flex;
     align-items: flex-start;
     row-gap: 10px;
