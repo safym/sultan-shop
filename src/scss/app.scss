@@ -209,7 +209,7 @@ body {
 
 .divider {
   height: 50px;
-  border: 1px dashed #3F4E65;
+  border: $dash-border;
   opacity: 0.1;
 
   &_size {
@@ -304,16 +304,6 @@ body {
   &__container {
     padding: 0 15px;
     box-sizing: content-box;
-  }
-}
-
-.path {
-  .path__step {
-    color: var(--darkTextColor)
-  }
-
-  .path__divider {
-    margin: 0 10px;
   }
 }
 
@@ -443,7 +433,7 @@ body {
   }
 
   &__borderline {
-    border: 1px dashed var(--border-color);
+    border: $dash-border;
   }
 
   &__controls {
@@ -573,7 +563,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px dashed var(--border-color);
+    border-top: $dash-border;
     padding: 50px 0;
   }
 
@@ -593,7 +583,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px dashed var(--border-color);
+    border-top: $dash-border;
   }
 
   &__image-wrapper {
