@@ -3,7 +3,7 @@
   color: var(--lightTextColor);
   padding: 70px 0 116px 0;
 
-  &__container {
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -13,41 +13,41 @@
     flex-wrap: wrap;
   }
 
-  &__main {
+  .main {
     width: 320px;
   }
 
-  &__column {
+  .column {
     display: flex;
     flex-direction: column;
   }
 
-  &__logo,
-  &__label {
+  .logo,
+  .label {
     margin-bottom: 15px;
   }
 
-  &__description {
+  .description {
     margin-bottom: 45px;
   }
 
-  &__title {
+  .title {
     margin-bottom: 25px;
     font-weight: 600;
     font-size: 20px;
   }
 
-  &__link {
+  .link {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
   }
 
-  &__row {
+  .row {
     display: flex;
   }
 
-  &__sign {
+  .sign {
     display: block;
 
     &:not(:last-child) {
@@ -55,23 +55,23 @@
     }
   }
 
-  &__button {
+  .button {
     margin-bottom: 20px;
   }
 
-  &__phone {
+  .phone {
     margin-bottom: 25px;
   }
 
-  &__call {
+  .call {
     text-decoration: underline !important;
   }
 
-  &__contact {
+  .contact {
     font-weight: 600;
   }
 
-  &__mail {
+  .mail {
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
