@@ -1,13 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { Product } from "../app/slices/productsSlice"
+
 import AddButton from "./AddButton/AddButton";
 import Measurement from "./Measurement/Measurement";
 
-// ----> draft
 interface productItemProps {
   productData: Product,
 }
-// draft <-----
 
 const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
   return (
