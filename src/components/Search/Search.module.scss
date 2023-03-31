@@ -12,12 +12,7 @@ $field-offset: 10px;
   padding: 20px;
   border-radius: $ui-height;
   background-color: var(--field-bg-color);
-
-  &_color {
-    &_white {
-      background-color: var(--body-bg-color);
-    }
-  }
+  color: var(--darkTextColor);
 }
 
 .button {
