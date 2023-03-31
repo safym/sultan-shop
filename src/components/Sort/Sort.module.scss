@@ -5,11 +5,11 @@
   display: flex;
   column-gap: 10px;
 
-  &__title {
+  .title {
     font-weight: 500;
   }
   
-  &__link {
+  .link {
     min-width: 100px;
     text-align: end;
     color: var(--darkTextColor)
@@ -27,7 +27,7 @@
   box-shadow: var(--border-color) 0px 0px 0px 1px, $shadow;
   background-color: $element-color;
 
-  &__option {
+  .option {
     cursor: pointer;
     border-radius: 8px;
     padding: 5px 10px;
