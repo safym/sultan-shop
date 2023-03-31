@@ -18,11 +18,6 @@ body {
   background-color: var(--body-bg-color);
 }
 
-._container {
-  max-width: $container-width;
-  margin: 0 auto;
-}
-
 .main-wrapper {
   min-height: 100vh;
   display: flex;
@@ -311,11 +306,6 @@ body {
 .products {
   position: relative;
 
-  &__container {
-    padding: 0 15px;
-    box-sizing: content-box;
-  }
-
   &__body {
     padding: 50px 0;
   }
@@ -454,13 +444,11 @@ body {
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 .cart {
-  &__container {
-    padding: 0 15px;
-    box-sizing: content-box;
-  }
-
+  background-color: orange;
+  
   &__body {
     padding: 50px 0;
+
   }
 
   &__title {
@@ -563,6 +551,7 @@ body {
 
 .empty-message {
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
