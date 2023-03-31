@@ -6,9 +6,13 @@
     color: inherit;
   }
 
-  &__input {}
+  &__input {
+    margin-right: 10px;
+  }
 
-  &__checkmark {}
+  &__text {
+    margin-right: 5px;
+  }
 
   input[type="checkbox"] {
     accent-color: #8691a1;
