@@ -1,23 +1,64 @@
-import { useAppSelector } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { getCateroryList } from "../utils/getCateroryList";
 import Search from "./Search/Search";
 
 import buttonStyle from "../scss/components/_button.module.scss";
+import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory } from "../app/slices/filterSlice";
+
+interface manufacturerItem {
+  manufacturer: string;
+  countItems: 1;
+}
 
 const FilterSidebar: React.FC = () => {
+  const dispatch = useAppDispatch();
   const productsItems = useAppSelector((state) => state.products.productsItems);
+  const filters = useAppSelector((state) => state.filter);
 
-  // temp manufacturersList
-  const manufacturersList = Object.entries(productsItems).reduce(function (result: Array<string>, currentPair) {
-    const [key, value] = currentPair;
+  const categoryList = getCateroryList(productsItems)
 
-    if (!result.includes(value.manufacturer)) {
-      result.push(value.manufacturer)
+  const manufacturersList = productsItems.reduce(function (result: Array<manufacturerItem>, value) {
+    const isAdded = result.find((item) => item.manufacturer === value.manufacturer)
+
+    if (!isAdded) {
+      result.push({ manufacturer: value.manufacturer, countItems: 1 })
+    } else {
+      isAdded.countItems++
     }
     return result;
   }, []);
 
-  const categoryList = getCateroryList(productsItems)
+  const minOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const price = event.target.value.replace(/\D/g, '')
+
+    dispatch(setMinPrice(+price))
+  }
+
+  const maxOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const price = event.target.value.replace(/\D/g, '')
+
+    dispatch(setMaxPrice(+price))
+  }
+
+  const manufacturerOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const manufacturer = event.target.value
+
+    if (event.target.checked) {
+      dispatch(setManufacturer([manufacturer]))
+    } else {
+      dispatch(removeManufacturer(manufacturer))
+    }
+  }
+
+  const categoryOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const category = event.target.value
+
+    if (event.target.checked) {
+      dispatch(setCategory(category))
+    } else {
+      dispatch(removeCategory(category))
+    }
+  }
 
   return (
     <div className="products__filter-sidebar filter-sidebar">
@@ -25,23 +66,36 @@ const FilterSidebar: React.FC = () => {
       <div className="filter-sidebar__price filter-sidebar__section">
         <div className="filter-sidebar__subtitle">Цена<span className="filter-sidebar__currency">₸</span></div>
         <div className="filter-sidebar__price-fields-wrapper">
-          <input className="filter-sidebar__price-input" placeholder="0" type="text" />
+          <input className="filter-sidebar__price-input"
+            placeholder="0" onChange={minOnChange}
+            value={filters.minPrice} type="text" />
           <span className="filter-sidebar__dash">-</span>
-          <input className="filter-sidebar__price-input" placeholder="10000" type="text" />
+          <input className="filter-sidebar__price-input"
+            placeholder="10000"
+            onChange={maxOnChange}
+            value={filters.maxPrice}
+            type="text" />
         </div>
       </div>
-
       <div className="filter-sidebar__manufacturer filter-sidebar__section">
         <h2 className="filter-sidebar__title">Производитель</h2>
         <Search />
         <ul className="filter-sidebar__manufacturer-list">
           {manufacturersList.map((item, index) => {
+            const id = `manufacturerItem_${index}`
+            const checked = filters.manufacturers.includes(item.manufacturer);
+
             return (
-              <li key={index} className="filter-sidebar__manufacturer-item">
-                <label className="filter-sidebar__checkbox checkbox">
-                  <input type="checkbox" className="checkbox__input" />
-                  {item} <span className="checkbox__counter">(?)</span>
-                  <span className="checkbox__checkmark"></span>
+              <li key={index}
+                className="filter-sidebar__manufacturer-item checkbox">
+                <input className="checkbox__input"
+                  checked={checked}
+                  value={item.manufacturer} onChange={manufacturerOnChange}
+                  id={id}
+                  type="checkbox" />
+                <label className="checkbox__label" htmlFor={id}>
+                  <span className="checkbox__text">{item.manufacturer}</span>
+                  <span className="checkbox__counter">({item.countItems})</span>
                 </label>
               </li>
             )
@@ -56,7 +110,6 @@ const FilterSidebar: React.FC = () => {
           </span>
         </a>
       </div>
-
       <div className="filter-sidebar__controls filter-sidebar__section">
         <button className={`filter-sidebar__show-button ${buttonStyle.button}`}>
           <span className="button__text">Показать</span>
@@ -73,14 +126,25 @@ const FilterSidebar: React.FC = () => {
       </div>
       <div className="filter-sidebar__borderline"></div>
       <div className="filter-sidebar__categories filter-sidebar__section">
-        <ul className="filter-sidebar__categories-list">
-
+        <form className="filter-sidebar__categories-list">
           {categoryList.map((item, index) => {
+            const id = `categoryItem_${index}`
+            const checked = filters.category === item;
+
             return (
-              <li key={index} className="filter-sidebar__category-item"><a href="#">{item}</a></li>
+              <span className={`filter-sidebar__category-item ${(checked) ? 'products__filter-checked' : ''}`}>
+                <label key={`label_${index}`} htmlFor={id}>{item}</label>
+                <input key={`input_${index}`}
+                  value={item} name="category"
+                  onChange={categoryOnChange}
+                  id={id}
+                  className="filter-sidebar__category-input"
+                  type="checkbox"
+                  checked={checked} />
+              </span >
             )
           })}
-        </ul>
+        </form>
       </div>
     </div>
   );

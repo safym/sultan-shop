@@ -2,14 +2,18 @@ import React from "react";
 import { useAppSelector } from "../../app/hooks";
 import ProductItem from "../ProductItem";
 import FilterSidebar from "../FilterSidebar";
-import FilterCategories from "../FilterCategories";
+import FilterCategories from "../FilterCategories/FilterCategories";
 import Sort from "../Sort/Sort";
 import { sortByField } from "../../utils/sort"
+import { getFilteredItems } from "../../utils/getFilteredItems";
 
 const Products: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
   const sort = useAppSelector((state) => state.sort.type);
-  const sortedProductItems = sortByField(productsItems, sort)
+  
+  const filtredProductItems = getFilteredItems(productsItems)
+
+  const sortedProductItems = sortByField(filtredProductItems, sort)
 
   return (
     <section className="content__products products">
