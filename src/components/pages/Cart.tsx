@@ -55,7 +55,7 @@ const Cart: React.FC = () => {
                 <span>Оформить</span>
               </button>
               <div className="cart__total price">
-                <b className="cart__total-value"> {cart.totalPrice.toFixed(2)} ₸</b>
+                <b className="cart__total-value">{cart.totalPrice.toFixed(2)} ₸</b>
                 <span className="cart__total-currency"></span>
               </div>
             </div>

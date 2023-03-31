@@ -38,9 +38,9 @@ const Counter: React.FC<CounterProductProps> = (props: CounterProductProps) => {
   
   return (
     <div className={counterStyle.counter}>
-      <button className={counterStyle.counter__button} onClick={() => countMinus(props.product)}>-</button>
+      <button className={counterStyle.button} onClick={() => countMinus(props.product)}>-</button>
       <b className={counterStyle.value}>{addedItem?.count}</b>
-      <button className={counterStyle.counter__button} onClick={() => countPlus(props.product)}>+</button>
+      <button className={counterStyle.button} onClick={() => countPlus(props.product)}>+</button>
     </div>
   );
 }

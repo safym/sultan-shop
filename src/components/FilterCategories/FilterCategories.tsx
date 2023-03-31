@@ -24,25 +24,22 @@ const FilterCategories: React.FC = () => {
   return (
     <div className={style.filterCategories}>
       {categoryList.map((item, index) => {
-        const id = `categoryItem_${index}`
-        console.log(filters.category === item)
+        const key = `categoryItem_${index}`
         const checked = filters.category === item;
 
         return (
-          <span key={`category_${index}`} 
+          <span key={key} 
             className={`${style.card}  ${(checked) ? style.checked : ''}`} >
-            <label key={`label_${index}`} 
-              className={style.label}
-              htmlFor={id}>
+            <label className={style.label}
+              htmlFor={key}>
               {item}
             </label>
-            <input key={`input_${index}`}
+            <input className={style.input}
+              id={key}
               value={item} name="category"
               onChange={categoryOnChange}
-              id={id}
-              className={style.input}
-              type="checkbox"
-              checked={filters.category === item} />
+              checked={filters.category === item} 
+              type="checkbox"/>
           </span >
         )
       })}

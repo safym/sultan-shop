@@ -35,7 +35,9 @@ const Breadcrumbs: React.FC = () => {
       <div className={style.path}>
         {breadcrumbs.map(({ breadcrumb, match }, index) => (
           <span className={style.step} key={match.pathname}>
-            <NavLink to={match.pathname || ""}>{getPathTitle(match.pathname)}</NavLink>
+            <NavLink to={match.pathname || ""}>
+              {getPathTitle(match.pathname)}
+            </NavLink>
           </span>
         ))}
       </div>
