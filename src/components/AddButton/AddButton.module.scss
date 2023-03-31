@@ -19,28 +19,24 @@
   letter-spacing: 0.15em;
   border-radius: $secondary-ui-height;
 
-  &__text {
-    color: inherit;
-  }
-
-  &__icon {
+  .icon {
     display: flex;
     align-items: center;
+  }  
+}
+
+
+.done {
+  color: $button-color;
+  background-color: var(--body-bg-color);
+
+  & svg path {
+    fill: $button-color;
   }
 
-
-  &_done {
-    color: $button-color;
-    background-color: var(--body-bg-color);
-
-    & svg path {
-      fill: $button-color;
-    }
-
-    & .counter_badge {
-      color: white !important;
-      background-color: $button-color !important;
-    }
+  & .counter_badge {
+    color: white !important;
+    background-color: $button-color !important;
   }
 }
 

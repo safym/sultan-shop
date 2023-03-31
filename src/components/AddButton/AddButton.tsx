@@ -1,7 +1,7 @@
 import { Product } from "../../app/slices/productsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { addItem } from "../../app/slices/cartSlice";
-import styles from "./AddButton.module.scss";
+import style from "./AddButton.module.scss";
 
 interface productItemProps {
   productData: Product,
@@ -18,14 +18,15 @@ const AddButton: React.FC<productItemProps> = (props: productItemProps) => {
   const addedItem = cartItems.find((item) => item.id === props.productData.id)
   
   return (
-    <button className={`${styles.button}  ${(addedItem?.count) ? styles.button_done : ""}`} onClick={() => add(props.productData)}>
-      <span className={styles.button__text}>
+    <button className={`${style.button}  ${(addedItem?.count) ? style.done : ""}`} 
+      onClick={() => add(props.productData)}>
+      <span className={style.text}>
         {(addedItem?.count)
           ? "В КОРЗИНЕ"
           : "В КОРЗИНУ"
         }
       </span>
-      <span className={styles.button__icon}>
+      <span className={style.icon}>
         <svg width="27" height="27" viewBox="0 0 27 27" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path
@@ -33,7 +34,7 @@ const AddButton: React.FC<productItemProps> = (props: productItemProps) => {
             fill="white" />
         </svg>
       </span>
-      <span className={styles.badge}>{addedItem?.count}</span>
+      <span className={style.badge}>{addedItem?.count}</span>
     </button>
   );
 }
