@@ -1,16 +1,24 @@
 .checkbox {
   color: var(--darkTextColor);
 
-  &__counter {
+  .counter {
     font-size: 10px;
     color: inherit;
   }
 
-  &__input {
+  .input {
     margin-right: 10px;
+
+    &:checked+.label {
+      font-weight: 700;
+    }
   }
 
-  &__text {
+  .hidden {
+    display: none;
+  }
+
+  .text {
     margin-right: 5px;
   }
 
