@@ -1,7 +1,7 @@
 import { Product } from "../slices/productsSlice";
 
 export async function getProducts(): Promise<Product[]> {
-  const results = await fetch("../products.json");
+  const results = await fetch("https://ayyansea.com/api/products");
   const products = results.json();
   return products;
 }

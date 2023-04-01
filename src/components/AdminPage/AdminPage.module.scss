@@ -1,16 +1,43 @@
 @import "../../scss/variables";
 
 .edit {
+
   .body {
+    color: var(--darkTextColor);
     display: flex;
+    flex-direction: column;
     margin: 50px 0;
+    font-size: 16px;
+  }
+  .subtitle {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .fieldsWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  .modeWrapper {
+    display: flex;
+    column-gap: 30px;
   }
   .form {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    min-width: 500px;
     position: relative;
+  }
+  .row {
+    display: flex;
+    column-gap: 10px;
+  }
+  .styledRadio {
+    margin-right: 10px;
+  }
+  .styledInput:disabled {
+    color: gray;
+    background-color: rgb(238, 238, 238);
   }
   .styledSelect,
   .styledInput {
