@@ -3,6 +3,7 @@ import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { useAppSelector } from "../../app/hooks"
 
 import style from "./Breadcrumbs.module.scss"
+import mainStyle from "../../scss/_container.module.scss"
 
 const Breadcrumbs: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
@@ -26,13 +27,12 @@ const Breadcrumbs: React.FC = () => {
     }
   }
 
-  if (!breadcrumbs) {
+  if (!breadcrumbs || breadcrumbs.length === 1) {
     return <></>
   }
 
   return (
-
-      <div className={style.path}>
+      <div className={`${style.path} ${mainStyle.container} ${mainStyle.content}`}>
         {breadcrumbs.map(({ breadcrumb, match }, index) => (
           <span className={style.step} key={match.pathname}>
             <NavLink to={match.pathname || ""}>

@@ -4,6 +4,8 @@ import CartItem from "../CartItem";
 import buttonStyle from "../../scss/components/_button.module.scss";
 import CartEmpty from "../CartEmpty/CartEmpty";
 
+import mainStyle from "../../scss/_container.module.scss"
+
 const Cart: React.FC = () => {
   const cart = useAppSelector(state => state.cart);
   const productsItems = useAppSelector((state) => state.products.productsItems);
@@ -15,7 +17,7 @@ const Cart: React.FC = () => {
   }
 
   return (
-    <section className="content__cart cart">
+    <section className={`content__cart cart ${mainStyle.container} ${mainStyle.content}`}>
       <div className="cart__container _container">
         <div className="cart__body">
           <div className="cart__title-wrapper">

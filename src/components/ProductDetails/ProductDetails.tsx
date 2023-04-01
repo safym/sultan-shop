@@ -1,12 +1,13 @@
-import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { useAppSelector } from "../../app/hooks";
+import { useParams } from "react-router-dom"
+import { useState } from "react"
+import { useAppSelector } from "../../app/hooks"
 
-import Measurement from "../Measurement/Measurement";
-import AddButton from "../AddButton/AddButton";
-import Counter from "../Counter/Counter";
+import Measurement from "../Measurement/Measurement"
+import AddButton from "../AddButton/AddButton"
+import Counter from "../Counter/Counter"
 
-import style from "./ProductDetails.module.scss";
+import style from "./ProductDetails.module.scss"
+import mainStyle from "../../scss/_container.module.scss"
 import expandedBlockStyle from "../../scss/components/_expanded-block.module.scss"
 
 const ProductDetails: React.FC = () => {
@@ -33,7 +34,7 @@ const ProductDetails: React.FC = () => {
   if (!product) return <></>
 
   return (
-    <section className={style.section}>
+    <section className={`${style.section} ${mainStyle.container} ${mainStyle.content}`}>
       <div className={style.container} >
         <div className={style.body}>
           <div className={style.image}>

@@ -6,8 +6,8 @@ import buttonStyle from "../../scss/components/_button.module.scss";
 
 const Footer: React.FC = () => {
   return (
-    <footer className={style.footer}>
-      <div className={`${style.container} ${mainStyle.container}`}>
+    <footer className={`${style.footer} `}>
+      <div className={`${style.container} ${mainStyle.content} ${mainStyle.container}`}>
         <div className={`${style.main} ${style.column}`}>
           <svg className={style.logo} width="156" height="66" viewBox="0 0 156 66" fill="none"
             xmlns="http://www.w3.org/2000/svg">

@@ -7,6 +7,8 @@ import Sort from "../Sort/Sort";
 import { sortByField } from "../../utils/sort"
 import { getFilteredItems } from "../../utils/getFilteredItems";
 
+import mainStyle from "../../scss/_container.module.scss"
+
 const Products: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems);
   const sort = useAppSelector((state) => state.sort.type);
@@ -17,7 +19,7 @@ const Products: React.FC = () => {
 
   return (
     <section className="content__products products">
-      <div className="products__container _container">
+      <div className={`products__container ${mainStyle.container} ${mainStyle.content}`}>
         <div className="products__body">
           <div className="products__title-wrapper">
             <h1 className="products__title title">Косметика и гигиена</h1>

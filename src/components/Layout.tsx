@@ -11,7 +11,7 @@ const Layout: React.FC = () => {
     <div className={mainStyle.wrapper}>
       <ScrollToTop />
       <Header />
-      <div className={mainStyle.container}>
+      <div>
         <Breadcrumbs />
         <Outlet />
       </div>
