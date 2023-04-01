@@ -1,0 +1,23 @@
+@import "../../scss/variables";
+
+.edit {
+  .body {
+    display: flex;
+    margin: 50px 0;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    min-width: 500px;
+    position: relative;
+  }
+  .styledSelect,
+  .styledInput {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+  }
+}

@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from "./app/hooks"
 import { useEffect, useState } from "react"
 import { getProducts } from "./app/data/api"
 import { setProducts } from "./app/slices/productsSlice"
-import EditProduct from "./components/EditProduct/EditProduct"
+import AdminPage from "./components/AdminPage/AdminPage"
 
 function App() {
   // load product data from json to redux state
@@ -32,7 +32,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:productId" element={<ProductDetails />}/>
-          <Route path="/products/:productId/edit/" element={<EditProduct />}/>
+          <Route path="/edit/" element={<AdminPage />}/>
         </Route>
       </Routes>
     </BrowserRouter>
