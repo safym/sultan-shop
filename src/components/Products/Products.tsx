@@ -1,6 +1,6 @@
 import React from "react"
 import { useAppSelector } from "../../app/hooks"
-import ProductItem from "../ProductItem"
+import ProductItem from "../ProductItem/ProductItem"
 import FilterSidebar from "../FilterSidebar/FilterSidebar"
 import FilterCategories from "../FilterCategories/FilterCategories"
 import Sort from "../Sort/Sort"

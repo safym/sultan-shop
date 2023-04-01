@@ -264,66 +264,62 @@ body {
 /// ---------------------------------PRODUCT-ITEM----------------------------------------//
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-.product-item {
-  width: 326px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 10px;
+// .product-item {
+//   width: 326px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   row-gap: 10px;
 
-  box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
-  border-radius: 10px;
-  padding: 20px;
+//   box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
+//   border-radius: 10px;
+//   padding: 20px;
 
-  &__body {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-  }
+//   &__body {
+//     display: flex;
+//     flex-direction: column;
+//     row-gap: 10px;
+//   }
 
-  &__image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+//   &__image-wrapper {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
 
-  &__image {
-    max-height: 250px;
-  }
+//   &__image {
+//     max-height: 250px;
+//   }
 
-  &__name {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 130%;
-  }
+//   &__name {
+//     font-weight: 500;
+//     font-size: 16px;
+//     line-height: 130%;
+//   }
 
-  &__info {
-    flex: 1 1 auto;
-  }
+//   &__info {
+//     flex: 1 1 auto;
+//   }
 
-  &__property-title {
-    color: var(--darkTextColor);
-    display: flex;
-    -moz-column-gap: 5px;
-    column-gap: 5px;
-  }
+//   &__property-title {
+//     color: var(--darkTextColor);
+//     display: flex;
+//     -moz-column-gap: 5px;
+//     column-gap: 5px;
+//   }
 
-  &__property-value {
-    font-weight: 500;
-    color: var(--mainTextColor);
-  }
-
-
-  &__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+//   &__property-value {
+//     font-weight: 500;
+//     color: var(--mainTextColor);
+//   }
 
 
-}
+//   &__footer {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
 
-.price {
-  font-weight: 800;
-  font-size: 16px;
-}
+
+// }
+
