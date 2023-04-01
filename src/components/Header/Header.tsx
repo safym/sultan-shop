@@ -1,63 +1,80 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
-import { useAppSelector } from "../app/hooks"
-import Search from './Search/Search'
+import { useAppSelector } from "../../app/hooks"
+import Search from '../Search/Search'
 
-import buttonStyle from "../scss/components/_button.module.scss"
+import style from "./Header.module.scss"
+import buttonStyle from "../../scss/components/_button.module.scss"
+import contactStyle from "../../scss/components/_contact.module.scss"
+import dividerStyle from "../../scss/components/_divider.module.scss"
 
 const Header: React.FC = () => {
   const cart = useAppSelector((state) => state.cart)
 
   return (
-    <header className="app-header">
-      <div className="app-header__container ">
-        <div className="app-header__top-wrapper">
-          <div className="app-header__top  app-header__row-container">
-            <div className="app-header__contact-wrapper ">
-              <div className="app-header__contact-info contact-info">
-                <svg className="contact-info__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+    <header className={style.header}>
+      <div className={style.container}>
+        <div className={style.topWrapper}>
+          <div className={`${style.top}  ${style.row}`}>
+            <div className={style.contactsWrapper}>
+              <div className={contactStyle.contact}>
+                <svg className={contactStyle.icon}
+                  width="20" height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M10 10.8335C11.3807 10.8335 12.5 9.71421 12.5 8.3335C12.5 6.95278 11.3807 5.8335 10 5.8335C8.61929 5.8335 7.5 6.95278 7.5 8.3335C7.5 9.71421 8.61929 10.8335 10 10.8335Z"
-                    stroke="#3F4E65" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                    stroke="#3F4E65"
+                    strokeWidth="1.3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round" />
                   <path
                     d="M9.99967 1.66675C8.23156 1.66675 6.53587 2.36913 5.28563 3.61937C4.03539 4.86961 3.33301 6.5653 3.33301 8.33342C3.33301 9.91008 3.66801 10.9417 4.58301 12.0834L9.99967 18.3334L15.4163 12.0834C16.3313 10.9417 16.6663 9.91008 16.6663 8.33342C16.6663 6.5653 15.964 4.86961 14.7137 3.61937C13.4635 2.36913 11.7678 1.66675 9.99967 1.66675V1.66675Z"
-                    stroke="#3F4E65" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                    stroke="#3F4E65"
+                    strokeWidth="1.3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round" />
                 </svg>
-                <div className="contact-info__link-wrapper">
-                  <a className="contact-info__link contact-link">г. Кокшетау, ул. Ж. Ташенова 129Б</a>
-                  <span className="contact-info__subtitle">(Рынок Восточный)</span>
+                <div className={contactStyle.wrapper}>
+                  <a className={contactStyle.link}>г. Кокшетау, ул. Ж. Ташенова 129Б</a>
+                  <span className={contactStyle.subtitle}>(Рынок Восточный)</span>
                 </div>
               </div>
-              <div className="app-header__contact-info contact-info">
-                <svg className="contact-info__icon" width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <div className={contactStyle.contact}>
+                <svg className={contactStyle.icon}
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M4.37533 3.33325H15.6253C16.3171 3.33321 16.9827 3.59788 17.4855 4.07298C17.9884 4.54808 18.2903 5.19758 18.3295 5.88825L18.3337 6.04158V13.9583C18.3337 14.65 18.069 15.3156 17.5939 15.8184C17.1188 16.3213 16.4693 16.6233 15.7787 16.6624L15.6253 16.6666H4.37533C3.68354 16.6666 3.01797 16.402 2.51513 15.9269C2.0123 15.4518 1.71032 14.8023 1.67116 14.1116L1.66699 13.9583V6.04158C1.66695 5.3498 1.93162 4.68423 2.40672 4.18139C2.88182 3.67856 3.53132 3.37658 4.22199 3.33742L4.37533 3.33325H15.6253H4.37533ZM17.0837 7.81075L10.292 11.3858C10.2153 11.4263 10.131 11.4504 10.0445 11.4565C9.958 11.4627 9.87115 11.4508 9.78949 11.4216L9.70949 11.3866L2.91699 7.81158V13.9583C2.91701 14.3242 3.05463 14.6768 3.30256 14.9461C3.55048 15.2153 3.89058 15.3815 4.25533 15.4116L4.37533 15.4166H15.6253C15.9915 15.4166 16.3442 15.2788 16.6134 15.0307C16.8827 14.7826 17.0487 14.4423 17.0787 14.0774L17.0837 13.9583V7.81075ZM15.6253 4.58325H4.37533C4.00933 4.58327 3.65673 4.72089 3.3875 4.96882C3.11827 5.21674 2.95211 5.55683 2.92199 5.92159L2.91699 6.04158V6.39908L10.0003 10.1266L17.0837 6.39825V6.04158C17.0836 5.67546 16.9459 5.32274 16.6978 5.0535C16.4497 4.78425 16.1094 4.61817 15.7445 4.58825L15.6253 4.58325Z"
                     fill="#3F4E65" />
                 </svg>
-                <div className="contact-info__link-wrapper">
-                  <a className="contact-info__link contact-link">opt.sultan@mail.ru</a>
-                  <span className="contact-info__subtitle">На связи в любое время</span>
+                <div className={contactStyle.wrapper}>
+                  <a className={contactStyle.link}>opt.sultan@mail.ru</a>
+                  <span className={contactStyle.subtitle}>На связи в любое время</span>
                 </div>
               </div>
             </div>
-            <nav className="app-header__nav">
-              <a className="app-header__nav-link">О компании</a>
-              <span className="app-header__divider divider divider_size_long"></span>
-              <a className="app-header__nav-link">Доставка и оплата</a>
-              <span className="app-header__divider divider divider_size_long"></span>
-              <a className="app-header__nav-link">Возврат</a>
-              <span className="app-header__divider divider divider_size_long"></span>
-              <a className="app-header__nav-link">Контакты</a>
+            <nav className={style.nav}>
+              <a className={style.navLink}>О компании</a>
+              <a className={style.navLink}>Доставка и оплата</a>
+              <a className={style.navLink}>Возврат</a>
+              <a className={style.navLink}>Контакты</a>
             </nav>
           </div>
         </div>
-        <div className="app-header__bottom-wrapper">
-          <div className="app-header__bottom  app-header__row-container">
-            <div className="app-header__left-column">
+        <div className={style.bottomWrapper}>
+          <div className={`${style.bottom} ${style.row}`}>
+            <div className={style.left}>
               <NavLink to="/">
-                <svg className="app-header__logo" width="156" height="66" viewBox="0 0 156 66" fill="none"
+                <svg className={style.logo}
+                  width="156"
+                  height="66"
+                  viewBox="0 0 156 66"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <g clipPath="url(#clip0_4602_674)">
                     <path
@@ -94,11 +111,15 @@ const Header: React.FC = () => {
                   </defs>
                 </svg>
               </NavLink>
-              <div className="app-header__actions-wrapper">
-                <NavLink to="/products" className={`app-header__action ${buttonStyle.button}`}>
+              <div className={style.actions}>
+                <NavLink to="/products" className={`${style.action} ${buttonStyle.button}`}>
                   <span>Каталог</span>
                   <span className={buttonStyle.icon}>
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="15"
+                      height="15"
+                      viewBox="0 0 15 15"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H6C6.27614 0.5 6.5 0.723858 6.5 1V6C6.5 6.27614 6.27614 6.5 6 6.5H1C0.723858 6.5 0.5 6.27614 0.5 6V2Z"
                         stroke="white" />
@@ -117,43 +138,52 @@ const Header: React.FC = () => {
                 <Search />
               </div>
             </div>
-            <div className="app-header__right-column">
-              <div className="app-header__call-wrapper">
-                <div className="app-header__call-text">
-                  <a className="app-header__phone-number contact-link">+7 (777) 490-00-91</a>
-                  <p className="app-header__schedule">время работы: 9:00-20:00</p>
-                  <a className="app-header__order-call">Заказать звонок</a>
+            <div className={style.right}>
+              <div className={style.call}>
+                <div className={style.textColumn}>
+                  <a className={contactStyle.link}>+7 (777) 490-00-91</a>
+                  <p className={style.schedule}>время работы: 9:00-20:00</p>
+                  <a className={style.orderCall}>Заказать звонок</a>
                 </div>
-                <div className="app-header__call-image">
+                <div className={style.callImage}>
                   <img src="./../src/assets/img/call.png" alt="consultant" />
                 </div>
               </div>
-              <span className="app-header__divider divider divider_size_short"></span>
+              <span className={dividerStyle.divider}></span>
               <a className={buttonStyle.button}>
                 <span>Прайс-лист</span>
                 <span className={buttonStyle.icon}>
-                  <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="18"
+                    height="17"
+                    viewBox="0 0 18 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M13.958 6.375H11.1247V2.125H6.87467V6.375H4.04134L8.99967 12.0417L13.958 6.375ZM3.33301 13.4583H14.6663V14.875H3.33301V13.4583Z"
                       fill="white" />
                   </svg>
                 </span>
               </a>
-              <span className="app-header__divider divider divider_size_short"></span>
-              <NavLink to="/cart" className="app-header__cart-button cart-button">
-                <div className="cart-button__icon-wrapper">
-                  <span className="cart-button__items-counter">
+              <span className={dividerStyle.divider}></span>
+              <NavLink to="/cart" className={style.cartLink}>
+                <div className={style.icon}>
+                  <span className={style.counter}>
                     {cart.totalCount}
                   </span>
-                  <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    width="46"
+                    height="46"
+                    viewBox="0 0 46 46"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M41.6514 13.7862C41.3916 13.4233 41.043 13.2418 40.6055 13.2418H12.7559L12 11.274C11.8086 10.6289 11.5488 10.0778 11.2207 9.6208C10.8926 9.16381 10.5439 8.84123 10.1748 8.65306C9.80566 8.46489 9.48438 8.3372 9.21094 8.27C8.9375 8.20279 8.66406 8.16919 8.39062 8.16919H2.77148C2.41602 8.16919 2.11523 8.29016 1.86914 8.53209C1.62305 8.77403 1.5 9.08317 1.5 9.45951C1.5 9.67457 1.55469 9.8829 1.66406 10.0845C1.77344 10.2861 1.93066 10.4407 2.13574 10.5482C2.34082 10.6557 2.55273 10.7095 2.77148 10.7095H8.39062C8.5 10.7095 8.60254 10.723 8.69824 10.7498C8.79395 10.7767 8.92383 10.891 9.08789 11.0926C9.25195 11.2942 9.38867 11.5966 9.49805 11.9998L15.3809 28.1531C15.4355 28.3144 15.5244 28.4689 15.6475 28.6168C15.7705 28.7646 15.9141 28.8789 16.0781 28.9595C16.2422 29.0402 16.4199 29.0805 16.6113 29.0805H34.3301C34.6035 29.0805 34.8564 28.9998 35.0889 28.8385C35.3213 28.6773 35.4785 28.4756 35.5605 28.2337L41.8359 14.9757C41.9727 14.5456 41.9111 14.1491 41.6514 13.7862ZM33.4277 26.4998H17.6367L13.4531 15.8225H38.7188L33.4277 26.4998ZM31.0625 30.4798C30.1602 30.4798 29.3877 30.7957 28.7451 31.4274C28.1025 32.0591 27.7812 32.8186 27.7812 33.7057C27.7812 34.5928 28.1025 35.3522 28.7451 35.9839C29.3877 36.6156 30.1602 36.9315 31.0625 36.9315C31.9648 36.9315 32.7373 36.6156 33.3799 35.9839C34.0225 35.3522 34.3438 34.5928 34.3438 33.7057C34.3438 32.8186 34.0225 32.0591 33.3799 31.4274C32.7373 30.7957 31.9648 30.4798 31.0625 30.4798ZM19.25 30.4798C18.6484 30.4798 18.0947 30.6277 17.5889 30.9234C17.083 31.2191 16.6865 31.6089 16.3994 32.0927C16.1123 32.5766 15.9688 33.1143 15.9688 33.7057C15.9688 34.5928 16.29 35.3522 16.9326 35.9839C17.5752 36.6156 18.3477 36.9315 19.25 36.9315C20.1523 36.9315 20.9248 36.6156 21.5674 35.9839C22.21 35.3522 22.5312 34.5928 22.5312 33.7057C22.5312 33.4906 22.5107 33.2755 22.4697 33.0605C22.4287 32.8454 22.3672 32.6438 22.2852 32.4557C22.2031 32.2675 22.1006 32.086 21.9775 31.9113C21.8545 31.7366 21.7178 31.5753 21.5674 31.4274C21.417 31.2796 21.2529 31.1452 21.0752 31.0242C20.8975 30.9032 20.7129 30.8024 20.5215 30.7218C20.3301 30.6411 20.125 30.5806 19.9062 30.5403C19.6875 30.5 19.4688 30.4798 19.25 30.4798Z"
                       fill="#3F4E65" />
                   </svg>
                 </div>
-                <div className="cart-button__total-wrapper">
-                  <p className="cart-button__title">Корзина</p>
-                  <p className="cart-button__total">{cart.totalPrice.toFixed(2)} ₸</p>
+                <div className={style.text}>
+                  <p className={style.title}>Корзина</p>
+                  <p className={style.total}>{cart.totalPrice.toFixed(2)} ₸</p>
                 </div>
               </NavLink>
             </div>

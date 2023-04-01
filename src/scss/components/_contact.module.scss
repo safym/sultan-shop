@@ -1,0 +1,26 @@
+@import "../variables";
+
+.contact {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: $offset;
+    max-width: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subtitle {
+    font-weight: 300;
+    color: var(--darkTextColor);
+  }
+}
+
+.link {
+  color: inherit;
+  font-weight: 600;
+}
