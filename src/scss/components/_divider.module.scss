@@ -1,0 +1,9 @@
+@import "../variables";
+
+.divider {
+  height: 50px;
+  border: $dash-border;
+  opacity: 0.7;
+  height: 100%;
+  margin: 0 30px;
+}
