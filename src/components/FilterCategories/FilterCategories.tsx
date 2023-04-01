@@ -6,7 +6,7 @@ import style from "./FilterCategories.module.scss"
 
 const FilterCategories: React.FC = () => {
   const dispatch = useAppDispatch()
-  
+
   const productsItems = useAppSelector((state) => state.products.productsItems)
   const filters = useAppSelector((state) => state.filter)
   const categoryList = getCateroryList(productsItems)
@@ -28,18 +28,16 @@ const FilterCategories: React.FC = () => {
         const checked = filters.category === item
 
         return (
-          <span key={key} 
+          <span key={key}
             className={`${style.card}  ${(checked) ? style.checked : ''}`} >
-            <label className={style.label}
-              htmlFor={key}>
+            <label className={style.label}>
               {item}
+              <input className={style.input}
+                value={item} name="category"
+                onChange={categoryOnChange}
+                checked={filters.category === item}
+                type="checkbox" />
             </label>
-            <input className={style.input}
-              id={key}
-              value={item} name="category"
-              onChange={categoryOnChange}
-              checked={filters.category === item} 
-              type="checkbox"/>
           </span >
         )
       })}

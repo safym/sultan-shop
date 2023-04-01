@@ -73,8 +73,8 @@ const FilterSidebar: React.FC = () => {
         </div>
         <div className={style.priceWrapper}>
           <input className={style.priceInput}
-            placeholder="0" 
-            value={filters.minPrice} 
+            placeholder="0"
+            value={filters.minPrice}
             onChange={minOnChange}
             type="text" />
           <span className={style.dash}>-</span>
@@ -90,19 +90,16 @@ const FilterSidebar: React.FC = () => {
         <Search />
         <ul className={style.list}>
           {manufacturersList.map((item, index) => {
-            const id = `manufacturerItem_${index}`
             const checked = filters.manufacturers.includes(item.manufacturer)
 
             return (
               <li className={`${style.listItem} ${checkboxStyle.checkbox}`}
                 key={`Manufacturer_${index}`}>
-                <input className={checkboxStyle.input}
-                  id={id}
-                  value={item.manufacturer} onChange={manufacturerOnChange}
-                  checked={checked}
-                  type="checkbox" />
-                <label className={checkboxStyle.label} 
-                  htmlFor={id}>
+                <label className={checkboxStyle.label}>
+                  <input className={checkboxStyle.input}
+                    value={item.manufacturer} onChange={manufacturerOnChange}
+                    checked={checked}
+                    type="checkbox" />
                   <span className={checkboxStyle.text}>{item.manufacturer}</span>
                   <span className={checkboxStyle.counter}>({item.countItems})</span>
                 </label>
@@ -137,21 +134,18 @@ const FilterSidebar: React.FC = () => {
       <div className={style.list}>
         <form className={`${style.list} ${style.categoriesList}`}>
           {categoryList.map((item, index) => {
-            const id = `categoryItem_${index}`
             const checked = filters.category === item
 
             return (
               <span className={`${style.listItem} ${checkboxStyle.checkbox}`}
                 key={`Category_${index}`}>
-                <input className={`${checkboxStyle.input} ${checkboxStyle.hidden}`}
-                  id={id}
-                  value={item} name="category"
-                  onChange={categoryOnChange}
-                  checked={checked}
-                  type="checkbox" />
-                <label className={checkboxStyle.label}
-                  htmlFor={id}>
+                <label className={`${checkboxStyle.label} ${(checked) ? checkboxStyle.checked : ''}`}>
                   {item}
+                  <input className={`${checkboxStyle.input} ${checkboxStyle.hidden}`}
+                    value={item} name="category"
+                    onChange={categoryOnChange}
+                    checked={checked}
+                    type="checkbox" />
                 </label>
               </span >
             )
