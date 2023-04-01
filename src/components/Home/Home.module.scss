@@ -1,0 +1,37 @@
+@import "../../scss/variables";
+
+$index: calc(1vh + 1vw);
+$min-height: 650px;
+
+.home {
+  min-height: $min-height;
+  position: relative;
+  color: var(--body-bg-color);
+
+  .wrapper {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+  }
+
+  .image {
+    object-fit: cover;
+    min-height: $min-height;
+    position: absolute;
+    z-index: -1
+  }
+
+  .title {
+    margin-bottom: 40px;
+    max-width: 700px;
+    font-size: calc($index * 2.8);
+    line-height: 110%;
+  }
+
+  .subtitle {
+    font-weight: 700;
+    font-size: calc($index * 1.2);
+    text-transform: uppercase;
+    margin-bottom: 80px;
+  }
+}
