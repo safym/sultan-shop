@@ -55,15 +55,11 @@
     white-space: pre-wrap;
   }
 
-  &__info {
-    flex: 1 1 auto;
-  }
-
-  &__counter {
+  .counter {
     display: flex;
   }
 
-  &__total-value {
+  .total {
     text-align: center;
     min-width: 200px;
   }
@@ -71,6 +67,7 @@
   .controls {
     height: $secondary-ui-height;
     display: flex;
+    column-gap: 20px;
     align-items: center;
     justify-content: space-between;
   }
