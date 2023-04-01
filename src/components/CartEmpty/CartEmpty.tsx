@@ -2,13 +2,13 @@ import { NavLink } from "react-router-dom";
 
 import style from "./CartEmpty.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
-// import titleStyle from "../../scss/components/__title"
+import titleStyle from "../../scss/components/_title.module.scss"
 
 const CartEmpty: React.FC = () => {
   return (
     <section className={`${style.cartEmpty} ${mainStyle.container} ${mainStyle.content}`}>
       <div className={style.body}>
-          <h1 className={`${style.title}`}>
+          <h1 className={`${titleStyle.title}`}>
             Корзина
           </h1>
           <div className={style.message}>
