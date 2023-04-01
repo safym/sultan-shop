@@ -199,24 +199,6 @@ body {
   font-weight: 600;
 }
 
-.divider {
-  height: 50px;
-  border: $dash-border;
-  opacity: 0.1;
-
-  &_size {
-    &_long {
-      height: 100%;
-      margin: 0 30px;
-    }
-
-    &_short {
-      height: 50px;
-      margin: 0 25px;
-    }
-  }
-}
-
 //---field---------------------------------------------------------------//
 
 .cart-button {
@@ -279,93 +261,6 @@ body {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-/// --------------------------------------CONTENT----------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
-.content {
-  flex: 1 1 auto;
-  padding: 50px 0 0 0;
-
-  &__products {
-    margin-bottom: 50px;
-  }
-
-  &__app-footer {}
-}
-
-.page-header {
-  &__container {
-    padding: 0 15px;
-    box-sizing: content-box;
-  }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////
-/// --------------------------------------PRODUCTS---------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
-// .products {
-//   position: relative;
-
-//   &__title-wrapper {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     margin-bottom: 25px;
-//   }
-
-//   &__title {
-//     text-transform: uppercase;
-//   }
-
-//   &__content {
-//     position: relative;
-//     display: flex;
-//     justify-content: space-between;
-//   }
-
-//   &__list-wrapper {
-//     flex-grow: 1;
-//   }
-
-//   &__list {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-//     justify-items: center;
-//     column-gap: 21px;
-//     row-gap: 21px;
-//   }
-
-//   &__pages {
-//     margin: 50px 0;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-
-//   &__description {
-//     color: var(--darkTextColor)
-//   }
-// }
-
-///////////////////////////////////////////////////////////////////////////////////////////
-/// -----------------------------------FILTER-SIDEBAR------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
-
-
-.show-hide-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--darkTextColor);
-
-  &__direction-arrow {
-
-    & svg {
-      margin-left: 5px;
-      margin-bottom: 2px;
-    }
-  }
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////
 /// ---------------------------------PRODUCT-ITEM----------------------------------------//
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -425,96 +320,10 @@ body {
     align-items: center;
   }
 
-  &__price-currency,
-  &__price-value {
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 130%;
-  }
-}
 
-///////////////////////////////////////////////////////////////////////////////////////////
-/// -----------------------------------CART-ITEM-----------------------------------------//
-///////////////////////////////////////////////////////////////////////////////////////////
-
-.cart-item {
-  position: relative;
-
-  &__wrapper {
-    position: relative;
-    max-height: 290px;
-    padding: 50px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: $dash-border;
-  }
-
-  &__image-wrapper {
-    position: relative;
-    height: 290px;
-    width: 290px;
-    padding: 30px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__info-wrapper {
-    position: relative;
-    min-height: 190px;
-    max-width: 480px;
-    display: flex;
-    align-items: flex-start;
-    row-gap: 10px;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  &__image {
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  &__name {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 36px;
-  }
-
-  &__description {
-    font-size: 12px;
-    color: var(--darkTextColor);
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    white-space: pre-wrap;
-  }
-
-  &__info {
-    flex: 1 1 auto;
-  }
-
-  &__counter {
-    display: flex;
-  }
-
-  &__total-value {
-    text-align: center;
-    min-width: 200px;
-  }
-
-  &__controls-wrapper {
-    height: $secondary-ui-height;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
 }
 
 .price {
-  font-size: 30px;
-  display: inline-flex;
-  flex-wrap: nowrap;
+  font-weight: 800;
+  font-size: 16px;
 }

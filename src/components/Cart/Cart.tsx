@@ -1,5 +1,5 @@
 import { useAppSelector } from "../../app/hooks"
-import CartItem from "../CartItem"
+import CartItem from "../CartItem/CartItem"
 
 import buttonStyle from "../../scss/components/_button.module.scss"
 import CartEmpty from "../CartEmpty/CartEmpty"
