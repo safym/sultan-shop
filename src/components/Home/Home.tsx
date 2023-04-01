@@ -8,15 +8,13 @@ const Home: React.FC = () => {
   return (
     <div className={style.home}>
       <img className={style.image} src="./../src/assets/img/banner.png" alt="consultant" />
-      <div className={style.wrapper}>
-        <div className={mainStyle.content}>
-          <h1 className={style.title}>
-            Бытовая химия,
-            косметика
-            и хозтовары
-          </h1>
-          <h2 className={style.subtitle}>оптом по кокчетаву и области</h2>
-        </div>
+      <div className={`${style.wrapper} ${mainStyle.content} ${mainStyle.container}`}>
+        <h1 className={style.title}>
+          Бытовая химия,
+          косметика
+          и хозтовары
+        </h1>
+        <h2 className={style.subtitle}>оптом по кокчетаву и области</h2>
         <NavLink to="/products" className={`app-header__action ${buttonStyle.button}`}>
           <span>Каталог</span>
           <span className={buttonStyle.icon}>
@@ -37,7 +35,6 @@ const Home: React.FC = () => {
           </span>
         </NavLink>
       </div>
-
     </div>
   );
 }
