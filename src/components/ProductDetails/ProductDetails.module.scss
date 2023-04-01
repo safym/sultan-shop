@@ -1,6 +1,6 @@
 @import "../../scss/variables";
 
-.section {
+.details {
   .body {
     padding: 50px 0;
     flex-direction: row;
@@ -15,6 +15,18 @@
     width: 35%;
     min-width: 340px;
     margin: 0 auto;
+  }
+
+  .topWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .edit {
+    padding: 10px;
+    color: $dark-text-color;
+    border-radius: 30px;
+    border: 1px solid var( --border-color)
   }
 
   .info {

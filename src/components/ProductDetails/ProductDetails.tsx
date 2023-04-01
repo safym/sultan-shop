@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { NavLink, useParams } from "react-router-dom"
 import { useState } from "react"
 import { useAppSelector } from "../../app/hooks"
 
@@ -34,14 +34,20 @@ const ProductDetails: React.FC = () => {
   if (!product) return <></>
 
   return (
-    <section className={`${style.section} ${mainStyle.container} ${mainStyle.content}`}>
+    <section className={`${style.details} ${mainStyle.container} ${mainStyle.content}`}>
       <div className={style.container} >
         <div className={style.body}>
           <div className={style.image}>
             <img src={product?.imageURL} alt="product image" />
           </div>
           <div className={style.info}>
-            <p className={style.status}>В наличии</p>
+            <div className={style.topWrapper}>
+              <p className={style.status}>В наличии</p>
+              <NavLink className={style.edit} 
+                to={`edit`}>
+                Редактировать ✏️
+              </NavLink>
+            </div>
             <h2 className={style.title}><b>{product.brand}</b> {product.name}</h2>
             <Measurement {...product.measurement} />
 

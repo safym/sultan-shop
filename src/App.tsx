@@ -7,10 +7,11 @@ import Products from "./components/Products/Products"
 import Cart from "./components/Cart/Cart"
 import Layout from './components/Layout'
 import ProductDetails from "./components/ProductDetails/ProductDetails"
-import { useAppDispatch } from "./app/hooks"
-import { useEffect } from "react"
+import { useAppDispatch, useAppSelector } from "./app/hooks"
+import { useEffect, useState } from "react"
 import { getProducts } from "./app/data/api"
 import { setProducts } from "./app/slices/productsSlice"
+import EditProduct from "./components/EditProduct/EditProduct"
 
 function App() {
   // load product data from json to redux state
@@ -19,6 +20,7 @@ function App() {
   useEffect(() => {
     getProducts().then((products) => {
       dispatch(setProducts(products))
+
     })
   }, [])
   
@@ -30,6 +32,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products/:productId" element={<ProductDetails />}/>
+          <Route path="/products/:productId/edit/" element={<EditProduct />}/>
         </Route>
       </Routes>
     </BrowserRouter>
