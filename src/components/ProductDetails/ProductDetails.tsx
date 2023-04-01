@@ -41,13 +41,7 @@ const ProductDetails: React.FC = () => {
             <img src={product?.imageURL} alt="product image" />
           </div>
           <div className={style.info}>
-            <div className={style.topWrapper}>
-              <p className={style.status}>В наличии</p>
-              <NavLink className={style.edit} 
-                to={`edit`}>
-                Редактировать ✏️
-              </NavLink>
-            </div>
+            <p className={style.status}>В наличии</p>
             <h2 className={style.title}><b>{product.brand}</b> {product.name}</h2>
             <Measurement {...product.measurement} />
 
