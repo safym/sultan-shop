@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 
 import style from "./CartEmpty.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
@@ -35,7 +35,7 @@ const CartEmpty: React.FC = () => {
           </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default CartEmpty;
+export default CartEmpty

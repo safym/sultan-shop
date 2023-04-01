@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 
 import style from "./Home.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
         </NavLink>
       </div>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

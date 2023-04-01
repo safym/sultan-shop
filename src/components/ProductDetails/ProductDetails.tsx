@@ -11,22 +11,22 @@ import mainStyle from "../../scss/_container.module.scss"
 import expandedBlockStyle from "../../scss/components/_expanded-block.module.scss"
 
 const ProductDetails: React.FC = () => {
-  const [descrptionOpen, setDescrptionOpen] = useState(true);
-  const [specOpen, setSpecOpen] = useState(true);
+  const [descrptionOpen, setDescrptionOpen] = useState(true)
+  const [specOpen, setSpecOpen] = useState(true)
 
-  const { productId } = useParams();
-  const productsItems = useAppSelector((state) => state.products.productsItems);
+  const { productId } = useParams()
+  const productsItems = useAppSelector((state) => state.products.productsItems)
 
   const toggleDescriptionOpen = () => {
-    setDescrptionOpen(!descrptionOpen);
-  };
+    setDescrptionOpen(!descrptionOpen)
+  }
 
   const toggleSpecOpen = () => {
-    setSpecOpen(!specOpen);
-  };
+    setSpecOpen(!specOpen)
+  }
 
 
-  let product;
+  let product
   if (productId) {
     product = productsItems.find((item) => item.id === productId)
   }
@@ -198,7 +198,7 @@ const ProductDetails: React.FC = () => {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default ProductDetails;
+export default ProductDetails

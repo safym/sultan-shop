@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"
 import { Product } from "../app/slices/productsSlice"
 
-import AddButton from "./AddButton/AddButton";
-import Measurement from "./Measurement/Measurement";
+import AddButton from "./AddButton/AddButton"
+import Measurement from "./Measurement/Measurement"
 
 interface productItemProps {
   productData: Product,
@@ -45,7 +45,7 @@ const ProductItem: React.FC<productItemProps> = (props: productItemProps) => {
         <AddButton productData={props.productData} />
       </div>
     </li>
-  );
+  )
 }
 
-export default ProductItem;
+export default ProductItem

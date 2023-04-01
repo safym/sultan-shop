@@ -1,22 +1,22 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { getCateroryList } from "../../utils/getCateroryList";
-import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory } from "../../app/slices/filterSlice";
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { getCateroryList } from "../../utils/getCateroryList"
+import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory } from "../../app/slices/filterSlice"
 
-import Search from "../Search/Search";
+import Search from "../Search/Search"
 
 import style from "./FilterSidebar.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss";
-import checkboxStyle from "../../scss/components/_checkbox.module.scss";
+import buttonStyle from "../../scss/components/_button.module.scss"
+import checkboxStyle from "../../scss/components/_checkbox.module.scss"
 
 interface manufacturerItem {
-  manufacturer: string;
-  countItems: 1;
+  manufacturer: string
+  countItems: 1
 }
 
 const FilterSidebar: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const productsItems = useAppSelector((state) => state.products.productsItems);
-  const filters = useAppSelector((state) => state.filter);
+  const dispatch = useAppDispatch()
+  const productsItems = useAppSelector((state) => state.products.productsItems)
+  const filters = useAppSelector((state) => state.filter)
 
   const categoryList = getCateroryList(productsItems)
 
@@ -28,8 +28,8 @@ const FilterSidebar: React.FC = () => {
     } else {
       isAdded.countItems++
     }
-    return result;
-  }, []);
+    return result
+  }, [])
 
   const minOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const price = event.target.value.replace(/\D/g, '')
@@ -91,7 +91,7 @@ const FilterSidebar: React.FC = () => {
         <ul className={style.list}>
           {manufacturersList.map((item, index) => {
             const id = `manufacturerItem_${index}`
-            const checked = filters.manufacturers.includes(item.manufacturer);
+            const checked = filters.manufacturers.includes(item.manufacturer)
 
             return (
               <li className={`${style.listItem} ${checkboxStyle.checkbox}`}
@@ -138,7 +138,7 @@ const FilterSidebar: React.FC = () => {
         <form className={`${style.list} ${style.categoriesList}`}>
           {categoryList.map((item, index) => {
             const id = `categoryItem_${index}`
-            const checked = filters.category === item;
+            const checked = filters.category === item
 
             return (
               <span className={`${style.listItem} ${checkboxStyle.checkbox}`}
@@ -159,7 +159,7 @@ const FilterSidebar: React.FC = () => {
         </form>
       </div>
     </div>
-  );
+  )
 }
 
-export default FilterSidebar;
+export default FilterSidebar

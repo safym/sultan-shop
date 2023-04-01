@@ -1,25 +1,25 @@
 import styles from "./Measurement.module.scss"
 
-const WEIGHT_UNITS = ['мг', 'г', 'кг'];
-const VOLUME_UNITS = ['мл', 'л'];
+const WEIGHT_UNITS = ['мг', 'г', 'кг']
+const VOLUME_UNITS = ['мл', 'л']
 
 interface MeasurementProps {
-  type: string;
-  value: string;
+  type: string
+  value: string
 }
 
 const Measurement: React.FC<MeasurementProps> = (props: MeasurementProps) => {
-  const isWeight: boolean = WEIGHT_UNITS.includes(props.type);
-  const isVolume: boolean = VOLUME_UNITS.includes(props.type);
+  const isWeight: boolean = WEIGHT_UNITS.includes(props.type)
+  const isVolume: boolean = VOLUME_UNITS.includes(props.type)
 
   const renderIcon = () => {
     switch (true) {
       case isWeight:
-        return <BoxIcon />;
+        return <BoxIcon />
       case isVolume:
-        return <BottleIcon />;
+        return <BottleIcon />
       default: 
-        return <BoxIcon />;
+        return <BoxIcon />
     }
   }
   
@@ -30,7 +30,7 @@ const Measurement: React.FC<MeasurementProps> = (props: MeasurementProps) => {
         {props.value} {props.type}
       </span>
     </p>
-  );
+  )
 }
 
 const BoxIcon: React.FC = () => {
@@ -72,4 +72,4 @@ const BottleIcon: React.FC = () => {
 }
 
 
-export default Measurement;
+export default Measurement

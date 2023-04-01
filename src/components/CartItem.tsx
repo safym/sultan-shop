@@ -1,20 +1,20 @@
-import { NavLink } from "react-router-dom";
-import { Product } from "../app/slices/productsSlice";
+import { NavLink } from "react-router-dom"
+import { Product } from "../app/slices/productsSlice"
 import { CartItem as CartItemData } from "../app/slices/cartSlice"
-import { useAppDispatch } from "../app/hooks";
-import { removeItem } from "../app/slices/cartSlice";
-import Measurement from "./Measurement/Measurement";
-import Counter from "./Counter/Counter";
+import { useAppDispatch } from "../app/hooks"
+import { removeItem } from "../app/slices/cartSlice"
+import Measurement from "./Measurement/Measurement"
+import Counter from "./Counter/Counter"
 
 import buttonStyle from "../scss/components/_button.module.scss"
 
 export interface CartItemProps {
-  product: Product;
-  cartItem: CartItemData;
+  product: Product
+  cartItem: CartItemData
 }
 
 const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const remove = (item: Product) => {
     dispatch(removeItem({ item }))
@@ -53,7 +53,7 @@ const CartItem: React.FC<CartItemProps> = (props: CartItemProps) => {
         </div>
       </div>
     </li>
-  );
+  )
 }
 
-export default CartItem;
+export default CartItem

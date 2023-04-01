@@ -1,8 +1,8 @@
-import { useAppSelector } from "../app/hooks";
-import { Product } from "../app/slices/productsSlice";
+import { useAppSelector } from "../app/hooks"
+import { Product } from "../app/slices/productsSlice"
 
 export const getFilteredItems = (items: Product[]) => {
-  const filters = useAppSelector((state) => state.filter);
+  const filters = useAppSelector((state) => state.filter)
 
   return items.filter((item) => {
     const priceIsMatch = filters.minPrice < item.price && item.price < filters.maxPrice

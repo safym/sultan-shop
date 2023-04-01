@@ -1,12 +1,12 @@
-import React from 'react';
-import { NavLink } from "react-router-dom";
-import { useAppSelector } from "../app/hooks";
-import Search from './Search/Search';
+import React from 'react'
+import { NavLink } from "react-router-dom"
+import { useAppSelector } from "../app/hooks"
+import Search from './Search/Search'
 
-import buttonStyle from "../scss/components/_button.module.scss";
+import buttonStyle from "../scss/components/_button.module.scss"
 
 const Header: React.FC = () => {
-  const cart = useAppSelector((state) => state.cart);
+  const cart = useAppSelector((state) => state.cart)
 
   return (
     <header className="app-header">
@@ -161,7 +161,7 @@ const Header: React.FC = () => {
         </div>
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header

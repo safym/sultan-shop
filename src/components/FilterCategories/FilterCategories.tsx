@@ -1,14 +1,14 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { removeCategory, setCategory } from "../../app/slices/filterSlice";
-import { getCateroryList } from "../../utils/getCateroryList";
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { removeCategory, setCategory } from "../../app/slices/filterSlice"
+import { getCateroryList } from "../../utils/getCateroryList"
 
 import style from "./FilterCategories.module.scss"
 
 const FilterCategories: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
   
-  const productsItems = useAppSelector((state) => state.products.productsItems);
-  const filters = useAppSelector((state) => state.filter);
+  const productsItems = useAppSelector((state) => state.products.productsItems)
+  const filters = useAppSelector((state) => state.filter)
   const categoryList = getCateroryList(productsItems)
 
   const categoryOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,7 +25,7 @@ const FilterCategories: React.FC = () => {
     <div className={style.filterCategories}>
       {categoryList.map((item, index) => {
         const key = `categoryItem_${index}`
-        const checked = filters.category === item;
+        const checked = filters.category === item
 
         return (
           <span key={key} 
@@ -44,7 +44,7 @@ const FilterCategories: React.FC = () => {
         )
       })}
     </div>
-  );
+  )
 }
 
-export default FilterCategories;
+export default FilterCategories

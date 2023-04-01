@@ -3,7 +3,7 @@ import { sortSpec } from "../app/slices/sortSlice"
 
 export const sortByField = (data: Product[], sortSpec: sortSpec) => {
   const dataCopy = [...data]
-  const field = sortSpec.field;
+  const field = sortSpec.field
 
   return dataCopy.sort((a, b) => {
     switch (field) {
@@ -12,7 +12,7 @@ export const sortByField = (data: Product[], sortSpec: sortSpec) => {
       case 'brand':
         return sortSpec.direction * a.name.localeCompare(b.name, ["ru", "en-US"])
       default: 
-        return 1;
+        return 1
     }
   })
 }

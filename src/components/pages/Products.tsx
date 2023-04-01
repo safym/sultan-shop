@@ -1,17 +1,17 @@
-import React from "react";
-import { useAppSelector } from "../../app/hooks";
-import ProductItem from "../ProductItem";
-import FilterSidebar from "../FilterSidebar/FilterSidebar";
-import FilterCategories from "../FilterCategories/FilterCategories";
-import Sort from "../Sort/Sort";
+import React from "react"
+import { useAppSelector } from "../../app/hooks"
+import ProductItem from "../ProductItem"
+import FilterSidebar from "../FilterSidebar/FilterSidebar"
+import FilterCategories from "../FilterCategories/FilterCategories"
+import Sort from "../Sort/Sort"
 import { sortByField } from "../../utils/sort"
-import { getFilteredItems } from "../../utils/getFilteredItems";
+import { getFilteredItems } from "../../utils/getFilteredItems"
 
 import mainStyle from "../../scss/_container.module.scss"
 
 const Products: React.FC = () => {
-  const productsItems = useAppSelector((state) => state.products.productsItems);
-  const sort = useAppSelector((state) => state.sort.type);
+  const productsItems = useAppSelector((state) => state.products.productsItems)
+  const sort = useAppSelector((state) => state.sort.type)
   
   const filtredProductItems = getFilteredItems(productsItems)
 
@@ -66,7 +66,7 @@ const Products: React.FC = () => {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Products;
+export default Products

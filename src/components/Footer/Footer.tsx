@@ -1,8 +1,8 @@
-import Search from '../Search/Search';
+import Search from '../Search/Search'
 
 import style from "./Footer.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss";
+import buttonStyle from "../../scss/components/_button.module.scss"
 
 const Footer: React.FC = () => {
   return (
@@ -161,7 +161,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

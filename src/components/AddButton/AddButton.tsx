@@ -1,20 +1,20 @@
-import { Product } from "../../app/slices/productsSlice";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { addItem } from "../../app/slices/cartSlice";
-import style from "./AddButton.module.scss";
+import { Product } from "../../app/slices/productsSlice"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import { addItem } from "../../app/slices/cartSlice"
+import style from "./AddButton.module.scss"
 
 interface productItemProps {
   productData: Product,
 }
 
 const AddButton: React.FC<productItemProps> = (props: productItemProps) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const add = (item: object) => {
     dispatch(addItem({ item }))
   }
 
-  const cartItems = useAppSelector(state => state.cart.cartItems);
+  const cartItems = useAppSelector(state => state.cart.cartItems)
   const addedItem = cartItems.find((item) => item.id === props.productData.id)
   
   return (
@@ -36,7 +36,7 @@ const AddButton: React.FC<productItemProps> = (props: productItemProps) => {
       </span>
       <span className={style.badge}>{addedItem?.count}</span>
     </button>
-  );
+  )
 }
 
-export default AddButton;
+export default AddButton

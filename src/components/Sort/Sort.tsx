@@ -17,9 +17,9 @@ const Sort: React.FC = () => {
       }
     }
 
-    document.body.addEventListener('click', onClickOutSide);
+    document.body.addEventListener('click', onClickOutSide)
 
-    return () => document.body.removeEventListener('click', onClickOutSide);
+    return () => document.body.removeEventListener('click', onClickOutSide)
   }, [])
 
   const sortOnClick = () => {
