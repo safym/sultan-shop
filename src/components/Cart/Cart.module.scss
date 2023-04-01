@@ -1,0 +1,25 @@
+@import "../../scss/variables";
+
+.cart {
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: $dash-border;
+    padding: 50px 0;
+  }
+
+  .list {
+    padding-top: 50px;
+  }
+
+  .price {
+    white-space: pre;
+    font-size: 30px;
+  }
+  
+  .order {
+    flex-grow: 0;
+    width: 190px;
+  }
+}

@@ -4,7 +4,7 @@ import './scss/app.css'
 
 import Home from "./components/Home/Home";
 import Products from "./components/pages/Products";
-import Cart from "./components/pages/Cart";
+import Cart from "./components/Cart/Cart";
 import Layout from './components/Layout';
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import { useAppDispatch } from "./app/hooks";
