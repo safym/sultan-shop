@@ -63,6 +63,7 @@ const Header: React.FC = () => {
               <a className={style.navLink}>Доставка и оплата</a>
               <a className={style.navLink}>Возврат</a>
               <a className={style.navLink}>Контакты</a>
+              <NavLink className={style.adminLink} to={'/edit'}>Админ</NavLink>
             </nav>
           </div>
         </div>
