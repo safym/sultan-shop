@@ -10,8 +10,15 @@ import { useState } from "react"
 
 const AdminPage: React.FC = () => {
   const [isEdit, setIsEdit] = useState(false);
+  const [isAdd, setIsAdd] = useState(false);
+  const [isDelete, setDelete] = useState(false);
 
   const productsItems = useAppSelector((state) => state.products.productsItems)
+
+  const modeOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const mode = event.target.value
+
+  }
 
   return (
     <section className={`${style.edit} ${mainStyle.container} ${mainStyle.content}`}>
@@ -20,27 +27,25 @@ const AdminPage: React.FC = () => {
         <div className={style.body}>
           <form className={style.form}>
             Выберите режим:
-            <div> 
-            <label>Добавление
-            <input type="radio" name="mode" value="edit"/>
-            </label>
-            <label>Изменение
-            <input type="radio" name="mode" value="edit"/>
-            </label>
-            <label>Удаление
-            <input type="radio" name="mode" value="edit"/>
-            </label>
+            <div>
+              <label>Добавление {String(isAdd)}
+                <input type="radio" name="mode" value="add" onChange={modeOnChange} />
+              </label>
+              <label>Изменение {String(isEdit)}
+                <input type="radio" name="mode" value="edit" onChange={modeOnChange} />
+              </label>
+              <label>Удаление  {String(isDelete)}
+                <input type="radio" name="mode" value="delete" onChange={modeOnChange} />
+              </label>
             </div>
 
             <label>Выберите товар
               <select className={style.styledSelect}>
                 {
-                  (isEdit 
+                  (isEdit
                     && productsItems.map((item) => (
-                    <option>{item.name}</option>
-                  ))) 
-
-
+                      <option>{item.name}</option>
+                    )))
                 }
               </select>
             </label>
