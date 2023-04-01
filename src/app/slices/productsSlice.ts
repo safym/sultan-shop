@@ -6,8 +6,6 @@ export interface Product {
   price: number;
   description: string;
   imageURL: string;
-  imageAlt: string;
-  imageCredit: string;
   measurement: {
     type: string;
     value: string;
