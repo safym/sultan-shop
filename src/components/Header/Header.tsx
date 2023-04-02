@@ -11,6 +11,15 @@ import dividerStyle from "../../scss/components/_divider.module.scss"
 const Header: React.FC = () => {
   const cart = useAppSelector((state) => state.cart)
 
+  // // Sticky Menu Area
+  // useEffect(() => {
+  //   window.addEventListener('scroll', isSticky);
+  //   return () => {
+  //     window.removeEventListener('scroll', isSticky);
+  //   };
+  // });
+
+
   return (
     <header className={style.header}>
       <div className={style.container}>
