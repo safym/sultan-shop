@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useState } from "react"
 import { useAppSelector } from "../../app/hooks"
 
@@ -24,7 +24,6 @@ const ProductDetails: React.FC = () => {
   const toggleSpecOpen = () => {
     setSpecOpen(!specOpen)
   }
-
 
   let product
   if (productId) {

@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import filterSlice from '../slices/filterSlice';
 import loadingSlice from '../slices/loadingSlice';
+import paginationSlice from '../slices/paginationSlice';
 import relevantSlice from '../slices/relevantSlice';
 import cartReducer from './../slices/cartSlice';
 import productsReducer from './../slices/productsSlice';
@@ -13,7 +14,8 @@ export const store = configureStore({
     sort: sortReducer,
     filter: filterSlice,
     loading: loadingSlice,
-    relevant: relevantSlice
+    relevant: relevantSlice,
+    pagination: paginationSlice,
   },
 });
 
