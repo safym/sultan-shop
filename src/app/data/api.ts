@@ -31,16 +31,11 @@ export async function createProduct(productData: formData): Promise<CheckoutResp
       body: JSON.stringify(productData),
     });
     const data = await response.json();
-    if (!data.success) {
-      throw new Error(data.error);
-    }
+
     return data as CheckoutResponse;
   } catch (error) {
     console.error(error)
   }
-
-
-
 }
 
 const sleep = (time: number) =>
