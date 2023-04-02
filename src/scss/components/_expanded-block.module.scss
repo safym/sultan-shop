@@ -15,7 +15,7 @@
       padding: 3px;
       transform: rotate(-135deg);
       -webkit-transform: rotate(-135deg);
-      margin-left: 10px;
+      margin: 10px;
     }
 
     .arrowDown {
@@ -25,7 +25,7 @@
       padding: 3px;
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
-      margin-left: 10px;
+      margin: 0 10px;
     }
   }
 
@@ -38,7 +38,10 @@
     transition: max-height 0.2s ease;
 
     &.open {
-      max-height: 500px;
+      max-height: 1000px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
     }
 
     .item {

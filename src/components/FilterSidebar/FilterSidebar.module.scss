@@ -1,14 +1,10 @@
 @import "../../scss/variables";
 
 .filter {
-  width: 240px;
+  min-width: 260px;
   margin-right: 100px;
 
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
 
   @media only screen and (max-width: 700px) {
     width: 100%;
@@ -22,6 +18,7 @@
   }
 
   .title {
+    display: flex;
     font-size: 16px;
     font-weight: 500;
   }
