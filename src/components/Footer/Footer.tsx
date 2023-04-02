@@ -48,9 +48,8 @@ const Footer: React.FC = () => {
           <p className={style.description}>Компания «Султан» — снабжаем розничные магазины товарами "под
             ключ" в Кокчетаве и Акмолинской области</p>
           <p className={style.label}>Подпишись на скидки и акции</p>
-          <Search />
+          <Search onChange={console.log}/>
         </div>
-        {/* <div class=></div> */}
         <div className={style.column}>
           <h3 className={style.title}>Меню сайта:</h3>
           <a className={style.link}>О компании</a>
