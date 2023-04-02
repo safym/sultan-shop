@@ -11,9 +11,24 @@
     column-gap: 30px;
     row-gap: 30px;
     flex-wrap: wrap;
+
+    @media only screen and (max-width: 1000px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
   }
 
   .main {
+    @media only screen and (max-width: 1000px) {
+      grid-area: 1 / 1 / 2 / 3;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
     width: 320px;
   }
 
