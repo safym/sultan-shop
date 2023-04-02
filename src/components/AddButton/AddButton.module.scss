@@ -10,7 +10,6 @@
 
   color: var(--lightTextColor);
   background-color: var(--button-bg-color);
-  box-shadow: $button-color 0px 0px 0px 3px;
   column-gap: 5px;
   flex-grow: 0;
   font-weight: 700;
@@ -30,6 +29,7 @@
 .done {
   color: $button-color;
   background-color: var(--body-bg-color);
+  border: $button-color 3px solid;
 
   & svg path {
     fill: $button-color;
