@@ -20,8 +20,8 @@
 <p align="center">
     <img height="250px" src="https://user-images.githubusercontent.com/99616798/229374519-553db1fe-c96c-4d6c-9e21-6f9467e55148.png" />
     <img height="250px" src="https://user-images.githubusercontent.com/99616798/229374304-857cee78-474f-4beb-b986-5893e67a030c.png" />
-    <img height="450px" src="https://user-images.githubusercontent.com/99616798/229374306-1e2b6db0-2ab6-4555-b864-a26c47c58905.png" />
-    <img height="450px" src="https://user-images.githubusercontent.com/99616798/229374447-c644bb27-fc4c-4047-98c6-46d975be71b6.png" />
+    <img height="460px" src="https://user-images.githubusercontent.com/99616798/229374306-1e2b6db0-2ab6-4555-b864-a26c47c58905.png" />
+    <img height="460px" src="https://user-images.githubusercontent.com/99616798/229374447-c644bb27-fc4c-4047-98c6-46d975be71b6.png" />
 </p>
 
 ## 📑 Реализация:
