@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "./app/hooks"
 import { useEffect, useState } from "react"
 import { getProducts } from "./app/data/api"
 import { setProducts } from "./app/slices/productsSlice"
+import { setLoading } from "./app/slices/loadingSlice"
 import AdminPage from "./components/AdminPage/AdminPage"
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
 
   useEffect(() => {
     getProducts().then((products) => {
+      dispatch(setLoading(true))
       dispatch(setProducts(products))
-
+      dispatch(setLoading(false))
     })
   }, [])
   

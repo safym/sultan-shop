@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface LoadingState {
   isLoading: boolean;
@@ -12,7 +12,8 @@ const CartSlice = createSlice({
   name: 'loading',
   initialState,
   reducers: {
-    setLoading: (state, action) => {
+    setLoading: (state, action: PayloadAction<boolean>) => {
+      console.log(action.payload)
       state.isLoading = action.payload
     }
   },

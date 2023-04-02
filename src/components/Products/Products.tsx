@@ -10,10 +10,13 @@ import { getFilteredItems } from "../../utils/getFilteredItems"
 import style from "./Products.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
 import titleStyle from "../../scss/components/_title.module.scss"
+import ProductsSkeleton from "./ProductsSkeleton"
 
 
 const Products: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems)
+  const isLoading = useAppSelector((state) => state.loading.isLoading)
+
   const sort = useAppSelector((state) => state.sort.type)
 
   const filtredProductItems = getFilteredItems(productsItems)
@@ -35,6 +38,7 @@ const Products: React.FC = () => {
             <FilterSidebar />
             <div className={style.listWrapper}>
               <ul className={style.list}>
+                <ProductsSkeleton />
                 {Object.entries(sortedProductItems).map(([id, product]) => {
                   const productItemProps = {
                     productData: product,
