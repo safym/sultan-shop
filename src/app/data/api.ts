@@ -1,11 +1,11 @@
 import { Product } from "../slices/productsSlice";
-import { formData } from "../../components/AdminPage/AdminPage"
-import { Form } from "react-router-dom";
+import { formData } from "../../components/AdminPage/types"
 
 const BASE_URL = 'https://ayyansea.com/api/'
 
 export async function getProducts(): Promise<Product[]> {
-  const results = await fetch("https://ayyansea.com/api/products");
+  const url = `${BASE_URL}products`;
+  const results = await fetch(url);
 
   // artificial delay for skeletons
   await sleep(1000);
