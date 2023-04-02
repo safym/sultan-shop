@@ -33,6 +33,13 @@
   }
   .styledRadio {
     margin-right: 10px;
+    accent-color: #8691a1;
+  }
+  .radioLabel {
+    height: $ui-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .styledInput:disabled {
     color: gray;

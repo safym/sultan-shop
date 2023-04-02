@@ -141,29 +141,29 @@ const AdminPage: React.FC = () => {
           <div className={style.fieldsWrapper}>
             <h2 className={style.subtitle}>Выберите режим:</h2>
             <div className={style.modeWrapper}>
-              <label>
+              <label className={style.radioLabel}>
                 <input className={style.styledRadio}
                   type="radio"
                   name="mode"
                   defaultValue="add"
                   onChange={modeOnChange} />
-                Добавление
+                ➕ Добавление
               </label>
-              <label>
+              <label className={style.radioLabel}>
                 <input className={style.styledRadio}
                   type="radio"
                   name="mode"
                   defaultValue="edit"
                   onChange={modeOnChange} />
-                Изменение
+                📝 Изменение
               </label>
-              <label>
+              <label className={style.radioLabel}>
                 <input className={style.styledRadio}
                   type="radio"
                   name="mode"
                   defaultValue="delete"
                   onChange={modeOnChange} />
-                Удаление
+                ❌ Удаление
               </label>
             </div>
 
