@@ -10,6 +10,8 @@ import dividerStyle from "../../scss/components/_divider.module.scss"
 import { is } from 'immer/dist/internal'
 import MobileHeader from '../MobileHeader/MobileHeader'
 
+const call = new URL("../../assets/img/call.png", import.meta.url).href;
+
 const Header: React.FC = () => {
   const cart = useAppSelector((state) => state.cart)
 
@@ -161,7 +163,7 @@ const Header: React.FC = () => {
                     </svg>
                   </span>
                 </NavLink>
-                <Search />
+                <Search onChange={() => {}}/>
               </div>
             </div>
             <div className={style.right}>
@@ -172,7 +174,7 @@ const Header: React.FC = () => {
                   <a className={style.orderCall}>Заказать звонок</a>
                 </div>
                 <div className={style.callImage}>
-                  <img src="./../src/assets/img/call.png" alt="consultant" />
+                  <img src={call} alt="consultant" />
                 </div>
               </div>
               <a className={`${buttonStyle.button} ${style.priceListButton}`}>

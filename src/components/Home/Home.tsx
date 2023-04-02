@@ -4,10 +4,12 @@ import style from "./Home.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
 import buttonStyle from "../../scss/components/_button.module.scss"
 
+const consultant = new URL("../../assets/img/banner.png", import.meta.url).href;
+
 const Home: React.FC = () => {
   return (
     <div className={style.home}>
-      <img className={style.image} src="./../src/assets/img/banner.png" alt="consultant" />
+      <img className={style.image} src={consultant} alt="consultant" />
       <div className={`${style.wrapper} ${mainStyle.content} ${mainStyle.container}`}>
         <h1 className={style.title}>
           Бытовая химия,
