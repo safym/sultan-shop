@@ -1,13 +1,16 @@
 import styles from "./Search.module.scss"
 
 interface FormProps {
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  onChange: any;
+  substring: string;
 }
 
 const Search: React.FC<FormProps> = (props: FormProps) => {
   return (
     <form className={styles.field}>
-      <input placeholder="Поиск..." className={styles.input}
+      <input placeholder="Поиск..." className={styles.input} 
+        defaultValue=''
+        value={props.substring}
         onChange={props.onChange} 
         type="text"/>
       <button className={styles.button} type="submit">

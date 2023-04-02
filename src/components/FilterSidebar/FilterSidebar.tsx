@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { getCateroryList } from "../../utils/getCateroryList"
 import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory, removeFilters } from "../../app/slices/filterSlice"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import Search from "../Search/Search"
 
@@ -17,15 +17,7 @@ interface manufacturerItem {
 }
 
 const FilterSidebar: React.FC = () => {
-  const [filteredManufacturers, setFilteredManufacturers] = useState<Array<manufacturerItem>>([])
-  const [filterIsOpen, setFilterIsOpen] = useState(true)
-
-  const dispatch = useAppDispatch()
   const productsItems = useAppSelector((state) => state.products.productsItems)
-  const filters = useAppSelector((state) => state.filter)
-
-  const categoryList = getCateroryList(productsItems)
-
   const manufacturersList = productsItems.reduce(function (result: Array<manufacturerItem>, value) {
     const isAdded = result.find((item) => item.manufacturer === value.manufacturer)
 
@@ -36,6 +28,19 @@ const FilterSidebar: React.FC = () => {
     }
     return result
   }, [])
+
+  const [manufacturers, setManufacturers] = useState<Array<manufacturerItem>>([])
+  const [filteredManufacturers, setFilteredManufacturers] = useState<Array<manufacturerItem>>(manufacturersList)
+  const [filterIsOpen, setFilterIsOpen] = useState<boolean>(true)
+  const [substring, setSubstring] = useState<string>('')
+
+  const dispatch = useAppDispatch()
+ 
+  const filters = useAppSelector((state) => state.filter)
+
+  const categoryList = getCateroryList(productsItems)
+
+
 
   const minOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const price = event.target.value.replace(/\D/g, '')
@@ -69,21 +74,19 @@ const FilterSidebar: React.FC = () => {
     }
   }
 
-  const filterMnufacturers = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const filterSubString = event.target.value
+  const filterMnufacturers = (event: any) => {
 
-    console.log(filterSubString)
-
-    if (filterSubString) {
-      console.log(manufacturersList)
 
       const filtered = manufacturersList.filter(item => {
-        return item.manufacturer.toUpperCase().includes(filterSubString.toUpperCase())
+        return item.manufacturer.toUpperCase().includes(event.target.value.toUpperCase())
       });
 
       setFilteredManufacturers(filtered)
-      console.log(filtered)
-    }
+
+
+
+    setSubstring(event.target.value)
+    console.log(filtered)
   }
 
   const removeFiltersOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -123,9 +126,12 @@ const FilterSidebar: React.FC = () => {
           </div>
           <div className={style.manufacturer}>
             <h2 className={style.title}>Производитель</h2>
-            <Search onChange={filterMnufacturers} />
+            <input placeholder="Поиск..."
+              onChange={filterMnufacturers}
+              type="text" />
+            <Search onChange={filterMnufacturers} substring={substring} />
             <ul className={style.list}>
-              {manufacturersList.map((item, index) => {
+              {filteredManufacturers.map((item, index) => {
                 const checked = filters.manufacturers.includes(item.manufacturer)
 
                 return (

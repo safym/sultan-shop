@@ -163,7 +163,7 @@ const Header: React.FC = () => {
                     </svg>
                   </span>
                 </NavLink>
-                <Search onChange={() => {}}/>
+                <Search substring='' onChange={() => {}}/>
               </div>
             </div>
             <div className={style.right}>
