@@ -1,27 +1,46 @@
 import { Product } from "../slices/productsSlice";
+import { formData } from "../../components/AdminPage/AdminPage"
+import { Form } from "react-router-dom";
+
+const BASE_URL = 'https://ayyansea.com/api/'
 
 export async function getProducts(): Promise<Product[]> {
   const results = await fetch("https://ayyansea.com/api/products");
+
+  // artificial delay for skeletons
+  await sleep(1000);
+
   const products = results.json();
   return products;
 }
 
-export type CartItems = { [productID: string]: number };
 export type CheckoutResponse = { success: boolean; error?: string };
 
-export async function checkout(items: CartItems): Promise<CheckoutResponse> {
-  const modifier = Object.keys(items).length > 0 ? "success" : "error";
-  const url = `/checkout-${modifier}.json`;
-  await sleep(500);
-  const response = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify(items),
-  });
-  const data = await response.json();
-  if (!data.success) {
-    throw new Error(data.error);
+export async function createProduct(productData: formData): Promise<CheckoutResponse> {
+ 
+  const url = `https://ayyansea.com/api/products`;
+
+  console.log(productData)
+  
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      body: JSON.stringify(productData),
+    });
+    const data = await response.json();
+    if (!data.success) {
+      throw new Error(data.error);
+    }
+    return data as CheckoutResponse;
+  } catch (error) {
+    console.error(error)
   }
-  return data as CheckoutResponse;
+
+
+
 }
 
 const sleep = (time: number) =>

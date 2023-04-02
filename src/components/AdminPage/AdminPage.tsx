@@ -7,8 +7,9 @@ import style from "./AdminPage.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
 import titleStyle from "../../scss/components/_title.module.scss"
 import buttonStyle from "../../scss/components/_button.module.scss"
+import { createProduct } from "../../app/data/api"
 
-interface formData {
+export interface formData {
   id?: string;
   name?: string;
   price?: number;
@@ -48,7 +49,10 @@ const AdminPage: React.FC = () => {
     const selectedMode = event.target.defaultValue;
 
     if (selectedMode === 'add') {
-      const productCopy = JSON.parse(JSON.stringify(productData));
+      const productCopy: formData = JSON.parse(JSON.stringify(productData));
+
+      console.log(productCopy)
+      console.log(getNewProductId(productsItems))
       productCopy.id = getNewProductId(productsItems)
       setProductData(({ ...productCopy }))
     } else {
@@ -70,23 +74,55 @@ const AdminPage: React.FC = () => {
 
   const fieldOnChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLSelectElement>) => {
     event.preventDefault();
-    const value = event.target.value;
-    const fieldName = event.target.name;
 
     const productCopy = JSON.parse(JSON.stringify(productData));
-    productCopy[fieldName] = value
+
+    const value = event.target.value;
+    let fieldName = event.target.name;
+
+    console.log(value, fieldName)
+
+    switch (true) {
+      case fieldName.includes('measurement'):
+        const pathParts = fieldName.split('.');
+        const firstPart = pathParts[0];
+        const secondPart = pathParts[1];
+
+        console.log(productCopy, firstPart, secondPart)
+
+        productCopy[firstPart][secondPart] = value
+        break;
+      case fieldName.includes('category'):
+        const values = event.target.value.split(',');
+        console.log(values)
+        productCopy[fieldName] = values
+        break;
+      case fieldName === 'price':
+
+        productCopy[fieldName] = +value
+        break;
+      default:
+        productCopy[fieldName] = value
+    }
+
+    console.log(productCopy)
     setProductData(({ ...productCopy }))
   }
 
-  const formOnSubmit = (event: React.FormEvent) => {
+  const formOnSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     switch (mode) {
       case 'add':
         console.log('ADD', productData)
+        const result = await createProduct(productData)
+        console.log(result)
+        break
       case 'edit':
         console.log('EDIT', productData)
+        break
       case 'delete':
         console.log('DELETE', productData)
+        break
     }
   }
 
@@ -142,7 +178,7 @@ const AdminPage: React.FC = () => {
               {(mode === 'add' || mode === 'edit') &&
                 <>
                   <label className={style.label}>id:
-                    <input disabled className={style.styledInput}
+                    <input className={style.styledInput}
                       name="id"
                       type="text"
                       value={productData.id}
@@ -158,7 +194,7 @@ const AdminPage: React.FC = () => {
                   </label>
                   <label className={style.label}>Цена:
                     <input className={style.styledInput}
-                      name="price" type="text"
+                      name="price" type="number"
                       value={productData.price}
                       onChange={fieldOnChange} />
                   </label>
@@ -181,16 +217,16 @@ const AdminPage: React.FC = () => {
                   <div className={style.row}>
                     <label className={style.label}>Значение измерения:
                       <input className={style.styledInput}
-                        name="measurement"
+                        name="measurement.type"
                         type="number"
-                        value={productData.measurement?.value}
+                        value={productData.measurement?.type}
                         onChange={fieldOnChange} />
                     </label>
 
                     <label className={style.label}>Тип измерения:
                       <select className={style.styledSelect}
-                        name="measurement"
-                        value={productData.measurement?.type}
+                        name="measurement.value"
+                        value={productData.measurement?.value}
                         onChange={fieldOnChange}>
                         <option value='' disabled>ед</option>
                         <option value='л'>л</option>
@@ -256,5 +292,5 @@ export default AdminPage
 
 
 const getNewProductId = (productItems: Product[]): string => {
-  return String(Math.max(...productItems.map(item => +item.id)) + 1)
+  return String(Math.max(...productItems.map(item => (item.id) ? +item.id : 0)) + 1)
 }
