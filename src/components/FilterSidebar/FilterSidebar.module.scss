@@ -27,7 +27,7 @@
   }
 
   .subtitle {
-    color: var(--darkTextColor);
+    color: $dark-text-color;
     display: flex;
     column-gap: 5px;
   }
@@ -63,7 +63,7 @@
   }
 
   .listItem {
-    color: var(--darkTextColor)
+    color: $dark-text-color;
   }
 
   .borderline {
@@ -87,7 +87,7 @@
 .expandLink {
   display: inline-flex;
   align-items: center;
-  color: var(--darkTextColor);
+  color: $dark-text-color;
 
   &__arrow {
 

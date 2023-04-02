@@ -11,7 +11,7 @@ $field-offset: 10px;
   height: $ui-height;
   padding: 20px;
   border-radius: $ui-height;
-  background-color: var(--field-bg-color);
+  background-color: $light-text-color;
   color: var(--darkTextColor);
 }
 
@@ -28,5 +28,5 @@ $field-offset: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--button-bg-color);
+  background-color: $button-color;
 }

@@ -9,7 +9,7 @@
     display: inline-flex;
     flex-wrap: nowrap;
     padding: 0 10px;
-    color: var(--darkTextColor);
+    color: $dark-text-color;
 
 
     &:last-child {

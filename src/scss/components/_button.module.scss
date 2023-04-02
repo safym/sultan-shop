@@ -8,8 +8,8 @@
   justify-content: center;
   font-weight: 700;
   border-radius: $ui-height;
-  color: var(--lightTextColor);
-  background-color: var(--button-bg-color);
+  color: $light-text-color;
+  background-color: $button-color;
 
   padding: 21px 40px;
   -moz-column-gap: 15px;
@@ -27,6 +27,6 @@
   min-width: $ui-height;
   flex-grow: 0;
   border-radius: 50%;
-  color: var(--lightTextColor);
-  background-color: var(--button-bg-color);  
+  color: $light-text-color;
+  background-color: $button-color;  
 }

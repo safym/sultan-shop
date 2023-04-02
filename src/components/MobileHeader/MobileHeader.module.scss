@@ -4,10 +4,10 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: var(--body-bg-color);
+  background-color: $body-bg-color;
   .row {
     display: flex;
-    border-bottom: var(--border-color) 1px solid;
+    border-bottom: $border-color 1px solid;
   }
 
   .top {
@@ -34,7 +34,7 @@
     column-gap: 10px;
 
     &:not(:last-child) {
-      border-right: var(--border-color) 1px dashed;
+      border-right: $border-color 1px dashed;
     }
   }
 
@@ -55,11 +55,11 @@
     left: 0;
     z-index: -2;
 
-    background-color: var(--body-bg-color);
+    background-color: $body-bg-color;
     color: $dark-text-color;
     font-size: 20px;
-    border: var(--border-color) 1px solid;
-    box-shadow: var(--border-color) 0px 10px 50px 20px;
+    border: $border-color 1px solid;
+    box-shadow: $border-color 0px 10px 50px 20px;
   }
 }
 
@@ -96,8 +96,8 @@
 
     border-radius: $size;
 
-    box-shadow: var(--body-bg-color) 0px 0px 0px 3px;
-    color: var(--lightTextColor);
-    background-color: var(--button-bg-color);
+    box-shadow: $body-bg-color 0px 0px 0px 3px;
+    color: $body-bg-color;
+    background-color: $button-color;
   }
 }

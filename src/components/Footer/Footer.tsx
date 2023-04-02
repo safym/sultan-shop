@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             </defs>
           </svg>
           <p className={style.description}>Компания «Султан» — снабжаем розничные магазины товарами "под
-            ключ" в Кокчетаве и Акмолинской области</p>
+            ключ" в Кокшетау и Акмолинской области</p>
           <p className={style.label}>Подпишись на скидки и акции</p>
           <Search onChange={console.log}/>
         </div>

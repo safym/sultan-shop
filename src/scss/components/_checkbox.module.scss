@@ -1,5 +1,7 @@
+@import "../variables";
+
 .checkbox {
-  color: var(--darkTextColor);
+  color: $dark-text-color;
 
   .counter {
     font-size: 10px;

@@ -1,3 +1,5 @@
+@import "../../scss/variables";
+
 .item {
   width: 326px;
   display: flex;
@@ -36,7 +38,7 @@
   }
 
   .property {
-    color: var(--darkTextColor);
+    color: $dark-text-color;
     display: flex;
     -moz-column-gap: 5px;
     column-gap: 5px;
@@ -44,7 +46,7 @@
 
   .value {
     font-weight: 500;
-    color: var(--mainTextColor);
+    color: $main-text-color;
   }
 
   .footer {

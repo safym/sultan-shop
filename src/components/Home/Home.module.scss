@@ -7,7 +7,7 @@ $min-height: 650px;
   width: 100%;
   min-height: $min-height;
   position: relative;
-  color: var(--body-bg-color);
+  color: $body-bg-color;
 
   .wrapper {
     padding-top: 50px;

@@ -11,7 +11,7 @@
     border-radius: 20px;
 
     &:disabled {
-      background-color: var(--online-border-color);
+      background-color: $online-border-color;
     }
   }
 }

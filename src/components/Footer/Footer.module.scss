@@ -1,6 +1,8 @@
+@import "../../scss/variables";
+
 .footer {
-  background-color: var(--darkTextColor);
-  color: var(--lightTextColor);
+  background-color: $dark-text-color;
+  color: $body-bg-color;
   padding: 70px 0 116px 0;
 
   .container {

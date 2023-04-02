@@ -8,8 +8,8 @@
   align-items: center;
   justify-content: center;
 
-  color: var(--lightTextColor);
-  background-color: var(--button-bg-color);
+  color: $light-text-color;
+  background-color: $button-color;
   column-gap: 5px;
   flex-grow: 0;
   font-weight: 700;
@@ -28,7 +28,7 @@
 
 .done {
   color: $button-color;
-  background-color: var(--body-bg-color);
+  background-color: $body-bg-color;
   border: $button-color 3px solid;
 
   & svg path {
@@ -36,7 +36,7 @@
   }
 
   & .counter_badge {
-    color: white !important;
+    color: $body-bg-color !important;
     background-color: $button-color !important;
   }
 }
@@ -50,7 +50,7 @@
     height: 22px;
     padding: 3px;
     border-radius: 22px;
-    background-color: var(--button-bg-color);
-    color: var(--body-bg-color)
+    background-color: $button-color;
+    color: $body-bg-color
   }
 }

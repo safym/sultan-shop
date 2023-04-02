@@ -14,7 +14,7 @@ const Home: React.FC = () => {
           косметика
           и хозтовары
         </h1>
-        <h2 className={style.subtitle}>оптом по кокчетаву и области</h2>
+        <h2 className={style.subtitle}>оптом по Кокшетау и области</h2>
         <NavLink to="/products" className={`app-header__action ${buttonStyle.button}`}>
           <span>Каталог</span>
           <span className={buttonStyle.icon}>

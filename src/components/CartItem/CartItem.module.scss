@@ -61,7 +61,7 @@
 
   .description {
     font-size: 12px;
-    color: var(--darkTextColor);
+    color: $dark-text-color;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
