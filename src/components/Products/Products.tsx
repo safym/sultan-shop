@@ -22,6 +22,7 @@ const Products: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems)
   const sort = useAppSelector((state) => state.sort.type)
 
+  console.log(productsItems)
   const filtredProductItems = getFilteredItems(productsItems)
 
   const sortedProductItems = sortByField(filtredProductItems, sort)

@@ -1,30 +1,15 @@
 import { useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 
-import { Product } from "../../app/slices/productsSlice"
-
 import style from "./AdminPage.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
 import titleStyle from "../../scss/components/_title.module.scss"
 import buttonStyle from "../../scss/components/_button.module.scss"
+
+import { Product } from "../../app/slices/productsSlice"
 import { createProduct, deleteProduct, editProduct } from "../../app/data/api"
 import { setRelevant } from "../../app/slices/relevantSlice"
-
-export interface formData {
-  id?: string;
-  name?: string;
-  price?: number;
-  description?: string;
-  imageURL?: string;
-  measurement?: {
-    type?: string;
-    value?: string;
-  };
-  barcode?: string;
-  manufacturer?: string;
-  brand?: string;
-  category?: Array<string>
-};
+import { formData } from "./types"
 
 const AdminPage: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -54,8 +39,6 @@ const AdminPage: React.FC = () => {
     if (selectedMode === 'add') {
       const productCopy: formData = JSON.parse(JSON.stringify(productData));
 
-      console.log(productCopy)
-      console.log(getNewProductId(productsItems))
       productCopy.id = getNewProductId(productsItems)
       setProductData(({ ...productCopy }))
     } else {
@@ -83,32 +66,25 @@ const AdminPage: React.FC = () => {
     const value = event.target.value;
     let fieldName = event.target.name;
 
-    console.log(value, fieldName)
-
     switch (true) {
       case fieldName.includes('measurement'):
         const pathParts = fieldName.split('.');
         const firstPart = pathParts[0];
         const secondPart = pathParts[1];
 
-        console.log(productCopy, firstPart, secondPart)
-
         productCopy[firstPart][secondPart] = value
         break;
       case fieldName.includes('category'):
         const values = event.target.value.split(',');
-        console.log(values)
         productCopy[fieldName] = values
         break;
       case fieldName === 'price':
-
         productCopy[fieldName] = +value
         break;
       default:
         productCopy[fieldName] = value
     }
 
-    console.log(productCopy)
     setProductData(({ ...productCopy }))
   }
 
@@ -132,7 +108,6 @@ const AdminPage: React.FC = () => {
         setProductData(initialProductData)
         break
       case 'edit':
-        console.log('EDIT', productData)
         response = await editProduct(productData)
 
         if (response?.ok) {
@@ -143,7 +118,8 @@ const AdminPage: React.FC = () => {
 
         break
       case 'delete':
-        console.log('DELETE', productData)
+        if (!productData.id) return
+
         response = await deleteProduct(productData.id)
 
         if (response?.deletedCount) {
@@ -213,21 +189,23 @@ const AdminPage: React.FC = () => {
                       name="id"
                       type="text"
                       value={productData.id}
-                      onChange={fieldOnChange} />
+                      onChange={fieldOnChange} 
+                      required/>
                   </label>
                   <label className={style.label}>Наименование:
                     <input className={style.styledInput}
                       name="name"
                       type="text"
-                      value={productData.name}
                       defaultValue={productData.name}
-                      onChange={fieldOnChange} />
+                      onChange={fieldOnChange} 
+                      required/>
                   </label>
                   <label className={style.label}>Цена:
                     <input className={style.styledInput}
                       name="price" type="number"
                       value={productData.price}
-                      onChange={fieldOnChange} />
+                      onChange={fieldOnChange} 
+                      required/>
                   </label>
                   <label className={style.label}>Описание:
                     <textarea className={style.styledInput}
@@ -248,21 +226,22 @@ const AdminPage: React.FC = () => {
                   <div className={style.row}>
                     <label className={style.label}>Значение измерения:
                       <input className={style.styledInput}
-                        name="measurement.type"
+                        name="measurement.value"
                         type="number"
-                        value={productData.measurement?.type}
+                        value={productData.measurement?.value}
                         onChange={fieldOnChange} />
                     </label>
 
                     <label className={style.label}>Тип измерения:
                       <select className={style.styledSelect}
-                        name="measurement.value"
-                        value={productData.measurement?.value}
+                        name="measurement.type"
+                        value={productData.measurement?.type}
                         onChange={fieldOnChange}>
                         <option value='' disabled>ед</option>
+                        <option value='шт'>шт</option>
                         <option value='л'>л</option>
                         <option value='мл'>мл</option>
-                        <option value='шт'>шт</option>
+                        <option value='г'>г</option>
                         <option value='кг'>кг</option>
                       </select>
                     </label>
@@ -273,7 +252,8 @@ const AdminPage: React.FC = () => {
                       name="barcode"
                       type="text"
                       value={productData.barcode}
-                      onChange={fieldOnChange} />
+                      onChange={fieldOnChange} 
+                      required/>
                   </label>
                   <label className={style.label}>Производитель:
                     <input className={style.styledInput}
@@ -287,7 +267,8 @@ const AdminPage: React.FC = () => {
                       name="brand"
                       type="text"
                       value={productData.brand}
-                      onChange={fieldOnChange} />
+                      onChange={fieldOnChange} 
+                      required/>
                   </label>
                   <label className={style.label}>Категория/Категории:
                     <input className={style.styledInput}

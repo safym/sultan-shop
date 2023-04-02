@@ -7,10 +7,18 @@ import CartEmpty from "../CartEmpty/CartEmpty"
 import style from "./Cart.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
 import titleStyle from "../../scss/components/_title.module.scss"
+import ModalComplete from "../ModalComlete/ModalComplete"
+import { useState } from "react"
 
 const Cart: React.FC = () => {
   const cart = useAppSelector(state => state.cart)
   const productsItems = useAppSelector((state) => state.products.productsItems)
+
+  const [isOrdered, setIsOrdered] = useState<boolean>(false)
+
+  const placeOreder = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setIsOrdered(!isOrdered)
+  }
 
   if (!cart.cartItems.length) {
     return (
@@ -21,6 +29,7 @@ const Cart: React.FC = () => {
   return (
     <section className={style.cart}>
       <div className={`${mainStyle.container} ${mainStyle.content}`}>
+        {(isOrdered) && <ModalComplete setIsOrdered={setIsOrdered}/>}
         <div className={style.body}>
           <h1 className={titleStyle.title}>Корзина</h1>
 
@@ -41,7 +50,7 @@ const Cart: React.FC = () => {
           </ul>
 
           <div className={style.total}>
-            <button className={buttonStyle.button}>
+            <button className={buttonStyle.button} onClick={placeOreder}>
               <span>Оформить</span>
             </button>
             <div className={style.price}>
