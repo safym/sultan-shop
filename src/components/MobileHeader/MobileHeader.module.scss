@@ -1,0 +1,103 @@
+@import "../../scss/variables";
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--body-bg-color);
+  .row {
+    display: flex;
+    border-bottom: var(--border-color) 1px solid;
+  }
+
+  .top {
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .bottom {
+    padding: 10px;
+    z-index: -3;
+    position: relative;
+  }
+
+  .action {
+    width: 50%;
+    height: $secondary-ui-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark-text-color;
+    column-gap: 10px;
+
+    &:not(:last-child) {
+      border-right: var(--border-color) 1px dashed;
+    }
+  }
+
+  .burderButton {
+    z-index: 10;
+  }
+
+  .nav {
+    width: 100vw;
+    padding: 100px 10px 20px 10px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+    background-color: var(--body-bg-color);
+    color: $dark-text-color;
+    font-size: 20px;
+    border: var(--border-color) 1px solid;
+    box-shadow: var(--border-color) 0px 10px 50px 20px;
+  }
+}
+
+.cartLink {
+  display: flex;
+  align-items: center;
+  height: $ui-height;
+  border-radius: $ui-height;
+
+  .icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    & svg {
+      max-width: none;
+    }
+  }
+
+  .counter {
+    $size: 22px;
+
+    height: $size;
+    min-width: $size;
+    padding: 3px;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+
+    border-radius: $size;
+
+    box-shadow: var(--body-bg-color) 0px 0px 0px 3px;
+    color: var(--lightTextColor);
+    background-color: var(--button-bg-color);
+  }
+}

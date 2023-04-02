@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { useAppSelector } from "../../app/hooks"
 import Search from '../Search/Search'
@@ -7,18 +7,27 @@ import style from "./Header.module.scss"
 import buttonStyle from "../../scss/components/_button.module.scss"
 import contactStyle from "../../scss/components/_contact.module.scss"
 import dividerStyle from "../../scss/components/_divider.module.scss"
+import { is } from 'immer/dist/internal'
+import MobileHeader from '../MobileHeader/MobileHeader'
 
 const Header: React.FC = () => {
   const cart = useAppSelector((state) => state.cart)
 
-  // // Sticky Menu Area
-  // useEffect(() => {
-  //   window.addEventListener('scroll', isSticky);
-  //   return () => {
-  //     window.removeEventListener('scroll', isSticky);
-  //   };
-  // });
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
+  }, []);
+
+  const isMobile = width <= 900;
+
+  if (isMobile) return <MobileHeader />
 
   return (
     <header className={style.header}>
@@ -79,6 +88,13 @@ const Header: React.FC = () => {
         <div className={style.bottomWrapper}>
           <div className={`${style.bottom} ${style.row}`}>
             <div className={style.left}>
+              <button className={`${buttonStyle.roundedButton} ${style.burderButton}`}>
+                <span>
+                  <svg width="20" height="20" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.799805 4.5999H9.1998V3.3999H0.799805V4.5999ZM0.799805 7.5999H9.1998V6.3999H0.799805V7.5999ZM0.799805 0.399902V1.5999H9.1998V0.399902H0.799805Z" fill="white" />
+                  </svg>
+                </span>
+              </button>
               <NavLink to="/">
                 <svg className={style.logo}
                   width="156"
@@ -159,8 +175,7 @@ const Header: React.FC = () => {
                   <img src="./../src/assets/img/call.png" alt="consultant" />
                 </div>
               </div>
-              <span className={dividerStyle.divider}></span>
-              <a className={buttonStyle.button}>
+              <a className={`${buttonStyle.button} ${style.priceListButton}`}>
                 <span>Прайс-лист</span>
                 <span className={buttonStyle.icon}>
                   <svg width="18"
@@ -174,7 +189,6 @@ const Header: React.FC = () => {
                   </svg>
                 </span>
               </a>
-              <span className={dividerStyle.divider}></span>
               <NavLink to="/cart" className={style.cartLink}>
                 <div className={style.icon}>
                   <span className={style.counter}>

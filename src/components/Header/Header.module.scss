@@ -1,9 +1,9 @@
 @import "../../scss/variables";
 
 .header {
-  // position: sticky;
-  // top: 0;
-  // z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   .row {
     padding: 0 15px;
@@ -23,11 +23,21 @@
 
   .top {
     min-height: 60px;
+    @media only screen and (max-width: 1150px) {
+      justify-content: flex-end;
+    }
   }
 
   .contactsWrapper {
     display: flex;
     column-gap: 40px;
+
+    @media only screen and (max-width: $container-width) {
+      column-gap: 20px;
+    }
+    @media only screen and (max-width: 1150px) {
+      display: none;
+    }
   }
 
   .nav {
@@ -58,7 +68,9 @@
       border-right: $dash-border;
     }
 
-    color: inherit;
+    @media only screen and (max-width: $container-width) {
+      padding: 0 10px;
+    }
   }
 
   .adminLink {
@@ -86,9 +98,19 @@
 
   .left {
     display: flex;
-
+    justify-content: space-between;
+    align-items: center;
     & svg {
       max-width: none;
+    }
+  }
+
+  .burderButton {
+    display: none;
+    margin-right: 15px;
+
+    @media only screen and (max-width: 1150px) {
+      display: block;
     }
   }
 
@@ -115,6 +137,10 @@
 
   .call {
     display: flex;
+
+    @media only screen and (max-width: 1150px) {
+      display: none;
+    }
   }
 
   .schedule {
@@ -131,6 +157,12 @@
   .orderCall {
     color: var(--darkTextColor);
     text-decoration: underline !important;
+  }
+
+  .priceListButton {
+    @media only screen and (max-width: $container-width) {
+      display: none;
+    }
   }
 
   .callImage {
@@ -150,6 +182,8 @@
     }
   }
 }
+
+
 
 .cartLink {
   display: flex;
@@ -196,6 +230,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: 1000px) {
+      display: none;
+    }
   }
 
   .title {

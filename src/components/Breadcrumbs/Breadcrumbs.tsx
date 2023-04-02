@@ -31,8 +31,6 @@ const Breadcrumbs: React.FC = () => {
     }
   }
 
-  console.log(breadcrumbs)
-
   if (!breadcrumbs || breadcrumbs.length === 1) {
     return <></>
   }
