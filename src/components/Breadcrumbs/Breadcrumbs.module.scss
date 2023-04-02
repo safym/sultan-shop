@@ -2,10 +2,15 @@
 
 .path {
   margin: 50px auto;
+  display: flex;
 
   .step {
+    min-width: 80px;
+    display: inline-flex;
+    flex-wrap: nowrap;
     padding: 0 10px;
     color: var(--darkTextColor);
+
 
     &:last-child {
       padding-right: 0;
@@ -16,5 +21,11 @@
     &:not(:last-child) {
       border-right: $dash-border;
     }
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    white-space: pre-wrap;
   }
 }
