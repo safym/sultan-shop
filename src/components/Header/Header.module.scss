@@ -23,6 +23,7 @@
 
   .top {
     min-height: 60px;
+
     @media only screen and (max-width: 1150px) {
       justify-content: flex-end;
     }
@@ -35,6 +36,7 @@
     @media only screen and (max-width: $container-width) {
       column-gap: 20px;
     }
+
     @media only screen and (max-width: 1150px) {
       display: none;
     }
@@ -55,6 +57,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    transition: $transition;
+
+    &:hover {
+      color: $main-text-color;
+    }
 
     &:last-child {
       padding-right: 0;
@@ -100,6 +107,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     & svg {
       max-width: none;
     }
@@ -191,6 +199,12 @@
   height: $ui-height;
   border-radius: $ui-height;
   padding: calc($offset / 2);
+  transform: translateZ(0) scale(1);
+  transition: $transition;
+
+  &:active {
+    transform: scale(1.1) translateY(.125rem);
+  }
 
   .icon {
     display: flex;
@@ -244,6 +258,4 @@
   .total {
     font-weight: 600;
   }
-
-  &:hover {}
 }

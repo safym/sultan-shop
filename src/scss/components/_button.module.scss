@@ -15,6 +15,16 @@
   -moz-column-gap: 15px;
   column-gap: 15px;
   flex-grow: 1;
+  transform: translateZ(0) scale(1);
+  transition: $transition;
+
+  &:hover {
+    background-color: darken($button-color, 10%);
+  }
+
+  &:active {
+    transform: scale(1.1) translateY(.125rem);
+  }
 
   .icon {
     display: flex;
@@ -29,4 +39,14 @@
   border-radius: 50%;
   color: $light-text-color;
   background-color: $button-color;  
+  transform: translateZ(0) scale(1);
+  transition: $transition;
+
+  &:hover {
+    background-color: darken($button-color, 10%);
+  }
+
+  &:active {
+    transform: scale(1.1) translateY(.125rem);
+  }
 }

@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: $transition;
 
   .control {
     width: 35px;

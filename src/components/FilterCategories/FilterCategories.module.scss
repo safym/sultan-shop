@@ -23,9 +23,10 @@
     background-color: $body-bg-color;
     box-shadow: $shadow;
     border-radius: 10px;
+    transition: $transition;
 
     &:hover {
-      background-color: darken($element-color, 3%);
+      box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.15), 0px 0px 0px 2px $button-bg-color, $shadow;
     }
   }
 
@@ -38,6 +39,6 @@
   }
 
   .checked {
-    box-shadow: 0px 0px 0px 2px $button-color-light, $shadow;
+    box-shadow: 0px 0px 0px 2px $button-bg-color, $shadow;
   }
 }

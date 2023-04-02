@@ -8,6 +8,6 @@ body {
   font-weight: $primary-font-weight;
   font-size: $primary-font-size;
   line-height: 150%;
-  color: var(--mainTextColor);
-  background-color: var(--body-bg-color); 
+  color: $main-text-color;
+  background-color: $body-bg-color; 
 }

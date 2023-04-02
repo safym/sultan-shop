@@ -11,12 +11,12 @@
   .input {
     margin-right: 10px;
 
-    &:checked+.label {
+    &:checked+span {
       font-weight: 700;
     }
   }
 
-  .checked{
+  .checked {
     font-weight: 700;
   }
 

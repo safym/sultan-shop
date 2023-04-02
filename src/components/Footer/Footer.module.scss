@@ -55,6 +55,10 @@
   }
 
   .link {
+    transition: $transition;
+    &:hover {
+      color: $button-bg-color;
+    }
     &:not(:last-child) {
       margin-bottom: 20px;
     }
