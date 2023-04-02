@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useAppSelector } from "../../app/hooks"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
 
 import { Product } from "../../app/slices/productsSlice"
 
@@ -8,6 +8,7 @@ import mainStyle from "../../scss/_container.module.scss"
 import titleStyle from "../../scss/components/_title.module.scss"
 import buttonStyle from "../../scss/components/_button.module.scss"
 import { createProduct } from "../../app/data/api"
+import { setRelevant } from "../../app/slices/relevantSlice"
 
 export interface formData {
   id?: string;
@@ -26,6 +27,8 @@ export interface formData {
 };
 
 const AdminPage: React.FC = () => {
+  const dispatch = useAppDispatch() 
+
   const productsItems = useAppSelector((state) => state.products.productsItems)
   const initialProductData: Product = {
     id: '',
@@ -109,13 +112,16 @@ const AdminPage: React.FC = () => {
     setProductData(({ ...productCopy }))
   }
 
+  const setRelevantData = (item: boolean) => {
+    dispatch(setRelevant(item))
+  }
+
   const formOnSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     switch (mode) {
       case 'add':
-        console.log('ADD', productData)
         const result = await createProduct(productData)
-        console.log(result)
+        setRelevantData(false)
         break
       case 'edit':
         console.log('EDIT', productData)
