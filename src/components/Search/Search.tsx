@@ -1,9 +1,15 @@
 import styles from "./Search.module.scss"
 
-const Search: React.FC = () => {
+interface FormProps {
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
+
+const Search: React.FC<FormProps> = (props: FormProps) => {
   return (
     <form className={styles.field}>
-      <input placeholder="Поиск..." className={styles.input} type="text"/>
+      <input placeholder="Поиск..." className={styles.input}
+        onChange={props.onChange} 
+        type="text"/>
       <button className={styles.button} type="submit">
         <svg
           width="19"

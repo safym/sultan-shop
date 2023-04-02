@@ -44,6 +44,12 @@ const FiltersSlice = createSlice({
     },
     removeCategory: (state, action: PayloadAction<string>) => {
       state.category = "";
+    },
+    removeFilters: (state) => {
+      state.category = initialState.category;
+      state.manufacturers = initialState.manufacturers;
+      state.maxPrice = initialState.maxPrice;
+      state.minPrice = initialState.minPrice
     }
   },
 });
@@ -54,7 +60,8 @@ export const {
   setManufacturer,
   removeManufacturer,
   setCategory,
-  removeCategory
+  removeCategory,
+  removeFilters
 } = FiltersSlice.actions;
 
 export default FiltersSlice.reducer;

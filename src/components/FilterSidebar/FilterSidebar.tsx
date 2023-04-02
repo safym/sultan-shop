@@ -1,12 +1,13 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { getCateroryList } from "../../utils/getCateroryList"
-import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory } from "../../app/slices/filterSlice"
+import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory, removeFilters } from "../../app/slices/filterSlice"
 
 import Search from "../Search/Search"
 
 import style from "./FilterSidebar.module.scss"
 import buttonStyle from "../../scss/components/_button.module.scss"
 import checkboxStyle from "../../scss/components/_checkbox.module.scss"
+import { useState } from "react"
 
 interface manufacturerItem {
   manufacturer: string
@@ -14,6 +15,7 @@ interface manufacturerItem {
 }
 
 const FilterSidebar: React.FC = () => {
+  const [filteredManufacturers, setFilteredManufacturers] = useState<Array<manufacturerItem>>([])
   const dispatch = useAppDispatch()
   const productsItems = useAppSelector((state) => state.products.productsItems)
   const filters = useAppSelector((state) => state.filter)
@@ -22,7 +24,7 @@ const FilterSidebar: React.FC = () => {
 
   const manufacturersList = productsItems.reduce(function (result: Array<manufacturerItem>, value) {
     const isAdded = result.find((item) => item.manufacturer === value.manufacturer)
-
+    
     if (!isAdded) {
       result.push({ manufacturer: value.manufacturer, countItems: 1 })
     } else {
@@ -63,6 +65,27 @@ const FilterSidebar: React.FC = () => {
     }
   }
 
+  const filterMnufacturers = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const filterSubString = event.target.value
+
+    console.log(filterSubString)
+
+    if (filterSubString) {
+      console.log(manufacturersList)
+
+      const filtered = manufacturersList.filter(item => {
+        return item.manufacturer.toUpperCase().includes(filterSubString.toUpperCase())
+      });
+
+      setFilteredManufacturers(filtered)
+      console.log(filtered)
+    }
+  }
+
+  const removeFiltersOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    dispatch(removeFilters())
+  }
+
   return (
     <div className={style.filter}>
       <h2 className={style.title}>ПОДБОР ПО ПАРАМЕТРАМ</h2>
@@ -87,7 +110,7 @@ const FilterSidebar: React.FC = () => {
       </div>
       <div className={style.manufacturer}>
         <h2 className={style.title}>Производитель</h2>
-        <Search />
+        <Search onChange={filterMnufacturers} />
         <ul className={style.list}>
           {manufacturersList.map((item, index) => {
             const checked = filters.manufacturers.includes(item.manufacturer)
@@ -120,7 +143,8 @@ const FilterSidebar: React.FC = () => {
         <button className={buttonStyle.button}>
           <span>Показать</span>
         </button>
-        <button className={buttonStyle.roundedButton}>
+        <button className={buttonStyle.roundedButton}
+          onClick={removeFiltersOnClick}>
           <span>
             <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
