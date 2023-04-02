@@ -14,14 +14,9 @@ export async function getProducts(): Promise<Product[]> {
   return products;
 }
 
-export type CheckoutResponse = { success: boolean; error?: string };
+export async function createProduct(productData: formData) {
+  const url = `${BASE_URL}products`;
 
-export async function createProduct(productData: formData): Promise<CheckoutResponse> {
- 
-  const url = `https://ayyansea.com/api/products`;
-
-  console.log(productData)
-  
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -30,9 +25,44 @@ export async function createProduct(productData: formData): Promise<CheckoutResp
       },
       body: JSON.stringify(productData),
     });
+
+    return response;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export async function deleteProduct(productId: string) {
+  const url = `${BASE_URL}products/${productId}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
     const data = await response.json();
 
-    return data as CheckoutResponse;
+    return data;
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export async function editProduct(productData: formData) {
+  const url = `${BASE_URL}products/${productData.id}`;
+
+  try {
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(productData),
+    });
+
+    return response;
   } catch (error) {
     console.error(error)
   }

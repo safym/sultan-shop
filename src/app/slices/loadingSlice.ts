@@ -13,7 +13,6 @@ const CartSlice = createSlice({
   initialState,
   reducers: {
     setLoading: (state, action: PayloadAction<boolean>) => {
-      console.log(action.payload)
       state.isLoading = action.payload
     }
   },

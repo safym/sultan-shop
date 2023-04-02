@@ -7,7 +7,7 @@ import style from "./AdminPage.module.scss"
 import mainStyle from "../../scss/_container.module.scss"
 import titleStyle from "../../scss/components/_title.module.scss"
 import buttonStyle from "../../scss/components/_button.module.scss"
-import { createProduct } from "../../app/data/api"
+import { createProduct, deleteProduct, editProduct } from "../../app/data/api"
 import { setRelevant } from "../../app/slices/relevantSlice"
 
 export interface formData {
@@ -27,7 +27,7 @@ export interface formData {
 };
 
 const AdminPage: React.FC = () => {
-  const dispatch = useAppDispatch() 
+  const dispatch = useAppDispatch()
 
   const productsItems = useAppSelector((state) => state.products.productsItems)
   const initialProductData: Product = {
@@ -118,18 +118,43 @@ const AdminPage: React.FC = () => {
 
   const formOnSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    let response;
     switch (mode) {
       case 'add':
-        const result = await createProduct(productData)
-        setRelevantData(false)
+        response = await createProduct(productData)
+
+        if (response?.ok) {
+          alert('Товар добавлен')
+        } else {
+          alert('Ошибка')
+        }
+
+        setProductData(initialProductData)
         break
       case 'edit':
         console.log('EDIT', productData)
+        response = await editProduct(productData)
+
+        if (response?.ok) {
+          alert('Товар изменен')
+        } else {
+          alert('Ошибка')
+        }
+
         break
       case 'delete':
         console.log('DELETE', productData)
+        response = await deleteProduct(productData.id)
+
+        if (response?.deletedCount) {
+          alert('Товар удален')
+        } else {
+          alert('Ошибка')
+        }
+
         break
     }
+    setRelevantData(false)
   }
 
   return (

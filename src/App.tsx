@@ -18,13 +18,9 @@ import { setRelevant } from "./app/slices/relevantSlice"
 function App() {
   // load product data from json to redux state
   const dataIsRelevant = useState(useAppSelector((state) => state.relevant.isRelevant))
-  console.log('dataIsRelevant', dataIsRelevant)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-
-   console.log('useEffact')
-
     getProducts().then((products) => {
       dispatch(setLoading(true))
       dispatch(setProducts(products))
@@ -32,8 +28,6 @@ function App() {
       dispatch(setRelevant(true))
     })
   }, [dataIsRelevant])
-  
-
 
   return (
     <BrowserRouter>

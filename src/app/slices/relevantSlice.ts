@@ -13,7 +13,6 @@ const RelevntSlice = createSlice({
   initialState,
   reducers: {
     setRelevant: (state, action: PayloadAction<boolean>) => {
-      console.log(action.payload)
       state.isRelevant = action.payload
     }
   },
