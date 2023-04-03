@@ -9,24 +9,37 @@ import Layout from './components/Layout'
 import ProductDetails from "./components/ProductDetails/ProductDetails"
 import { useAppDispatch, useAppSelector } from "./app/hooks"
 import { useEffect, useState } from "react"
-import { getProducts } from "./app/data/api"
+import { BASE_URL, getProducts } from "./app/data/api"
+import { LOCAL_URL } from "./app/data/api"
 import { setProducts } from "./app/slices/productsSlice"
 import { setLoading } from "./app/slices/loadingSlice"
 import AdminPage from "./components/AdminPage/AdminPage"
 import { setRelevant } from "./app/slices/relevantSlice"
+
 
 function App() {
   // load product data from json to redux state
   const dataIsRelevant = useState(useAppSelector((state) => state.relevant.isRelevant))
   const dispatch = useAppDispatch()
 
+  const urlAPI = `${BASE_URL}products`
+
   useEffect(() => {
-    getProducts().then((products) => {
-      dispatch(setLoading(true))
-      dispatch(setProducts(products))
+    dispatch(setLoading(true))
+
+    getProducts(urlAPI).then((products) => {
+
+      if (!products.length) {
+        getProducts(LOCAL_URL).then((localProducts) => {
+          dispatch(setProducts(localProducts))
+        })  
+      } else {
+        dispatch(setProducts(products))
+      }
+
       dispatch(setLoading(false))
-      dispatch(setRelevant(true))
     })
+    dispatch(setRelevant(true))
   }, [dataIsRelevant])
 
   return (
@@ -36,8 +49,8 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/products/:productId" element={<ProductDetails />}/>
-          <Route path="/edit/" element={<AdminPage />}/>
+          <Route path="/products/:productId" element={<ProductDetails />} />
+          <Route path="/edit/" element={<AdminPage />} />
         </Route>
       </Routes>
     </HashRouter>

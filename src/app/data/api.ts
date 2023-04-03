@@ -1,21 +1,22 @@
-import { Product } from "../slices/productsSlice";
+import { Product } from "../slices/productsSlice"
 import { formData } from "../../components/AdminPage/types"
 
-const BASE_URL = 'https://ayyansea.com/api/'
+export const BASE_URL = 'https://ayyansea.com/api/'
+export const LOCAL_URL = 'products.json'
 
-export async function getProducts(): Promise<Product[]> {
-  const url = `${BASE_URL}products`;
-  const results = await fetch(url);
+export async function getProducts(url: string): Promise<Product[]> {
+  const results = await fetch(url)
 
   // artificial delay for skeletons
-  await sleep(1000);
+  await sleep(1000)
 
-  const products = results.json();
-  return products;
+  const products = results.json()
+
+  return products
 }
 
 export async function createProduct(productData: formData) {
-  const url = `${BASE_URL}products`;
+  const url = `${BASE_URL}products`
 
   try {
     const response = await fetch(url, {
@@ -24,16 +25,18 @@ export async function createProduct(productData: formData) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(productData),
-    });
+    })
 
-    return response;
+
+
+    return response
   } catch (error) {
     console.error(error)
   }
 }
 
 export async function deleteProduct(productId: string) {
-  const url = `${BASE_URL}products/${productId}`;
+  const url = `${BASE_URL}products/${productId}`
 
   try {
     const response = await fetch(url, {
@@ -41,17 +44,17 @@ export async function deleteProduct(productId: string) {
       headers: {
         'Content-Type': 'application/json'
       }
-    });
-    const data = await response.json();
+    })
+    const data = await response.json()
 
-    return data;
+    return data
   } catch (error) {
     console.error(error)
   }
 }
 
 export async function editProduct(productData: formData) {
-  const url = `${BASE_URL}products/${productData.id}`;
+  const url = `${BASE_URL}products/${productData.id}`
 
   try {
     const response = await fetch(url, {
@@ -60,13 +63,13 @@ export async function editProduct(productData: formData) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(productData),
-    });
+    })
 
-    return response;
+    return response
   } catch (error) {
     console.error(error)
   }
 }
 
 const sleep = (time: number) =>
-  new Promise((res) => setTimeout(res, time));
+  new Promise((res) => setTimeout(res, time))
