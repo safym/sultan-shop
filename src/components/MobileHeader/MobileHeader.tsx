@@ -1,10 +1,10 @@
+import { useAppSelector } from "../../app/hooks"
+import { useState } from "react"
+
 import { NavLink } from "react-router-dom"
 
 import style from "./MobileHeader.module.scss"
-import mainStyle from "../../scss/_container.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss"
-import { useAppSelector } from "../../app/hooks"
-import { useState } from "react"
+import buttonStyle from "../../styles/components/_button.module.scss"
 
 const MobileHeader: React.FC = () => {
   const cart = useAppSelector((state) => state.cart)

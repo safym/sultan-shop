@@ -1,19 +1,21 @@
-import { HashRouter, BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
+import { HashRouter,  Routes, Route} from "react-router-dom"
 
-import './scss/app.css'
+import './styles/app.css'
+
+import { useAppDispatch, useAppSelector } from "./app/hooks"
+import { useEffect, useState } from "react"
 
 import Home from "./components/Home/Home"
 import Products from "./components/Products/Products"
 import Cart from "./components/Cart/Cart"
 import Layout from './components/Layout'
 import ProductDetails from "./components/ProductDetails/ProductDetails"
-import { useAppDispatch, useAppSelector } from "./app/hooks"
-import { useEffect, useState } from "react"
-import { BASE_URL, getProducts } from "./app/data/api"
-import { LOCAL_URL } from "./app/data/api"
+import AdminPage from "./components/AdminPage/AdminPage"
+
+import { BASE_URL, LOCAL_URL, getProducts } from "./app/data/api"
+
 import { setProducts } from "./app/slices/productsSlice"
 import { setLoading } from "./app/slices/loadingSlice"
-import AdminPage from "./components/AdminPage/AdminPage"
 import { setRelevant } from "./app/slices/relevantSlice"
 
 

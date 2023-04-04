@@ -7,8 +7,8 @@ import AddButton from "../AddButton/AddButton"
 import Counter from "../Counter/Counter"
 
 import style from "./ProductDetails.module.scss"
-import mainStyle from "../../scss/_container.module.scss"
-import expandedBlockStyle from "../../scss/components/_expanded-block.module.scss"
+import mainStyle from "../../styles/_container.module.scss"
+import expandedBlockStyle from "../../styles/components/_expanded-block.module.scss"
 
 const ProductDetails: React.FC = () => {
   const [descrptionOpen, setDescrptionOpen] = useState(true)

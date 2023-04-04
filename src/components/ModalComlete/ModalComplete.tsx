@@ -1,7 +1,7 @@
-import style from "./ModalComplete.module.scss"
-import titleStyle from "../../scss/components/_title.module.scss"
 import { useState } from "react"
-import { is } from "immer/dist/internal"
+
+import style from "./ModalComplete.module.scss"
+import titleStyle from "../../styles/components/_title.module.scss"
 
 interface propsModal {
   setIsOrdered: React.Dispatch<React.SetStateAction<boolean>>

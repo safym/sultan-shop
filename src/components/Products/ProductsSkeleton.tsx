@@ -1,7 +1,7 @@
 import { useAppSelector } from "../../app/hooks";
 import ProductItemSkeleton from "../ProductItem/ProductItemSkeleton";
 
-import { PAGE_ITEMS } from "../../utils/pagination";
+import { PAGE_ITEMS } from "../../app/slices/paginationSlice"
 
 const ProductsSkeleton: React.FC = () => {
   const isLoading = useAppSelector((state) => state.loading.isLoading)

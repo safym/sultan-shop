@@ -1,11 +1,10 @@
-import { NavLink } from "react-router-dom"
 import { Product } from "../../app/slices/productsSlice"
 
-import style from "./Pagintaion.module.scss"
-
-import { PAGE_ITEMS } from "../../utils/pagination"
+import { PAGE_ITEMS } from "../../app/slices/paginationSlice"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setCurrentPage } from "../../app/slices/paginationSlice"
+
+import style from "./Pagintaion.module.scss"
 
 const START_PAGE = 1;
 

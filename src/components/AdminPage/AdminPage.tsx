@@ -2,9 +2,9 @@ import { useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 
 import style from "./AdminPage.module.scss"
-import mainStyle from "../../scss/_container.module.scss"
-import titleStyle from "../../scss/components/_title.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss"
+import mainStyle from "../../styles/_container.module.scss"
+import titleStyle from "../../styles/components/_title.module.scss"
+import buttonStyle from "../../styles/components/_button.module.scss"
 
 import { Product } from "../../app/slices/productsSlice"
 import { createProduct, deleteProduct, editProduct } from "../../app/data/api"

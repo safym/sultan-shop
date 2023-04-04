@@ -3,12 +3,13 @@ import { Product } from "../../app/slices/productsSlice"
 import { CartItem as CartItemData } from "../../app/slices/cartSlice"
 import { useAppDispatch } from "../../app/hooks"
 import { removeItem } from "../../app/slices/cartSlice"
+
 import Measurement from "../Measurement/Measurement"
 import Counter from "../Counter/Counter"
 
 import style from "./CartItem.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss"
-import dividerStyle from "../../scss/components/_divider.module.scss"
+import buttonStyle from "../../styles/components/_button.module.scss"
+import dividerStyle from "../../styles/components/_divider.module.scss"
 
 export interface CartItemProps {
   product: Product

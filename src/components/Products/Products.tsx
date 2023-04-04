@@ -1,20 +1,21 @@
 import React from "react"
 import { useAppSelector } from "../../app/hooks"
+
 import ProductItem from "../ProductItem/ProductItem"
 import FilterSidebar from "../FilterSidebar/FilterSidebar"
 import FilterCategories from "../FilterCategories/FilterCategories"
 import Sort from "../Sort/Sort"
+import ProductsSkeleton from "./ProductsSkeleton"
+import Pagination from "../Pagination/Pagination"
+
 import { sortByField } from "../../utils/sort"
 import { getFilteredItems } from "../../utils/getFilteredItems"
 
 import style from "./Products.module.scss"
-import mainStyle from "../../scss/_container.module.scss"
-import titleStyle from "../../scss/components/_title.module.scss"
-import ProductsSkeleton from "./ProductsSkeleton"
-import Pagination from "../Pagination/Pagination"
-import productsSlice from "../../app/slices/productsSlice"
+import mainStyle from "../../styles/_container.module.scss"
+import titleStyle from "../../styles/components/_title.module.scss"
 
-import { PAGE_ITEMS } from "../../utils/pagination"
+import { PAGE_ITEMS } from "../../app/slices/paginationSlice"
 
 
 const Products: React.FC = () => {

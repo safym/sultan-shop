@@ -1,14 +1,14 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { getCateroryList } from "../../utils/getCateroryList"
 import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory, removeFilters } from "../../app/slices/filterSlice"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 import Search from "../Search/Search"
 
 import style from "./FilterSidebar.module.scss"
-import expandedBlockStyle from "../../scss/components/_expanded-block.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss"
-import checkboxStyle from "../../scss/components/_checkbox.module.scss"
+import expandedBlockStyle from "../../styles/components/_expanded-block.module.scss"
+import buttonStyle from "../../styles/components/_button.module.scss"
+import checkboxStyle from "../../styles/components/_checkbox.module.scss"
 
 
 interface manufacturerItem {
@@ -29,7 +29,6 @@ const FilterSidebar: React.FC = () => {
     return result
   }, [])
 
-  const [manufacturers, setManufacturers] = useState<Array<manufacturerItem>>([])
   const [filteredManufacturers, setFilteredManufacturers] = useState<Array<manufacturerItem>>(manufacturersList)
   const [filterIsOpen, setFilterIsOpen] = useState<boolean>(true)
   const [substring, setSubstring] = useState<string>('')

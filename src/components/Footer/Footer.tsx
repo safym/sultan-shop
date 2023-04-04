@@ -1,8 +1,8 @@
 import Search from '../Search/Search'
 
 import style from "./Footer.module.scss"
-import mainStyle from "../../scss/_container.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss"
+import mainStyle from "../../styles/_container.module.scss"
+import buttonStyle from "../../styles/components/_button.module.scss"
 
 const Footer: React.FC = () => {
   return (

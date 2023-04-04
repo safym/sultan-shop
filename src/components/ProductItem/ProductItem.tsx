@@ -1,13 +1,10 @@
-import { is } from "immer/dist/internal"
 import { NavLink } from "react-router-dom"
-import { useAppSelector } from "../../app/hooks"
 import { Product } from "../../app/slices/productsSlice"
 
 import AddButton from "../AddButton/AddButton"
 import Measurement from "../Measurement/Measurement"
 
 import style from "./ProductItem.module.scss"
-import ProductItemSkeleton from "./ProductItemSkeleton"
 
 interface productItemProps {
   productData: Product,

@@ -4,10 +4,8 @@ import { useAppSelector } from "../../app/hooks"
 import Search from '../Search/Search'
 
 import style from "./Header.module.scss"
-import buttonStyle from "../../scss/components/_button.module.scss"
-import contactStyle from "../../scss/components/_contact.module.scss"
-import dividerStyle from "../../scss/components/_divider.module.scss"
-import { is } from 'immer/dist/internal'
+import buttonStyle from "../../styles/components/_button.module.scss"
+import contactStyle from "../../styles/components/_contact.module.scss"
 import MobileHeader from '../MobileHeader/MobileHeader'
 
 const call = new URL("../../assets/img/call.png", import.meta.url).href;

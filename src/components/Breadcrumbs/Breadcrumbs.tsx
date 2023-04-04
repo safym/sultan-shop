@@ -3,8 +3,7 @@ import useBreadcrumbs from "use-react-router-breadcrumbs"
 import { useAppSelector } from "../../app/hooks"
 
 import style from "./Breadcrumbs.module.scss"
-import mainStyle from "../../scss/_container.module.scss"
-import ProductItem from "../ProductItem/ProductItem"
+import mainStyle from "../../styles/_container.module.scss"
 
 const Breadcrumbs: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems)

@@ -1,14 +1,14 @@
 import { useAppSelector } from "../../app/hooks"
-import CartItem from "../CartItem/CartItem"
+import { useState } from "react"
 
-import buttonStyle from "../../scss/components/_button.module.scss"
+import CartItem from "../CartItem/CartItem"
 import CartEmpty from "../CartEmpty/CartEmpty"
+import ModalComplete from "../ModalComlete/ModalComplete"
 
 import style from "./Cart.module.scss"
-import mainStyle from "../../scss/_container.module.scss"
-import titleStyle from "../../scss/components/_title.module.scss"
-import ModalComplete from "../ModalComlete/ModalComplete"
-import { useState } from "react"
+import buttonStyle from "../../styles/components/_button.module.scss"
+import mainStyle from "../../styles/_container.module.scss"
+import titleStyle from "../../styles/components/_title.module.scss"
 
 const Cart: React.FC = () => {
   const cart = useAppSelector(state => state.cart)

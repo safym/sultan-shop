@@ -4,7 +4,7 @@ import Footer from "./Footer/Footer"
 import Breadcrumbs from "./Breadcrumbs/Breadcrumbs"
 import ScrollToTop from "./ScrollTop"
 
-import mainStyle from "../scss/_container.module.scss"
+import mainStyle from "../styles/_container.module.scss"
 
 const Layout: React.FC = () => {
   return (
