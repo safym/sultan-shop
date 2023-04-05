@@ -60,6 +60,7 @@ const CartSlice = createSlice({
 
       state.cartItems = state.cartItems.filter((item) => item.id !== productId)
 
+      state.totalCount = getTotalCartCount(state.cartItems)
       state.totalPrice = getTotalCartPrice(state.cartItems)
     }
   },
