@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "../../styles/main/variables";
 
 .details {
   .body {
@@ -70,7 +70,6 @@
     display: grid;
     column-gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(100px, auto));
-    grid-wrap: wrap;
     margin: 10px 0;
   }
 

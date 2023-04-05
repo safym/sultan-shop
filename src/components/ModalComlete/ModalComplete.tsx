@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import style from "./ModalComplete.module.scss"
+import style from "./_modalComplete.module.scss"
 import titleStyle from "../../styles/components/_title.module.scss"
 
 interface propsModal {

@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 
-import style from "./AdminPage.module.scss"
-import mainStyle from "../../styles/_container.module.scss"
-import titleStyle from "../../styles/components/_title.module.scss"
-import buttonStyle from "../../styles/components/_button.module.scss"
-
 import { Product } from "../../app/slices/productsSlice"
 import { createProduct, deleteProduct, editProduct } from "../../app/data/api"
 import { setRelevant } from "../../app/slices/relevantSlice"
 import { formData } from "./types"
+
+import style from "./_adminPage.module.scss"
+import mainStyle from "../../styles/main/_container.module.scss"
+import titleStyle from "../../styles/components/_title.module.scss"
+import buttonStyle from "../../styles/components/_button.module.scss"
 
 const AdminPage: React.FC = () => {
   const dispatch = useAppDispatch()

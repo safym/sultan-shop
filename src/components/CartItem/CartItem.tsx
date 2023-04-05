@@ -7,7 +7,7 @@ import { removeItem } from "../../app/slices/cartSlice"
 import Measurement from "../Measurement/Measurement"
 import Counter from "../Counter/Counter"
 
-import style from "./CartItem.module.scss"
+import style from "./_cartItem.module.scss"
 import buttonStyle from "../../styles/components/_button.module.scss"
 import dividerStyle from "../../styles/components/_divider.module.scss"
 

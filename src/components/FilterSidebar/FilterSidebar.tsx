@@ -5,7 +5,7 @@ import { useState } from "react"
 
 import Search from "../Search/Search"
 
-import style from "./FilterSidebar.module.scss"
+import style from "./_filterSidebar.module.scss"
 import expandedBlockStyle from "../../styles/components/_expanded-block.module.scss"
 import buttonStyle from "../../styles/components/_button.module.scss"
 import checkboxStyle from "../../styles/components/_checkbox.module.scss"

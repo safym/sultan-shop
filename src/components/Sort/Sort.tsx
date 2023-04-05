@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { sortList, sortItem, setSort } from "../../app/slices/sortSlice"
 
-import style from "./Sort.module.scss"
+import style from "./_sort.module.scss"
 
 const Sort: React.FC = () => {
   let [dropdownOpen, setDropdownOpen] = useState(false)

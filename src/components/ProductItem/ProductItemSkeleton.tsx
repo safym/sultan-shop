@@ -1,7 +1,7 @@
 import React from "react"
 import ContentLoader from "react-content-loader"
 
-import style from "./ProductItem.module.scss"
+import style from "./_productItem.module.scss"
 
 const ProductItemSkeleton: React.FC = () => (
   <ContentLoader 

@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { removeCategory, setCategory } from "../../app/slices/filterSlice"
 import { getCateroryList } from "../../utils/getCateroryList"
 
-import style from "./FilterCategories.module.scss"
+import style from "./_filterCategories.module.scss"
 
 const FilterCategories: React.FC = () => {
   const dispatch = useAppDispatch()

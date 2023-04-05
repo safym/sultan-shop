@@ -1,4 +1,4 @@
-import styles from "./Search.module.scss"
+import styles from "./_search.module.scss"
 
 interface FormProps {
   onChange: any;

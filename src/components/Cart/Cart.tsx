@@ -5,9 +5,9 @@ import CartItem from "../CartItem/CartItem"
 import CartEmpty from "../CartEmpty/CartEmpty"
 import ModalComplete from "../ModalComlete/ModalComplete"
 
-import style from "./Cart.module.scss"
+import style from "./_cart.module.scss"
 import buttonStyle from "../../styles/components/_button.module.scss"
-import mainStyle from "../../styles/_container.module.scss"
+import mainStyle from "../../styles/main/_container.module.scss"
 import titleStyle from "../../styles/components/_title.module.scss"
 
 const Cart: React.FC = () => {

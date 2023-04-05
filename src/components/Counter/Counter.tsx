@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { addItem, minusItem, removeItem } from "../../app/slices/cartSlice"
 import { Product } from "../../app/slices/productsSlice"
 
-import counterStyle from "./Counter.module.scss"
+import counterStyle from "./_counter.module.scss"
 
 interface CounterProductProps {
   product: Product

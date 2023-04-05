@@ -4,7 +4,7 @@ import { Product } from "../../app/slices/productsSlice"
 import AddButton from "../AddButton/AddButton"
 import Measurement from "../Measurement/Measurement"
 
-import style from "./ProductItem.module.scss"
+import style from "./_productItem.module.scss"
 
 interface productItemProps {
   productData: Product,

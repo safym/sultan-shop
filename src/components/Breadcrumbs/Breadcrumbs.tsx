@@ -2,8 +2,8 @@ import { NavLink, useParams } from "react-router-dom"
 import useBreadcrumbs from "use-react-router-breadcrumbs"
 import { useAppSelector } from "../../app/hooks"
 
-import style from "./Breadcrumbs.module.scss"
-import mainStyle from "../../styles/_container.module.scss"
+import style from "./_breadcrumbs.module.scss"
+import mainStyle from "../../styles/main/_container.module.scss"
 
 const Breadcrumbs: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems)

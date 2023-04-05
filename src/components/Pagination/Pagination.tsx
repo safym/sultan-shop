@@ -4,7 +4,7 @@ import { PAGE_ITEMS } from "../../app/slices/paginationSlice"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { setCurrentPage } from "../../app/slices/paginationSlice"
 
-import style from "./Pagintaion.module.scss"
+import style from "./_pagination.module.scss"
 
 const START_PAGE = 1;
 

@@ -1,9 +1,8 @@
 import { useAppSelector } from "../../app/hooks"
 import { useState } from "react"
-
 import { NavLink } from "react-router-dom"
 
-import style from "./MobileHeader.module.scss"
+import style from "./_mobileHeader.module.scss"
 import buttonStyle from "../../styles/components/_button.module.scss"
 
 const MobileHeader: React.FC = () => {

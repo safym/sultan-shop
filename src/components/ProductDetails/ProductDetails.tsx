@@ -6,8 +6,8 @@ import Measurement from "../Measurement/Measurement"
 import AddButton from "../AddButton/AddButton"
 import Counter from "../Counter/Counter"
 
-import style from "./ProductDetails.module.scss"
-import mainStyle from "../../styles/_container.module.scss"
+import style from "./_productDetails.module.scss"
+import mainStyle from "../../styles/main/_container.module.scss"
 import expandedBlockStyle from "../../styles/components/_expanded-block.module.scss"
 
 const ProductDetails: React.FC = () => {

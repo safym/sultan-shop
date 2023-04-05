@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 
-import style from "./CartEmpty.module.scss"
-import mainStyle from "../../styles/_container.module.scss"
+import style from "./_cartEmpty.module.scss"
+import mainStyle from "../../styles/main/_container.module.scss"
 import titleStyle from "../../styles/components/_title.module.scss"
 
 const CartEmpty: React.FC = () => {

@@ -11,8 +11,8 @@ import Pagination from "../Pagination/Pagination"
 import { sortByField } from "../../utils/sort"
 import { getFilteredItems } from "../../utils/getFilteredItems"
 
-import style from "./Products.module.scss"
-import mainStyle from "../../styles/_container.module.scss"
+import style from "./_products.module.scss"
+import mainStyle from "../../styles/main/_container.module.scss"
 import titleStyle from "../../styles/components/_title.module.scss"
 
 import { PAGE_ITEMS } from "../../app/slices/paginationSlice"

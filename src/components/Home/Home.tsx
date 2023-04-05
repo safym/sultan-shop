@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
 
-import style from "./Home.module.scss"
-import mainStyle from "../../styles/_container.module.scss"
+import style from "./_home.module.scss"
+import mainStyle from "../../styles/main/_container.module.scss"
 import buttonStyle from "../../styles/components/_button.module.scss"
 
 const consultant = new URL("../../assets/img/banner.png", import.meta.url).href;

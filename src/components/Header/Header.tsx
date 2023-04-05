@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom"
 import { useAppSelector } from "../../app/hooks"
+
 import Search from '../Search/Search'
 
-import style from "./Header.module.scss"
+import style from "./_header.module.scss"
 import buttonStyle from "../../styles/components/_button.module.scss"
 import contactStyle from "../../styles/components/_contact.module.scss"
 import MobileHeader from '../MobileHeader/MobileHeader'
