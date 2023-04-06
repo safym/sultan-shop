@@ -44,12 +44,6 @@
     background-color: $button-color-light;
   }
 
-  .manufacturer {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-  }
-
   .list {
     display: flex;
     flex-direction: column;
@@ -79,19 +73,4 @@
   .currency {
     font-weight: 600;
   }
-}
-
-.expandLink {
-  display: inline-flex;
-  align-items: center;
-  color: $dark-text-color;
-
-  &__arrow {
-
-    & svg {
-      margin-left: 5px;
-      margin-bottom: 2px;
-    }
-  }
-
 }

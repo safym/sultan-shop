@@ -1,9 +1,10 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
 import { getCateroryList } from "../../utils/getCateroryList"
-import { setMaxPrice, setMinPrice, setManufacturer, removeManufacturer, setCategory, removeCategory, removeFilters } from "../../app/slices/filterSlice"
 import { useState } from "react"
+import { setMaxPrice, setMinPrice, setCategory, removeCategory, removeFilters } from "../../app/slices/filterSlice"
+import { removeNonDigits } from "../../utils/removeNonDigits"
 
-import Search from "../Search/Search"
+import ManufacturerList from "../ManufacturerList/ManufacturerList"
 
 import style from "./_filterSidebar.module.scss"
 import expandedBlockStyle from "../../styles/components/_expanded-block.module.scss"
@@ -11,56 +12,26 @@ import buttonStyle from "../../styles/components/_button.module.scss"
 import checkboxStyle from "../../styles/components/_checkbox.module.scss"
 
 
-interface manufacturerItem {
-  manufacturer: string
-  countItems: 1
-}
-
 const FilterSidebar: React.FC = () => {
   const productsItems = useAppSelector((state) => state.products.productsItems)
-  const manufacturersList = productsItems.reduce(function (result: Array<manufacturerItem>, value) {
-    const isAdded = result.find((item) => item.manufacturer === value.manufacturer)
+  const filters = useAppSelector((state) => state.filter)
 
-    if (!isAdded) {
-      result.push({ manufacturer: value.manufacturer, countItems: 1 })
-    } else {
-      isAdded.countItems++
-    }
-    return result
-  }, [])
-
-  const [filteredManufacturers, setFilteredManufacturers] = useState<Array<manufacturerItem>>(manufacturersList)
   const [filterIsOpen, setFilterIsOpen] = useState<boolean>(true)
-  const [substring, setSubstring] = useState<string>('')
 
   const dispatch = useAppDispatch()
- 
-  const filters = useAppSelector((state) => state.filter)
 
   const categoryList = getCateroryList(productsItems)
 
-
-
   const minOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const price = event.target.value.replace(/\D/g, '')
+    const price = removeNonDigits(event.target.value)
 
     dispatch(setMinPrice(+price))
   }
 
   const maxOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const price = event.target.value.replace(/\D/g, '')
+    const price = removeNonDigits(event.target.value)
 
     dispatch(setMaxPrice(+price))
-  }
-
-  const manufacturerOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const manufacturer = event.target.value
-
-    if (event.target.checked) {
-      dispatch(setManufacturer([manufacturer]))
-    } else {
-      dispatch(removeManufacturer(manufacturer))
-    }
   }
 
   const categoryOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,21 +42,6 @@ const FilterSidebar: React.FC = () => {
     } else {
       dispatch(removeCategory(category))
     }
-  }
-
-  const filterMnufacturers = (event: any) => {
-
-
-      const filtered = manufacturersList.filter(item => {
-        return item.manufacturer.toUpperCase().includes(event.target.value.toUpperCase())
-      });
-
-      setFilteredManufacturers(filtered)
-
-
-
-    setSubstring(event.target.value)
-    console.log(filtered)
   }
 
   const removeFiltersOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -123,40 +79,9 @@ const FilterSidebar: React.FC = () => {
                 type="text" />
             </div>
           </div>
-          <div className={style.manufacturer}>
-            <h2 className={style.title}>Производитель</h2>
-            <input placeholder="Поиск..."
-              onChange={filterMnufacturers}
-              type="text" />
-            <Search onChange={filterMnufacturers} substring={substring} />
-            <ul className={style.list}>
-              {filteredManufacturers.map((item, index) => {
-                const checked = filters.manufacturers.includes(item.manufacturer)
 
-                return (
-                  <li className={`${style.listItem} ${checkboxStyle.checkbox}`}
-                    key={`Manufacturer_${index}`}>
-                    <label className={checkboxStyle.label}>
-                      <input className={checkboxStyle.input}
-                        value={item.manufacturer} onChange={manufacturerOnChange}
-                        checked={checked}
-                        type="checkbox" />
-                      <span className={checkboxStyle.text}>{item.manufacturer}</span>
-                      <span className={checkboxStyle.counter}>({item.countItems})</span>
-                    </label>
-                  </li>
-                )
-              })}
-            </ul>
-            <a className={style.expandLink}>
-              Показать все
-              <span className={style.expandLink__arrow}>
-                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.5 6L0.468911 0.750001L6.53109 0.75L3.5 6Z" fill="#3F4E65" />
-                </svg>
-              </span>
-            </a>
-          </div>
+          <ManufacturerList />
+
           <div className={style.controls}>
             <button className={buttonStyle.button}>
               <span>Показать</span>
