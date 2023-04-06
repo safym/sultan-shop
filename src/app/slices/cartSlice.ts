@@ -40,8 +40,7 @@ const CartSlice = createSlice({
         });
       }
 
-      state.totalPrice = getTotalCartPrice(state.cartItems)
-      state.totalCount = getTotalCartCount(state.cartItems)
+      CartSlice.caseReducers.updateItem(state)
     },
     minusItem: (state, action) => {
       const productId = action.payload.item.id
@@ -52,14 +51,16 @@ const CartSlice = createSlice({
         addedItem.total = getTotalItemPrice(addedItem)
       }
 
-      state.totalCount = getTotalCartCount(state.cartItems)
-      state.totalPrice = getTotalCartPrice(state.cartItems)
+      CartSlice.caseReducers.updateItem(state)
     },
     removeItem: (state, action) => {
       const productId = action.payload.item.id;
 
       state.cartItems = state.cartItems.filter((item) => item.id !== productId)
 
+      CartSlice.caseReducers.updateItem(state)
+    },
+    updateItem: (state) => {
       state.totalCount = getTotalCartCount(state.cartItems)
       state.totalPrice = getTotalCartPrice(state.cartItems)
     }
