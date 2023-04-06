@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useAppSelector } from "../../app/hooks"
+import { Product } from "../../app/slices/productsSlice"
 
 import Measurement from "../Measurement/Measurement"
 import AddButton from "../AddButton/AddButton"
@@ -11,11 +12,20 @@ import mainStyle from "../../styles/main/_container.module.scss"
 import expandedBlockStyle from "../../styles/components/_expanded-block.module.scss"
 
 const ProductDetails: React.FC = () => {
+  const productsItems = useAppSelector((state) => state.products.productsItems)
+  
   const [descrptionOpen, setDescrptionOpen] = useState(true)
   const [specOpen, setSpecOpen] = useState(true)
+  const [productData, setProductData] = useState<Product | undefined>()
 
   const { productId } = useParams()
-  const productsItems = useAppSelector((state) => state.products.productsItems)
+
+  useEffect(() => {
+    const product = productsItems.find((item) => item.id === productId)
+
+    if (productId) setProductData(product)
+  }, [productsItems])
+
 
   const toggleDescriptionOpen = () => {
     setDescrptionOpen(!descrptionOpen)
@@ -25,29 +35,24 @@ const ProductDetails: React.FC = () => {
     setSpecOpen(!specOpen)
   }
 
-  let product
-  if (productId) {
-    product = productsItems.find((item) => item.id === productId)
-  }
-
-  if (!product) return <></>
+  if (!productData) return <></>
 
   return (
     <section className={`${style.details} ${mainStyle.container} ${mainStyle.content}`}>
       <div className={style.container} >
         <div className={style.body}>
           <div className={style.image}>
-            <img src={product?.imageURL} alt="product image" />
+            <img src={productData?.imageURL} alt="product image" />
           </div>
           <div className={style.info}>
             <p className={style.status}>В наличии</p>
-            <h2 className={style.title}><b>{product.brand}</b> {product.name}</h2>
-            <Measurement {...product.measurement} />
+            <h2 className={style.title}><b>{productData.brand}</b> {productData.name}</h2>
+            <Measurement {...productData.measurement} />
 
             <div className={style.total}>
-              <b className={style.price}> {(product.price).toFixed(2)} ₸</b>
-              <Counter product={product} />
-              <AddButton productData={product} />
+              <b className={style.price}> {(productData.price).toFixed(2)} ₸</b>
+              <Counter product={productData} />
+              <AddButton productData={productData} />
             </div>
             <div className={style.actions}>
               <a className={style.link}>
@@ -72,7 +77,7 @@ const ProductDetails: React.FC = () => {
               </div>
               <div className={`${expandedBlockStyle.list} ${descrptionOpen ? expandedBlockStyle.open : ""}`}>
                 <div className={expandedBlockStyle.item}>
-                  <p className={style.description}>{product.description}</p>
+                  <p className={style.description}>{productData.description}</p>
                 </div>
               </div>
             </div>
@@ -90,7 +95,7 @@ const ProductDetails: React.FC = () => {
                       Производитель:
                     </span>
                     <span>
-                      {product.manufacturer}
+                      {productData.manufacturer}
                     </span>
                   </li>
                   <li>
@@ -98,7 +103,7 @@ const ProductDetails: React.FC = () => {
                       Бренд:
                     </span>
                     <span>
-                      {product.brand}
+                      {productData.brand}
                     </span>
                   </li>
                   <li>
@@ -106,7 +111,7 @@ const ProductDetails: React.FC = () => {
                       Артикул:
                     </span>
                     <span>
-                      {product.barcode}
+                      {productData.barcode}
                     </span>
                   </li>
                   <li>
@@ -114,7 +119,7 @@ const ProductDetails: React.FC = () => {
                       Штрихкод:
                     </span>
                     <span>
-                      {product.barcode}
+                      {productData.barcode}
                     </span>
                   </li>
                   <li>
@@ -122,7 +127,7 @@ const ProductDetails: React.FC = () => {
                       Назначения:
                     </span>
                     <span>
-                      {product.manufacturer}
+                      {productData.manufacturer}
                     </span>
                   </li>
                   <li>
@@ -130,7 +135,7 @@ const ProductDetails: React.FC = () => {
                       Тип:
                     </span>
                     <span>
-                      {product.manufacturer}
+                      {productData.manufacturer}
                     </span>
                   </li>
                   <li>
@@ -138,7 +143,7 @@ const ProductDetails: React.FC = () => {
                       Производитель:
                     </span>
                     <span>
-                      {product.manufacturer}
+                      {productData.manufacturer}
                     </span>
                   </li>
                   <li>
@@ -146,7 +151,7 @@ const ProductDetails: React.FC = () => {
                       Бренд:
                     </span>
                     <span>
-                      {product.brand}
+                      {productData.brand}
                     </span>
                   </li>
                   <li>
@@ -154,7 +159,7 @@ const ProductDetails: React.FC = () => {
                       Артикул:
                     </span>
                     <span>
-                      {product.barcode}
+                      {productData.barcode}
                     </span>
                   </li>
                   <li>
@@ -162,7 +167,7 @@ const ProductDetails: React.FC = () => {
                       Штрихкод:
                     </span>
                     <span>
-                      {product.barcode}
+                      {productData.barcode}
                     </span>
                   </li>
                   <li>
@@ -170,7 +175,7 @@ const ProductDetails: React.FC = () => {
                       Вес:
                     </span>
                     <span>
-                      {product.measurement.value} {product.measurement.type}
+                      {productData.measurement.value} {productData.measurement.type}
                     </span>
                   </li>
                   <li>
@@ -178,7 +183,7 @@ const ProductDetails: React.FC = () => {
                       Объем:
                     </span>
                     <span>
-                      {product.measurement.value} {product.measurement.type}
+                      {productData.measurement.value} {productData.measurement.type}
                     </span>
                   </li>
                   <li>
@@ -186,7 +191,7 @@ const ProductDetails: React.FC = () => {
                       Кол-во в коробке:
                     </span>
                     <span>
-                      {product.measurement.value} {product.measurement.type}
+                      {productData.measurement.value} {productData.measurement.type}
                     </span>
                   </li>
                 </ul>

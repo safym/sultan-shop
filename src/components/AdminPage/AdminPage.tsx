@@ -95,6 +95,7 @@ const AdminPage: React.FC = () => {
   const formOnSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     let response;
+
     switch (mode) {
       case 'add':
         response = await createProduct(productData)
@@ -231,7 +232,6 @@ const AdminPage: React.FC = () => {
                         value={productData.measurement?.value}
                         onChange={fieldOnChange} />
                     </label>
-
                     <label className={style.label}>Тип измерения:
                       <select className={style.styledSelect}
                         name="measurement.type"
@@ -246,7 +246,6 @@ const AdminPage: React.FC = () => {
                       </select>
                     </label>
                   </div>
-
                   <label className={style.label}>Штрихкод:
                     <input className={style.styledInput}
                       name="barcode"

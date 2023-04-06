@@ -6,17 +6,21 @@ import { PAGE_ITEMS } from "../../app/slices/paginationSlice"
 const ProductsSkeleton: React.FC = () => {
   const isLoading = useAppSelector((state) => state.loading.isLoading)
 
-  const skeletons = [];
+  const renderSkeletons = () => {
+    const skeletons = [];
 
-  if (isLoading) {
-    for (let index = 0; index < PAGE_ITEMS; index++) {
-      skeletons.push(<ProductItemSkeleton />)
+    if (isLoading) {
+      for (let index = 0; index < PAGE_ITEMS; index++) {
+        skeletons.push(<ProductItemSkeleton key={index}/>)
+      }
     }
-  }
+
+    return skeletons;
+  };
 
   return (
     <>
-    {skeletons}
+    {renderSkeletons()}
     </>
   )
 }

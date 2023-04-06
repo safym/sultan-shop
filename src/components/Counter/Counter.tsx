@@ -5,7 +5,7 @@ import { Product } from "../../app/slices/productsSlice"
 import counterStyle from "./_counter.module.scss"
 
 interface CounterProductProps {
-  product: Product
+  product: Product;
 }
 
 const Counter: React.FC<CounterProductProps> = (props: CounterProductProps) => {
@@ -31,9 +31,7 @@ const Counter: React.FC<CounterProductProps> = (props: CounterProductProps) => {
   }
 
   if (!addedItem?.count) {
-    return (
-      <div className={counterStyle.mock}></div>
-    )
+    return <div className={counterStyle.mock}></div>
   }
   
   return (

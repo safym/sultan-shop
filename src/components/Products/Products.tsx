@@ -17,7 +17,6 @@ import titleStyle from "../../styles/components/_title.module.scss"
 
 import { PAGE_ITEMS } from "../../app/slices/paginationSlice"
 
-
 const Products: React.FC = () => {
   const currentPage = useAppSelector((state) => state.pagination.currentPage)
   const productsItems = useAppSelector((state) => state.products.productsItems)

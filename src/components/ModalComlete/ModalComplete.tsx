@@ -1,16 +1,14 @@
-import { useState } from "react"
-
 import style from "./_modalComplete.module.scss"
 import titleStyle from "../../styles/components/_title.module.scss"
 
 interface propsModal {
-  setIsOrdered: React.Dispatch<React.SetStateAction<boolean>>
+  isOrdered: boolean;
+  setIsOrdered: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ModalComplete: React.FC<propsModal> = (props: propsModal) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  if (isOpen) return <></>
+  if (!props.isOrdered) return <></>
 
   return (
     <div className={style.modal}>
@@ -23,9 +21,9 @@ const ModalComplete: React.FC<propsModal> = (props: propsModal) => {
         </button>
         <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="59" height="59" rx="29.5" fill="#FFC85E" />
-          <path d="M19.5 29.5L24.75 34.5L27.375 31.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M25.5 29.5L30.75 34.5L39.5 24.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M33.5 24.5L30 28.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M19.5 29.5L24.75 34.5L27.375 31.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M25.5 29.5L30.75 34.5L39.5 24.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M33.5 24.5L30 28.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <h1 className={titleStyle.title}>Спасибо за заказ</h1>
         <p>Наш менеджер свяжется с вами в ближайшее время</p>

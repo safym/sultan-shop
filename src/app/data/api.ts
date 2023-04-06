@@ -6,10 +6,6 @@ export const LOCAL_URL = 'products.json'
 
 export async function getProducts(url: string): Promise<Product[]> {
   const results = await fetch(url)
-
-  // artificial delay for skeletons
-  await sleep(1000)
-
   const products = results.json()
 
   return products
@@ -26,8 +22,6 @@ export async function createProduct(productData: formData) {
       },
       body: JSON.stringify(productData),
     })
-
-
 
     return response
   } catch (error) {
@@ -70,6 +64,3 @@ export async function editProduct(productData: formData) {
     console.error(error)
   }
 }
-
-const sleep = (time: number) =>
-  new Promise((res) => setTimeout(res, time))

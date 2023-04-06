@@ -17,6 +17,7 @@ const FilterCategories: React.FC = () => {
     if (event.target.checked) {
       dispatch(setCategory(category))
     } else {
+      console.log(category)
       dispatch(removeCategory(category))
     }
   }

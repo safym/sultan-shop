@@ -15,7 +15,7 @@
 .content {
   position: relative;
   width: 40%;
-  height: 40%;
+  height: 30%;
 
   background-color: $body-bg-color;
   display: flex;
@@ -28,7 +28,7 @@
   border-radius: 8px;
   text-align: center;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 900px) {
     width: 80%;
   }
 }

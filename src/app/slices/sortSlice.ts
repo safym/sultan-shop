@@ -22,10 +22,10 @@ export interface sortItem {
 }
 
 export const sortList: sortItem[] = [
-  { title: "По цене 🡑", type: SORT_TYPES.priceAsc },
-  { title: "По цене 🡓", type: SORT_TYPES.priceDesc },
-  { title: "По алфавиту 🡑", type: SORT_TYPES.nameAsc },
-  { title: "По алфавиту 🡓", type: SORT_TYPES.nameDesc },
+  { title: "Сначала дешевле", type: SORT_TYPES.priceAsc },
+  { title: "Сначала дороже", type: SORT_TYPES.priceDesc },
+  { title: "По алфавиту от Я до А", type: SORT_TYPES.nameAsc },
+  { title: "По алфавиту от А до я", type: SORT_TYPES.nameDesc },
 ]
 
 const initialState: sortItem = sortList[0]

@@ -9,7 +9,6 @@ const Search: React.FC<FormProps> = (props: FormProps) => {
   return (
     <form className={styles.field}>
       <input placeholder="Поиск..." className={styles.input} 
-        defaultValue=''
         value={props.substring}
         onChange={props.onChange} 
         type="text"/>

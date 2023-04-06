@@ -21,18 +21,15 @@ const Cart: React.FC = () => {
   }
 
   if (!cart.cartItems.length) {
-    return (
-      <CartEmpty />
-    )
+    return <CartEmpty />
   }
 
   return (
     <section className={style.cart}>
       <div className={`${mainStyle.container} ${mainStyle.content}`}>
-        {(isOrdered) && <ModalComplete setIsOrdered={setIsOrdered}/>}
+        {(isOrdered) && <ModalComplete isOrdered={isOrdered} setIsOrdered={setIsOrdered}/>}
         <div className={style.body}>
           <h1 className={titleStyle.title}>Корзина</h1>
-
           <ul className={style.list}>
             {cart.cartItems.map((item) => {
               const productId = item.id
@@ -48,7 +45,6 @@ const Cart: React.FC = () => {
               }
             })}
           </ul>
-
           <div className={style.total}>
             <button className={buttonStyle.button} onClick={placeOreder}>
               <span>Оформить</span>
