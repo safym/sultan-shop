@@ -1,7 +1,7 @@
 import { Product } from "../app/slices/productsSlice"
 import { sortSpec } from "../app/slices/sortSlice"
 
-export const sortByField = (data: Product[], sortSpec: sortSpec) => {
+export const sortByField = (data: Product[], sortSpec: sortSpec): Product[] => {
   const dataCopy = [...data]
   const field = sortSpec.field
 
@@ -10,7 +10,7 @@ export const sortByField = (data: Product[], sortSpec: sortSpec) => {
       case 'price':
         return sortSpec.direction * (a.price - b.price)
       case 'brand':
-        return sortSpec.direction * a.name.localeCompare(b.name, ["ru", "en-US"])
+        return sortSpec.direction * a.brand.localeCompare(b.brand, ["ru", "en-US"])
       default: 
         return 1
     }
