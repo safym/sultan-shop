@@ -10,6 +10,7 @@ import style from "./_adminPage.module.scss"
 import mainStyle from "../../styles/main/_container.module.scss"
 import titleStyle from "../../styles/components/_title.module.scss"
 import buttonStyle from "../../styles/components/_button.module.scss"
+import { getNewProductId } from "../../utils/getNewProductId"
 
 const AdminPage: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -300,8 +301,3 @@ const AdminPage: React.FC = () => {
 }
 
 export default AdminPage
-
-
-const getNewProductId = (productItems: Product[]): string => {
-  return String(Math.max(...productItems.map(item => (item.id) ? +item.id : 0)) + 1)
-}

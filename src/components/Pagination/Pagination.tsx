@@ -9,15 +9,14 @@ import style from "./_pagination.module.scss"
 const START_PAGE = 1;
 
 interface paginationProps {
-  productItems: Product[]
+  productsItems: Product[]
 }
 
 const Pagination: React.FC<paginationProps> = (props: paginationProps) => {
   const dispatch = useAppDispatch()
-  const productsItems = useAppSelector((state) => state.products.productsItems)
   const currentPage = useAppSelector((state) => state.pagination.currentPage)
 
-  const totalPages = Math.ceil(productsItems.length / PAGE_ITEMS)
+  const totalPages = Math.ceil(props.productsItems.length / PAGE_ITEMS)
 
   const handlePageChange = (newPage: number) => {
     if (START_PAGE - 1 < newPage && newPage <= totalPages) {

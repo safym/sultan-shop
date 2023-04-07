@@ -58,7 +58,7 @@ export async function editProduct(productData: formData) {
       },
       body: JSON.stringify(productData),
     })
-
+    
     return response
   } catch (error) {
     console.error(error)

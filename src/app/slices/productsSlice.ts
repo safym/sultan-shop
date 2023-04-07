@@ -30,13 +30,8 @@ const productsSlice = createSlice({
   reducers: {
     setProducts(state, action: PayloadAction<Product[]>) {
       const products = action.payload;
-      products.forEach(product => {
-        const IsAdded = state.productsItems.find((item) => item.id === product.id)
 
-        if (!IsAdded) {
-          state.productsItems.push(product);
-        }
-      })
+      state.productsItems = [...products]
     }
   },
 });

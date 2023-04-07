@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface ProductFiltersState {
+export interface ProductFiltersState {
   minPrice: number;
   maxPrice: number;
   manufacturers: string[];

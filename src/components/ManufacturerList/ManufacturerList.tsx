@@ -9,14 +9,14 @@ import style from "./_manufacturerList.module.scss"
 import checkboxStyle from "../../styles/components/_checkbox.module.scss"
 
 const ManufacturerList: React.FC = () => {
-  const productsItems = useAppSelector((state) => state.products.productsItems)
-  const filters = useAppSelector((state) => state.filter)
-
   const [manufacturersList, setManufacturersList] = useState<Array<manufacturerItem>>([])
   const [filteredManufacturers, setFilteredManufacturers] = useState<Array<manufacturerItem>>([])
   const [substring, setSubstring] = useState<string>('')
 
   const dispatch = useAppDispatch()
+
+  const productsItems = useAppSelector((state) => state.products.productsItems)
+  const filters = useAppSelector((state) => state.filter)
 
   useEffect(() => {
     setManufacturersList(getManufacturersList(productsItems));
@@ -33,7 +33,7 @@ const ManufacturerList: React.FC = () => {
     }
   }
 
-  const filterMnufacturers = (event: any) => {
+  const filterManufacturers = (event: any) => {
     const filtered = manufacturersList.filter(item => {
       return item.manufacturer.toUpperCase().includes(event.target.value.toUpperCase())
     });
@@ -45,7 +45,7 @@ const ManufacturerList: React.FC = () => {
   return (
     <div className={style.filterManufacturer}>
       <h2 className={style.title}>Производитель</h2>
-      <Search onChange={filterMnufacturers} substring={substring} />
+      <Search onChange={filterManufacturers} substring={substring} />
       <ul className={style.list}>
         {filteredManufacturers.map((item, index) => {
           const checked = filters.manufacturers.includes(item.manufacturer)

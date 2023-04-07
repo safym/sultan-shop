@@ -36,11 +36,13 @@ function App() {
           dispatch(setProducts(localProducts))
         })  
       } else {
+        console.log('load', products)
         dispatch(setProducts(products))
       }
 
       dispatch(setLoading(false))
     })
+    
     dispatch(setRelevant(true))
   }, [dataIsRelevant])
 
