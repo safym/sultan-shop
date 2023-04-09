@@ -26,44 +26,81 @@ const CartSlice = createSlice({
     addItem: (state, action) => {
       const productId = action.payload.item.id;
       const productPrice = action.payload.item.price;
-      const addedItem = state.cartItems.find((item) => item.id === productId)
+      let addedItem = state.cartItems.find((item) => item.id === productId)
 
       if (addedItem) {
-        addedItem.count++;
-        addedItem.total = getTotalItemPrice(addedItem);
+        const itemIndex = state.cartItems.findIndex(item => item.id === productId)
+
+        const updatedItems = [
+          ...state.cartItems.slice(0, itemIndex),
+          {
+            ...state.cartItems[itemIndex],
+            count: state.cartItems[itemIndex].count + 1,
+            total: (state.cartItems[itemIndex].count + 1) * state.cartItems[itemIndex].price,
+          },
+          ...state.cartItems.slice(itemIndex + 1),
+        ];
+
+        return {
+          cartItems: updatedItems,
+          totalCount: getTotalCartCount(updatedItems),
+          totalPrice: getTotalCartPrice(updatedItems)
+        };
       } else {
-        state.cartItems.push({
-          id: productId,
-          price: productPrice,
-          count: 1,
-          total: productPrice,
+        const newItem = {
+            id: productId,
+            price: productPrice,
+            count: 1,
+            total: productPrice,
+          }
+
+        const updatedItems = [...state.cartItems, newItem]
+
+        return Object.assign({}, state, {
+          cartItems: updatedItems,
+          totalCount: getTotalCartCount(updatedItems),
+          totalPrice: getTotalCartPrice(updatedItems)
         });
       }
-
-      CartSlice.caseReducers.updateItem(state)
     },
     minusItem: (state, action) => {
-      const productId = action.payload.item.id
-      const addedItem = state.cartItems.find((item) => item.id === productId)
+      const productId = action.payload.item.id;
+      let addedItem = state.cartItems.find((item) => item.id === productId)
 
       if (addedItem) {
-        addedItem.count--
-        addedItem.total = getTotalItemPrice(addedItem)
-      }
+        const itemIndex = state.cartItems.findIndex(item => item.id === productId)
 
-      CartSlice.caseReducers.updateItem(state)
+        const updatedItems = [
+          ...state.cartItems.slice(0, itemIndex),
+          {
+            ...state.cartItems[itemIndex],
+            count: state.cartItems[itemIndex].count - 1,
+            total: (state.cartItems[itemIndex].count - 1) * state.cartItems[itemIndex].price
+          },
+          ...state.cartItems.slice(itemIndex + 1),
+        ];
+
+        return {
+          cartItems: updatedItems,
+          totalCount: getTotalCartCount(updatedItems),
+          totalPrice: getTotalCartPrice(updatedItems)
+        };
+      } 
     },
     removeItem: (state, action) => {
       const productId = action.payload.item.id;
+      let addedItem = state.cartItems.find((item) => item.id === productId)
 
-      state.cartItems = state.cartItems.filter((item) => item.id !== productId)
+      if (addedItem) {
+        const updatedItems = state.cartItems.filter((item) => item.id !== productId)
 
-      CartSlice.caseReducers.updateItem(state)
+        return {
+          cartItems: updatedItems,
+          totalCount: getTotalCartCount(updatedItems),
+          totalPrice: getTotalCartPrice(updatedItems)
+        };
+      }
     },
-    updateItem: (state) => {
-      state.totalCount = getTotalCartCount(state.cartItems)
-      state.totalPrice = getTotalCartPrice(state.cartItems)
-    }
   },
 });
 
@@ -74,10 +111,6 @@ export const getTotalCartCount = (items: CartItem[]) => {
 
 export const getTotalCartPrice = (items: CartItem[]) => {
   return items.reduce((sum, obj) => obj.price * obj.count + sum, 0);
-};
-
-export const getTotalItemPrice = (item: CartItem) => {
-  return item.count * item.price;
 };
 
 export const { addItem, minusItem, removeItem } = CartSlice.actions;
