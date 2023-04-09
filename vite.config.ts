@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig, normalizePath } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -7,5 +9,10 @@ export default defineConfig({
   base: '/sultan-shop',
   server: {
     host: true
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
   }
 })

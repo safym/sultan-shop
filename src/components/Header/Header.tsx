@@ -19,6 +19,7 @@ const Header: React.FC = () => {
   function handleWindowSizeChange() {
     setWidth(window.innerWidth);
   }
+
   useEffect(() => {
     window.addEventListener('resize', handleWindowSizeChange);
     return () => {
@@ -139,7 +140,9 @@ const Header: React.FC = () => {
                 </svg>
               </NavLink>
               <div className={style.actions}>
-                <NavLink to="/products" className={`${style.action} ${buttonStyle.button}`}>
+                <NavLink to="/products" 
+                className={`${style.action} ${buttonStyle.button}`}
+                data-testid="products-route">
                   <span>Каталог</span>
                   <span className={buttonStyle.icon}>
                     <svg width="15"
@@ -190,7 +193,9 @@ const Header: React.FC = () => {
                   </svg>
                 </span>
               </a>
-              <NavLink to="/cart" className={style.cartLink}>
+              <NavLink to="/cart" 
+                className={style.cartLink}
+                data-testid="cart-route">
                 <div className={style.icon}>
                   <span className={style.counter}>
                     {cart.totalCount}

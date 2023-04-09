@@ -57,7 +57,7 @@ const Products: React.FC = () => {
   };
 
   return (
-    <section className={style.products}>
+    <section className={style.products} data-testid="product-section">
       <div className={`${mainStyle.container} ${mainStyle.content}`}>
         <div className={style.body}>
           <div className={style.titleWrapper}>
@@ -70,7 +70,7 @@ const Products: React.FC = () => {
           <div className={style.content}>
             <FilterSidebar />
             <div className={style.listWrapper}>
-              <ul className={style.list}>
+              <ul className={style.list} data-testid="product-list">
                 <ProductsSkeleton />
                 {productsElements}
               </ul>
