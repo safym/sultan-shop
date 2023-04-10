@@ -34,7 +34,7 @@ const cartItemData: CartItem = {
 
 const mockStore = configureStore([]);
 
-describe("AddButton", () => {
+describe("CartItem", () => {
   let store: any;
 
   beforeEach(() => {

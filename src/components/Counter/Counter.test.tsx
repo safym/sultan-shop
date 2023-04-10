@@ -2,7 +2,6 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import { HashRouter } from "react-router-dom";
-import React from "react";
 
 import { Product } from "../../app/slices/productsSlice";
 import Counter from "./Counter";
@@ -27,7 +26,7 @@ const productData: Product = {
 
 const mockStore = configureStore([]);
 
-describe("AddButton", () => {
+describe("Counter", () => {
   let store: any;
 
   beforeEach(() => {
