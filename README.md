@@ -23,14 +23,14 @@ Layout Figma
 <p align="center">
     <img height="250px" src="https://user-images.githubusercontent.com/99616798/229374519-553db1fe-c96c-4d6c-9e21-6f9467e55148.png" />
     <img height="250px" src="https://user-images.githubusercontent.com/99616798/229374304-857cee78-474f-4beb-b986-5893e67a030c.png" />
-    <img height="280px" src="https://user-images.githubusercontent.com/99616798/229374306-1e2b6db0-2ab6-4555-b864-a26c47c58905.png" />
-    <img height="280px" src="https://user-images.githubusercontent.com/99616798/230989514-54a9b9d5-7d39-40e5-a49c-388048a854b9.png" />
+    <img height="285px" src="https://user-images.githubusercontent.com/99616798/229374306-1e2b6db0-2ab6-4555-b864-a26c47c58905.png" />
+    <img height="285px" src="https://user-images.githubusercontent.com/99616798/230989514-54a9b9d5-7d39-40e5-a49c-388048a854b9.png" />
 </p>
 
 ### 📱 Mobile
 <p align="center">
-  <img height="500px" style="margin-right: 50px" src="https://user-images.githubusercontent.com/99616798/230991786-727cd0f3-5191-4c10-a5bf-0b19f5fcfd06.png">
-  <img height="500px" style="margin-right: 50px" src="https://user-images.githubusercontent.com/99616798/230991802-6cd4cbed-1d3e-4463-99ac-06131190c1e4.png">
+  <img height="500px" src="https://user-images.githubusercontent.com/99616798/230991786-727cd0f3-5191-4c10-a5bf-0b19f5fcfd06.png">
+  <img height="500px" src="https://user-images.githubusercontent.com/99616798/230991802-6cd4cbed-1d3e-4463-99ac-06131190c1e4.png">
   <img height="500px" src="https://user-images.githubusercontent.com/99616798/230991755-52283ab7-ddb2-4d1c-b037-267341d5435d.png">
 </p>
 
