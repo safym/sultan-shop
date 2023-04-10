@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,redux,ts,vite" />
+    <img src="https://skillicons.dev/icons?i=react,redux,ts,vite,jest" />
   </a>
 </p>
 
@@ -46,6 +46,13 @@ Deploy to Github Pages.
 ```bash
 num run deploy
 ```
+
+Run tests.
+
+```bash
+num run test
+```
+
 
 ## 📑 Реализованные задачи:
 
@@ -126,3 +133,11 @@ num run deploy
       - DELETE запрос к API и форма для удаления выбранного товара.
         
       - обавление списка категорий товара происходит строкой, где категории разделены запятой.
+      
+
+## ⚙️ Реализованы тесты компонентов:
+1. AddButton
+2. CartItem
+3. Counter
+4. ProductItem
+5. Products
