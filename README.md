@@ -1,4 +1,4 @@
-<h1 align="center">🛒 Веб приложение интернет магазина Sultan</h1>
+<h1 align="center">🛒 "Sultan" Online Store web Application</h1>
 
 <p align="center">
   <a href="https://skillicons.dev">
@@ -17,7 +17,7 @@ Layout Figma
 
 [DEPLOY Live link](https://safym.github.io/sultan-shop/)
 
-## 📸 Скриншоты
+## 📸 Screenshots
 
 ### 🖥 Desktop
 <p align="center">
@@ -36,7 +36,17 @@ Layout Figma
 
 
 
-## ⚒️ Команды
+## 🛠 Commands
+
+Install packages:
+```bash
+npm install
+```
+
+Run the project:
+```bash
+npm run dev 
+```
 
 Build for production.
 
@@ -62,8 +72,7 @@ Run tests.
 num run test
 ```
 
-
-## 📑 Реализованные задачи:
+## 📑 Реализованные задачи [RU]:
 
 1.  Подготовлен JSON набор данных. На удаленном сервере развернута mongoBD и API для работы приложения.
     В базе данных хранятся сведения о продуктах.
