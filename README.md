@@ -51,25 +51,25 @@ npm run dev
 Build for production.
 
 ```bash
-num run build
+npm run build
 ```
 
 Locally preview production build.
 
 ```bash
-num run preview
+npm run preview
 ```
 
 Deploy to Github Pages.
 
 ```bash
-num run deploy
+npm run deploy
 ```
 
 Run tests.
 
 ```bash
-num run test
+npm run test
 ```
 
 ## 📑 Реализованные задачи [RU]:
