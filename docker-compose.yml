@@ -1,0 +1,43 @@
+networks:
+  sultan_network:
+    name: sultan_network
+
+services:
+  frontend:
+    image: node:18
+    container_name: dev-frontend
+    ports:
+      - 127.0.0.1:5173:5173
+    volumes:
+      - ./frontend:/app/frontend
+    working_dir: /app/frontend
+    restart: always
+    networks:
+      - sultan_network
+    command: npm run dev
+  backend:
+    image: node:18
+    container_name: dev-backend
+    ports:
+      - 127.0.0.1:3005:3005
+    volumes:
+      - ./backend:/app/backend
+    working_dir: /app/backend
+    restart: always
+    networks:
+      - sultan_network
+    command: npm run start:dev
+  mongo:
+    image: mongo:4.4.18
+    container_name: dev-mongo
+    ports:
+      - 127.0.0.1:27017:27017
+    volumes:
+      - ./mongo:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE:-sultan}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-sultan}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-sultan}
+    networks:
+      - sultan_network
+    restart: always
